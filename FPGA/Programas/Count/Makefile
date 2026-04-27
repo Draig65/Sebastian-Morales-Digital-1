@@ -19,6 +19,6 @@ Z=template
 MORE_SRC2SIM=
 MORE_SRC=docs
 
-MK_SYN=../../../makefiles/altera-c4e6e10-syn.mk
-MK_SIM=../../../makefiles/sim.mk
+MK_SYN=makefiles/openep4ce6-c-syn.mk
+MK_SIM=makefiles/sim.mk
 include $(MK_SYN) $(MK_SIM)
