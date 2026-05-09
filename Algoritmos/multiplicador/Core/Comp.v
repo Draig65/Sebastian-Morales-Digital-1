@@ -1,4 +1,4 @@
-module comparador(rst, a, z)
+module comparador(rst, a, z);
   input rst;
   input [31:0] a;
   output reg   z;
