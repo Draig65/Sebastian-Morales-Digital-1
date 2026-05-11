@@ -1,8 +1,9 @@
-module Control(rst,clk,init,ao,shift,load,add,done);
+module Control(rst,clk,init,ao,shift,load,add,z,done);
 
 input rst;
 input clk;
 input init;
+input z;
 input ao;
 
 output reg shift;
