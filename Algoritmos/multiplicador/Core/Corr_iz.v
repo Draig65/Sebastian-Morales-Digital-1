@@ -3,7 +3,7 @@ module Corrimiento_iz(rst,clk,shift,load,b,out_b);
   input clk;
   input shift;
   input load;
-  input [7:0] b;
+  input [15:0] b;
   output reg [31:0] out_b;
 
   always@(posedge clk) 
