@@ -20,6 +20,6 @@ Control      ctrl     (.rst(rst), .clk(clk), .init(init),.ao(w_a[0]),.shift(w_sh
 Corrimiento_iz lsh      (.rst(rst), .clk(clk), .shift(w_sh), .load(w_load), .b(b), .out_b(w_b)); 
 Corrimiento_de rsh      (.rst(rst), .clk(clk), .shift(w_sh), .load(w_load), .a(a), .out_a(w_a));
 acumulador     acc      (.rst(rst), .clk(clk), .b(w_b), .add(w_add), .out_r(r));
-comparador     comp     (.rst(rst), .a_in(w_a), .z(w_z));
+comparador     comp     (.rst(rst), .a(w_a), .z(w_z));
 
 endmodule
