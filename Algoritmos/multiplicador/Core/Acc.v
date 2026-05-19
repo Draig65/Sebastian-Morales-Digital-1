@@ -3,11 +3,11 @@ module acumulador(rst,clk,b,add,out_r);
   input clk;
   input [31:0] b;
   input add;
-  output [31:0] out_r;
+  output reg [31:0] out_r;
 
   always @(negedge clk or posedge rst)
     if(rst)
-      our_r<= 0;
+      out_r<= 0;
     else
       begin
         if(add)
