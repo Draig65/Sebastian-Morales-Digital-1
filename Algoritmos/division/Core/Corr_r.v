@@ -1,4 +1,4 @@
-module reg_r (clk, init, shift, load, r0, s_r);
+module corrimiento_r (clk, init, shift, load, r0, s_r);
   input        clk;
   input        init;
   input        shift;
