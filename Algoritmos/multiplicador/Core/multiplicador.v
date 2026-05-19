@@ -19,7 +19,7 @@ wire [31:0] w_a;
 Control      ctrl     (.rst(rst), .clk(clk), .init(init),.ao(w_a[0]),.shift(w_sh), .load(w_load),.add(w_add),.z(w_z),.done(done));
 Corrimiento_iz lsh      (.rst(rst), .clk(clk), .shift(w_sh), .load(w_load), .b(b), .out_b(w_b)); 
 Corrimiento_de rsh      (.rst(rst), .clk(clk), .shift(w_sh), .load(w_load), .a(a), .out_a(w_a));
-acumulador     acc      (.rst(rst), .clk(clk), .b(w_b), .add(w_add), .out_r(r));
+acumulador     acc      (.rst(rst), .clk(clk), .b(w_b), .add(w_add), .out_r(r), .load(w_load));
 comparador     comp     (.rst(rst), .a(w_a), .z(w_z));
 
 endmodule
