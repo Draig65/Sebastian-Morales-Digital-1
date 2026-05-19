@@ -11,13 +11,8 @@ module acumulador(rst,clk,b,add,out_r,load);
       out_r<= 0;
   else if (load)
     out_r <= 0;
-  else 
-      begin
-        if(add)
-          out_r<=out_r +b;
-        else
-          out_r<=out_r;
-      end
+  else if(add)
+            out_r <= out_r + b;
 endmodule
 
 
