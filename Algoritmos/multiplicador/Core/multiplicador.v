@@ -13,7 +13,7 @@ wire w_load;
 wire w_add;
 wire w_z;
   
-wire [15:0] w_b;
+wire [31:0] w_b;
 wire [31:0] w_a;
 
 Control      ctrl     (.rst(rst), .clk(clk), .init(init),.ao(w_a[0]),.shift(w_sh), .load(w_load),.add(w_add),.z(w_z),.done(done));
