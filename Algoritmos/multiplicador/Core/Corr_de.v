@@ -9,12 +9,12 @@ module Corrimiento_de(rst,clk,shift,load,a,out_a);
 
   always@(posedge clk)    
     if(rst)
-        a_out = 0 ;
+        out_a = 0 ;
     else
     begin
       if (load)
-        out_a=a;
+        out_a={16'b0, a};
         else if (shift)
-          out_a= a>>1;
+          out_a= out_a>>1;
     end 
 endmodule 
