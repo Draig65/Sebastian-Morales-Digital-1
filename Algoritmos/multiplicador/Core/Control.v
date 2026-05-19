@@ -36,7 +36,7 @@ always @(posedge clk or posedge rst) begin
             end
 
             CHECK: begin 
-                if(lsbb)
+                if(ao)
                     state <= ACCUMULATE;
                 else
                     state <= SHIFT;
@@ -46,7 +46,7 @@ always @(posedge clk or posedge rst) begin
                 state <= SHIFT;
 
             SHIFT:begin
-              state = ECHECK;
+              state <= ECHECK;
               end
               ECHECK:begin
                 if(z)
@@ -74,48 +74,48 @@ always @(*) begin
 
         START: begin
             load = 1;
-            sh = 0;
+            shift = 0;
             add = 0;
             done = 0;
         end 
 
         CHECK: begin
             load = 0;
-            sh = 0;
+            shift = 0;
             add = 0;
             done = 0;
         end
 
         ACCUMULATE: begin
             load = 0;
-            sh = 0;
+            shift = 0;
             add = 1;
             done = 0;
         end
 
         SHIFT: begin
             load = 0;
-            sh = 1;
+            shift = 1;
             add = 0;
             done = 0;
         end
         ECHECK: begin
             load = 0;
-            sh = 0;
+            shift = 0;
             add = 0;
             done = 0;
         end
 
         END: begin
             load = 0;
-            sh = 0;
+            shift = 0;
             add = 0;
             done = 1;
         end
 
         default: begin
             load = 0;
-            sh = 0;
+            shift = 0;
             add = 0;
             done = 0;
         end
