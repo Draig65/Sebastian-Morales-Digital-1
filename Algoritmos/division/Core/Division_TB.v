@@ -64,11 +64,16 @@ module Divisor_TB;
     start = 1;
     @ (posedge clk);
     start = 0;
+    @(posedge done);
+    #20
+    $finish;
+  end
 
-    for(i=0; i<60; i=i+1) begin
-      @ (posedge clk);
-    end
-  end  
+  always@(posedge done) begin
+    $display("Dividendo :%d",B); 
+    $display("Divisor: %d",A);
+    $display("Cociente: %d",cociente;
+    $display("Resciduo:%d", resto);
 
   initial begin: TEST_CASE
     $dumpfile("Divisor_TB.vcd");
