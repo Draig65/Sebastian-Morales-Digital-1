@@ -1,12 +1,12 @@
-module Corrimiento_c (
-    input            clk,
-    input            rst,
-    input            init,
-    input            load_b,
-    input      [4:0] B,
-    input            calc_c,
-    output reg [7:0] C
-);
+module Corrimiento_c (clk,rst,init,load_b,B,calc_c,C);
+    input            clk;
+    input            rst;
+    input            init;
+    input            load_b;
+    input      [4:0] B;
+    input            calc_c;
+    output reg [7:0] C;
+    
     always @(posedge clk or posedge rst) begin
         if (rst || init) begin
             C <= 8'b0;
