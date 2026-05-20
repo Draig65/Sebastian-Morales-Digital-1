@@ -79,7 +79,7 @@ module control (clk, rst, init, start, z, z_co, msb, done, sh, load, load_ac, r0
 end
  
   // Salidas según estado 
-  always @(state or init) begin
+  always @(*) begin
     if (init) begin
       done=0; sh=0; load=0; load_ac=0; r0=0; dec=0;
     end else begin
