@@ -13,7 +13,7 @@ module Divisor_TB;
   wire [15:0] resto;
   wire        done;
 
-  divisor uut (.clk(clk), .rst(rst), .init(init), .start(start), .A(A), .B(B), .cociente(cociente), .resto(resto), .done(done));
+  div uut (.clk(clk), .rst(rst), .init(init), .start(start), .A(A), .B(B), .cociente(cociente), .resto(resto), .done(done));
 
   parameter PERIOD         = 20;
   parameter real DUTY_CYCLE = 0.5;
@@ -74,6 +74,7 @@ module Divisor_TB;
     $display("Divisor: %d",A);
     $display("Cociente: %d",cociente;
     $display("Resciduo:%d", resto);
+    end
 
   initial begin: TEST_CASE
     $dumpfile("Divisor_TB.vcd");
