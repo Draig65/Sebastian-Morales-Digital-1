@@ -1,8 +1,7 @@
-module control (clk, rst, init, start, z, z_co, msb, done, sh, load, load_ac, r0, dec);
+module control (clk, rst, start, z, z_co, msb, done, sh, load, load_ac, r0, dec);
   
   input  clk;
   input  rst;
-  input  init;
   input  start;
   input  z;       
   input  z_co;    
@@ -30,8 +29,8 @@ module control (clk, rst, init, start, z, z_co, msb, done, sh, load, load_ac, r0
   end
  
   //Transiciones de estado 
-  always @(posedge clk or posedge rst or posedge init) begin
-    if (rst || init) begin
+  always @(posedge clk or posedge rst) begin
+    if (init) begin
         state <= START;
     end
     else begin
