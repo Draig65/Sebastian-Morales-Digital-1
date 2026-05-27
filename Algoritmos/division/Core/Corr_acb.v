@@ -1,4 +1,4 @@
-module Corrimiento_acb (clk, init, in_B, ac_sub, shift, load, load_ac, s_acb, msb);
+module Corrimiento_acb (clk, rst, in_B, ac_sub, shift, load, load_ac, s_acb);
   input        clk;
   input        init;
   input  [15:0] in_B;     
@@ -7,12 +7,9 @@ module Corrimiento_acb (clk, init, in_B, ac_sub, shift, load, load_ac, s_acb, ms
   input        load;      
   input        load_ac;   
   output reg [31:0] s_acb;
-  output       msb;
- 
-  assign msb = s_acb[31];
- 
+  
   always @(negedge clk) begin
-    if (init)
+    if (rst)
       s_acb = 32'b0;                       
     else if (load)
       s_acb = {16'b0, in_B};              
