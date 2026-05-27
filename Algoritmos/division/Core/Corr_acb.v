@@ -1,6 +1,6 @@
 module Corrimiento_acb (clk, rst, in_B, ac_sub, shift, load, load_ac, s_acb);
   input        clk;
-  input        init;
+  input        rst;
   input  [15:0] in_B;     
   input  [15:0] ac_sub;   
   input        shift;    
