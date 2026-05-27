@@ -1,6 +1,6 @@
-module contador(clk, init, rst, load, dec, z_co);
-  input  clk, rst;
-  input  init;   
+module contador(clk, rst, load, dec, z_co);
+  input  clk;
+  input  rst;   
   input  load;    
   input  dec;     
   output z_co;    
@@ -10,7 +10,7 @@ module contador(clk, init, rst, load, dec, z_co);
   assign z_co = (count == 5'b0);
  
   always @(negedge clk) begin
-    if (rst || init)
+    if (rst)
       count = 5'd16;         
     else if (load)
       count = 5'd16;         
