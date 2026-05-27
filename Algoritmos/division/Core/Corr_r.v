@@ -1,13 +1,13 @@
-module corrimiento_r (clk, init, shift, load, r0, s_r);
+module corrimiento_r (clk, rst, shift, load, r0, s_r);
   input        clk;
-  input        init;
+  input        rst;
   input        shift;
   input        load;
   input        r0;
   output reg [15:0] s_r;
  
   always @(negedge clk) begin
-    if (init)
+    if (rst)
       s_r = 16'b0;
     else if (load)
       s_r = 16'b0;
