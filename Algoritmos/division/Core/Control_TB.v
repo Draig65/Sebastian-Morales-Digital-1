@@ -2,17 +2,15 @@
 
 module Control_TB;
   reg  clk, rst, start, z, z_co;
-  wire load_ra, shift_ra, sub_ra;
-  wire clear_b, shift_b, set_b0;
-  wire load_c, calc_c;
+  wire load, sh, sub_ra;
+  wire  r0;
+  wire load_ac, dec;
   wire done;
 
   parameter PERIOD = 20;
   Control uut (
-    .clk(clk), .rst(rst), .start(start), .z(z), .z_a(z_a),
-    .load_ra(load_ra), .shift_ra(shift_ra), .sub_ra(sub_ra),
-    .clear_b(clear_b), .shift_b(shift_b), .set_b0(set_b0),
-    .load_c(load_c), .calc_c(calc_c), .done(done)
+    .clk(clk), .rst(rst), .start(start), .z(z), .z_co(z_co), .done(done),
+    .sh(sh),.load(load),.load_ac(load_ac), .r0(r0),.dec(dec)
   );
 
   event reset_trigger, reset_done_trigger;
