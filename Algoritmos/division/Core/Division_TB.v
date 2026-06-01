@@ -13,7 +13,7 @@ module Divisor_TB;
   wire [15:0] resto;
   wire        done;
 
-  div uut (.clk(clk), .rst(rst), .init(init), .start(start), .A(A), .B(B), .cociente(cociente), .done(done));
+  div uut (.clk(clk), .rst(rst), .start(start), .A(A), .B(B), .cociente(cociente), .done(done));
 
   parameter PERIOD         = 20;
   parameter real DUTY_CYCLE = 0.5;
