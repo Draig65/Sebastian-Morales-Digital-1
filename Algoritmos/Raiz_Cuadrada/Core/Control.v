@@ -1,5 +1,5 @@
-module control(clk,rst,init,start,z,z_a,load_ra,shift_ra,sub_ra,clear_b,shift_b,set_b0,load_c,calc_c,done);
-    input      clk, rst, init, start;
+module control(clk,rst,start,z,z_a,load_ra,shift_ra,sub_ra,clear_b,shift_b,set_b0,load_c,calc_c,done);
+    input      clk, rst, start;
     input      z;
     input      z_a;
     output reg load_ra, shift_ra, sub_ra;
@@ -17,8 +17,8 @@ module control(clk,rst,init,start,z,z_a,load_ra,shift_ra,sub_ra,clear_b,shift_b,
     reg [2:0] state, next_state;
 
     always @(posedge clk or posedge rst) begin
-        if (rst || init) state <= START;
-        else             state <= next_state;
+        if (rst) state <= START;
+        else  state <= next_state;
     end
 
     // Transiciones de estado
@@ -31,7 +31,7 @@ module control(clk,rst,init,start,z,z_a,load_ra,shift_ra,sub_ra,clear_b,shift_b,
             CHECK:    next_state = CHECK_F;
             CHECK_F:   if (z_a)   next_state = DONE;
                      else       next_state = SHIFT_RA;
-            DONE: if (init)  next_state = START;
+            DONE: if (rst)  next_state = START;
             default: next_state = START;
         endcase
     end
