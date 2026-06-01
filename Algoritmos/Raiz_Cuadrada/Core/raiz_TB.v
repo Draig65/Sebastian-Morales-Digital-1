@@ -12,7 +12,7 @@ module Raiz_TB;
   wire [7:0] residuo;
   wire       done;
 
-  raiz_cuadrada uut ( .clk(clk), .rst(rst), .init(init), .start(start), .radical(radical), .resultado(resultado), .residuo(residuo), .done(done));
+  raiz_cuadrada uut ( .clk(clk), .rst(rst), .start(start), .radical(radical), .resultado(resultado), .residuo(residuo), .done(done));
 
   parameter PERIOD         = 20;
   parameter real DUTY_CYCLE = 0.5;
@@ -35,7 +35,7 @@ module Raiz_TB;
 
   initial begin  
     clk = 0; rst = 1; init = 0; start = 0;
-    radical = 8'd90; 
+    radical = 8'd121; 
   end
 
   initial begin  
@@ -76,6 +76,9 @@ module Raiz_TB;
     $display(" RESULTADO FINAL : %d", resultado);
     $display(" RESIDUO FINAL   : %d", residuo);
   end
+
+  initial begin: TEST_CASE
+    $dumpfile("Raiz_TB.vcd");
 
   initial begin: TEST_CASE
     $dumpfile("Raiz_TB.vcd");
