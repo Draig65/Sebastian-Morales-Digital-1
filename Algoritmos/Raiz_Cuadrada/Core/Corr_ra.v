@@ -1,7 +1,6 @@
-module Corrimiento_ra (clk,rst,init,load,radical_in, shift,sub_en,C,A,R);
+module Corrimiento_ra (clk,rst,load,radical_in, shift,sub_en,C,A,R);
     input            clk;
     input            rst;
-    input            init;
     input            load;
     input      [7:0] radical_in;
     input            shift;
@@ -11,7 +10,7 @@ module Corrimiento_ra (clk,rst,init,load,radical_in, shift,sub_en,C,A,R);
     output reg [7:0] R;
 
     always @(posedge clk or posedge rst) begin
-        if (rst || init) begin
+        if (rst ) begin
             A <= 8'b0;
             R <= 8'b0;
         end 
@@ -26,4 +25,4 @@ module Corrimiento_ra (clk,rst,init,load,radical_in, shift,sub_en,C,A,R);
                 R <= R - C;            // Bloque: R = R - C
         end
     end
-end
+endmodule
