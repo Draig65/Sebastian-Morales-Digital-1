@@ -1,14 +1,13 @@
-module corrimiento_b (clk,rst,init,clear,shift,b0,B);
+module Corr_b (clk,rst,shift,b0,B);
     input            clk;
     input            rst;
-    input            init;
     input            clear;
     input            shift;
-    input            set_b0;
+    input            b0;
   output reg [4:0] B;
   
     always @(posedge clk or posedge rst) begin
-        if (rst || init || clear) begin
+        if (rst) begin
             B <= 5'b0;
         end 
 else begin
@@ -16,4 +15,4 @@ else begin
             if (b0) B[0] <= 1'b1;  
         end
     end
-end
+endmodule
