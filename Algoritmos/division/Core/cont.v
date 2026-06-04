@@ -11,10 +11,10 @@ module contador(clk, rst, load, dec, z_co);
  
   always @(negedge clk) begin
     if (rst)
-      count = 5'd16;         
+      count <= 5'd16;         
     else if (load)
-      count = 5'd16;         
+      count <= 5'd16;         
     else if (dec)
-      count = count - 1'b1;  
+      count <= count - 1'b1;  
   end
 endmodule
