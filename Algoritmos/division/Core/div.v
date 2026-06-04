@@ -4,7 +4,6 @@ module div_32 (clk, rst, start, A, B, cociente, done);
   input  [15:0] A;      
   input  [15:0] B;      
   output [15:0] cociente;
-  output [15:0] resto;
   output        done;
  
   wire w_sh;            
@@ -25,5 +24,4 @@ module div_32 (clk, rst, start, A, B, cociente, done);
   contador cnt      (.clk(clk), .rst(rst),.load(w_load), .dec(w_dec), .z_co(w_z_co));
   control ctrl    (.clk(clk), .rst(rst),.start(start), .z(w_z), .z_co(w_z_co),.done(done), .sh(w_sh), .load(w_load),.load_ac(w_load_ac), .r0(w_r0), .dec(w_dec));
   
-  assign resto = w_acb[31:16];
 endmodule
