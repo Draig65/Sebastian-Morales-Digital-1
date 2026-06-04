@@ -142,5 +142,18 @@ end
       endcase
     end
   end
- 
+`define BENCH
+`ifdef BENCH
+  reg [8*40:1] state_name;
+  always @(*) begin
+    case (state)
+      START:      state_name = "START";
+      SHIFT: state_name = "SHIFT";
+      CHECK:       state_name = "CHECK";
+      SUB:       state_name = "SUB";
+      CHK_CO:     state_name = "CHK_CO";
+      END:     state_name = "END";
+    endcase
+  end
+`endif
 endmodule
