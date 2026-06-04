@@ -2,7 +2,6 @@ module raiz_cuadrada (
     input        clk, rst, start,
     input  [7:0] radical,
     output [4:0] resultado,
-    output [7:0] residuo,
     output       done
 );
     wire w_z, w_z_a;
@@ -14,7 +13,7 @@ module raiz_cuadrada (
 
     assign w_z_a     = (w_A == 8'b0); 
     assign resultado = w_B;
-    assign residuo   = w_R;
+
 
     comparador comp   (.R(w_R), .C(w_C), .z(w_z));
     Corrimiento_ra   corr_ra(.clk(clk), .rst(rst), .load(w_load_ra),.radical_in(radical), .shift(w_shift_ra), .sub_en(w_sub_ra), .C(w_C), .A(w_A), .R(w_R));
