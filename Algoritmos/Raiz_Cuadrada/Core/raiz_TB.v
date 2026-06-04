@@ -78,9 +78,6 @@ module Raiz_TB;
 
   initial begin: TEST_CASE
     $dumpfile("Raiz_TB.vcd");
-
-  initial begin: TEST_CASE
-    $dumpfile("Raiz_TB.vcd");
     $dumpvars(-1, uut);
   end
 endmodule
