@@ -4,20 +4,20 @@
 
 ### Primera version
 
-![Diagrama de flujo divisor v1](algoritmo.png)
+![Diagrama de flujo v1](algoritmo.png)
 
 ### Version final
 
-![Diagrama de flujo divisor vf](multi_final_DF.jpg)
+![Diagrama de flujo vf](multi_final_DF.jpg)
 
-## Camino de datos
+## Caja negra y Datapath
 
-![Camino de datos](Caja_N_Datapath.jpg)
+![Camino de datos y Caja](Caja_N_Datapath.jpg)
 	
 ## Diagrama de estados
 
 ![Diagrama de estados](Estados.jpg)
 
-## Simulación periferico
+## Simulación 
 
-![Simulación de periferico](Core/Multi_señales.png)
+![Simulación ](Core/Multi_señales.png)
