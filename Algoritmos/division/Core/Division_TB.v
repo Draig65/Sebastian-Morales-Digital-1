@@ -10,7 +10,6 @@ module Divisor_TB;
   reg  [15:0] B; // Dividendo
 
   wire [15:0] cociente;
-  wire [15:0] resto;
   wire        done;
 
   div uut (.clk(clk), .rst(rst), .start(start), .A(A), .B(B), .cociente(cociente), .done(done));
