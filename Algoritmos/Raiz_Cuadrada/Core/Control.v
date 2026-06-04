@@ -68,4 +68,18 @@ module control(clk,rst,start,z,z_a,load_ra,shift_ra,sub_ra,clear_b,shift_b,set_b
             end
         endcase
     end
+`define BENCH
+`ifdef BENCH
+  reg [8*40:1] state_name;
+  always @(*) begin
+    case (state)
+      START:      state_name = "START";
+      SHIFT_RA: state_name = "SHIFT_RA";
+      SHIFT_CB: state_name = "SHIFT_CB";
+      CHECK:       state_name = "CHECK";
+      CHECK_F:     state_name = "CHK_CO";
+      DONE:     state_name = "END";
+    endcase
+  end
+`endif
 endmodule
