@@ -74,7 +74,6 @@ module Raiz_TB;
   always @(posedge done) begin
     $display(" Valor Radical  : %d", radical);
     $display(" RESULTADO FINAL : %d", resultado);
-    $display(" RESIDUO FINAL   : %d", residuo);
   end
 
   initial begin: TEST_CASE
