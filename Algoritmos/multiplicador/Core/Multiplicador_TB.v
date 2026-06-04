@@ -52,6 +52,11 @@ module Multiplicador_TB;
          @ (posedge clk);
        end
    end	 
+always @(posedge done) begin
+    $display(" Multiplicador  : %d", a);
+    $display(" Multiplicador  : %d", b);
+    $display(" Resultado : %d", r);
+  end
    initial begin: TEST_CASE
      $dumpfile("Multiplicador_TB.vcd");
      $dumpvars(-1, uut);
