@@ -122,6 +122,7 @@ always @(*) begin
         
     endcase
 end
+`define BENCH
 `ifdef BENCH
 reg [8*40:1] state_name;
 always @(*) begin
