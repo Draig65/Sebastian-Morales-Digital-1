@@ -12,7 +12,7 @@ module Raiz_TB;
   wire [7:0] residuo;
   wire       done;
 
-  raiz_cuadrada uut ( .clk(clk), .rst(rst), .start(start), .radical(radical), .resultado(resultado), .residuo(residuo), .done(done));
+  raiz_cuadrada uut ( .clk(clk), .rst(rst), .start(start), .radical(radical), .resultado(resultado), .done(done));
 
   parameter PERIOD         = 20;
   parameter real DUTY_CYCLE = 0.5;
