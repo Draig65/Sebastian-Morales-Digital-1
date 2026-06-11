@@ -6,6 +6,8 @@
 
 ![Diagrama de flujo v1](algoritmo.png)
 
+Aunque este diagrama de flujo era funcional, se penso una forma de optimizarlo.
+
 ### Version final
 
 ![Diagrama de flujo vf](multi_final_DF.jpg)
