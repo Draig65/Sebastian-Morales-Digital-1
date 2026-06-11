@@ -6,7 +6,7 @@
 
 ![Diagrama de flujo v1](Dig_fluj.jpg)
 
-Aunque este diagrama de flujo era funcional, se penso una forma de optimizarlo. De tal forma no se necesitaria ni la variable c ni la variable y.
+Aunque este diagrama de flujo era funcional, se observa que la repeticion del corrimiento de la variable R por tanto se modifica para que la accion solo se de en un lugar.
 
 ### Version final
 
