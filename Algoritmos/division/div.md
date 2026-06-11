@@ -14,7 +14,7 @@ Aunque este diagrama de flujo era funcional, se observa que la repeticion del co
 
 ## Caja negra y Datapath
 
-![Camino de datos y Caja](Caja_N_Datapath.jpg)
+![Camino de datos y Caja](Caj_N_Datapath.jpg)
 	
 ## Diagrama de estados
 
