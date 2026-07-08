@@ -1,4 +1,4 @@
-module div_32 (clk, rst, start, A, B, cociente, done);
+module div(clk, rst, start, A, B, cociente, done);
   input        clk, rst;   
   input        start;   
   input  [15:0] A;      
@@ -17,7 +17,7 @@ module div_32 (clk, rst, start, A, B, cociente, done);
   wire [31:0] w_acb;    
   wire [15:0] w_ac_sub; 
  
-  Corr_acb    corr_acb (.clk(clk), .rst(rst),.in_B(B), .ac_sub(w_ac_sub),.shift(w_sh), .load(w_load), .load_ac(w_load_ac),.s_acb(w_acb));
+  Corrimiento_acb    corr_acb (.clk(clk), .rst(rst),.in_B(B), .ac_sub(w_ac_sub),.shift(w_sh), .load(w_load), .load_ac(w_load_ac),.s_acb(w_acb));
   resta_ac     dec (.Ac(w_acb[31:16]), .A(A), .ac_out(w_ac_sub));
   corrimiento_r      corr_r   (.clk(clk), .rst(rst),.shift(w_sh), .load(w_load), .r0(w_r0),.s_r(cociente));
   comparador_aca   comp(.Ac(w_acb[31:16]), .A(A), .z(w_z));
