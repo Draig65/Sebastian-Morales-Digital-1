@@ -89,8 +89,7 @@ module Paridad_TB;
   always @(posedge done) begin
     $display("--------------------------------------------------");
     $display("Vector B  : %b", B);
-    $display("Paridad   : %0d  (1 = par, 0 = impar)", par);
-    $display("Tiempo ns : %t",  $time);
+    $display("Es par: %0d  (1 = si, 0 = no)", par);
   end
 
 
