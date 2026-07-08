@@ -8,11 +8,13 @@ module raiz_cuadrada (
     wire w_load_ra, w_shift_ra, w_sub_ra;
     wire w_clear_b, w_shift_b, w_set_b0;
     wire w_load_c, w_calc_c;
-    wire [7:0] w_A, w_R, w_C;
+    wire [8:0] w_A;
+    wire [7:0] w_R, w_C;
     wire [4:0] w_B;
 
-    assign w_z_a     = (w_A == 8'b0); 
+    assign w_z_a     = (w_A == 9'b100000000); 
     assign resultado = w_B;
+    
 
 
     comparador comp   (.R(w_R), .C(w_C), .z(w_z));
