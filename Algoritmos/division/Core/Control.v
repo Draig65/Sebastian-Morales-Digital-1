@@ -83,7 +83,7 @@ end
     end else begin
       case (state)
       
-        START:   begin 
+     START:   begin 
           done=0;
           sh=0; 
           load=1; 
@@ -91,7 +91,7 @@ end
           r0=0; 
           dec=0; 
         end
-        SHIFT:   begin 
+    SHIFT:   begin 
           done=0; 
           sh=1; 
           load=0; 
@@ -99,7 +99,7 @@ end
           r0=0; 
           dec=1; 
         end
-        CHECK:   begin 
+    CHECK:   begin 
           done=0; 
           sh=0; 
           load=0; 
@@ -107,7 +107,7 @@ end
           r0=0; 
           dec=0; 
         end
-        SUB:     begin 
+      SUB:     begin 
           done=0; 
           sh=0; 
           load=0; 
@@ -115,7 +115,7 @@ end
           r0=1; 
           dec=0; 
         end
-        CHK_CO:  begin 
+    CHK_CO:  begin 
           done=0; 
           sh=0; 
           load=0; 
@@ -123,7 +123,7 @@ end
           r0=0; 
           dec=0; 
         end
-        END_ST:  begin 
+      END_ST:  begin 
           done=1; 
           sh=0; 
           load=0; 
@@ -152,7 +152,7 @@ end
       CHECK:       state_name = "CHECK";
       SUB:       state_name = "SUB";
       CHK_CO:     state_name = "CHK_CO";
-      END:     state_name = "END";
+      END_ST:     state_name = "END";
     endcase
   end
 `endif
