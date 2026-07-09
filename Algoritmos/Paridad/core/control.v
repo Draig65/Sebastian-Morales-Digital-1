@@ -10,9 +10,9 @@ module control (clk, rst, start, b0, z_co, done, shift, load, inc, dec);
   output reg dec;     
 
   
-  parameter START  = 2'b00,
-   parameter LOAD   = 2'b01,
-   parameter SHIFT  = 2'b10,
+  parameter START  = 2'b00;
+   parameter LOAD   = 2'b01;
+   parameter SHIFT  = 2'b10;
     parameter END_ST = 2'b11;
 
   reg [1:0] state;
