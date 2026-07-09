@@ -1,4 +1,3 @@
-
 module control (clk, rst, start, b0, z_co, done, shift, load, inc, dec);
   input  clk, rst, start;
   input  b0;          
@@ -11,10 +10,10 @@ module control (clk, rst, start, b0, z_co, done, shift, load, inc, dec);
   output reg dec;     
 
   
-  localparam START  = 2'b00,
-             LOAD   = 2'b01,
-             SHIFT  = 2'b10,
-             END_ST = 2'b11;
+  parameter START  = 2'b00,
+   parameter LOAD   = 2'b01,
+   parameter SHIFT  = 2'b10,
+    parameter END_ST = 2'b11;
 
   reg [1:0] state;
 
@@ -34,7 +33,7 @@ module control (clk, rst, start, b0, z_co, done, shift, load, inc, dec);
 
   always @(*) begin
 
-    {done, shift, load, inc_ones, dec} = 5'b0;
+    {done, shift, load, inc, dec} = 5'b0;
     case (state)
       LOAD : load      = 1'b1;
       SHIFT: begin
@@ -46,7 +45,7 @@ module control (clk, rst, start, b0, z_co, done, shift, load, inc, dec);
     endcase
   end
 
-
+`define BENCH
 `ifdef BENCH
   reg [8*16:1] state_name;
   always @(*) begin
