@@ -99,7 +99,7 @@ module SOC (
 // --------Instanciacion del periferico a probar ----------------#
 // --------------------------------------------------------------#
 // --------------------------------------------------------------#
-   peripheral_test mult1 (
+   peripheral_test div(
       .clk(clk),
       .reset(!resetn),
       .d_in(mem_wdata[15:0]),
@@ -109,6 +109,26 @@ module SOC (
       .wr(wr),
       .d_out(test_dout)
    );
+	//peripheral_test multi(
+    //  .clk(clk),
+     // .reset(!resetn),
+      //.d_in(mem_wdata[15:0]),
+     // .cs(cs[3]),
+     // .addr(mem_addr[4:0]),
+      //.rd(rd),
+      //.wr(wr),
+      //.d_out(test_dout)
+   //);
+	//peripheral_test raiz (
+     // .clk(clk),
+      //.reset(!resetn),
+      //.d_in(mem_wdata[15:0]),
+      //.cs(cs[3]),
+      //.addr(mem_addr[4:0]),
+      //.rd(rd),
+      //.wr(wr),
+      //.d_out(test_dout)
+   //);
 
   always @*
   begin
