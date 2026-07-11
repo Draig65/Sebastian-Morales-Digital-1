@@ -1,12 +1,12 @@
 module control (clk, rst, init, b0, z_co, done, shift, load, inc, dec);
   input  clk, rst, init;
-   input  b0;          
+  input  b0;          
   input  z_co;        
 
-   output reg done; 
+  output reg done; 
   output reg shift;  
   output reg load;    
-   output reg inc;
+  output reg inc;
   output reg dec;     
 
   
@@ -19,11 +19,14 @@ module control (clk, rst, init, b0, z_co, done, shift, load, inc, dec);
   parameter CHECK_Z = 3'b110;
    parameter END_ST = 3'b111;
 
-  reg [2:0] state,next_state;
+  reg [2:0] state;
+reg [3:0] count;
+
 
   always @(posedge clk or posedge rst) begin
     if (rst) begin
         state <= START;
+        count <= 4'b0;
     end
     else begin
         case (state)
@@ -55,10 +58,10 @@ module control (clk, rst, init, b0, z_co, done, shift, load, inc, dec);
             end
 
             SHIFT: begin
-                state <= CHECK_Z;
+                state <= CHECK_F;
             end
 
-            CHECK_Z: begin
+            CHECK_F: begin
                 if (z_co)
                     state <= END_ST;
                 else
@@ -66,9 +69,10 @@ module control (clk, rst, init, b0, z_co, done, shift, load, inc, dec);
             end
 
             END_ST: begin
-                if (!init)
+                  if (start)
                     state <= START;
-                else
+
+                else 
                     state <= END_ST;
             end
 
@@ -170,7 +174,7 @@ end
       INC : state_name = "INC";
       DEC : state_name = "DEC";
       SHIFT : state_name = "SHIFT";
-      CHECK_Z: state_name = "CHECK_Z";
+      CHECK_F: state_name = "CHECK_F";
       END_ST: state_name = "END";
       default: state_name = "UNKN";
     endcase
