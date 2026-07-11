@@ -21,58 +21,55 @@ output reg r0;
   parameter END_ST  = 3'b101;
  
   reg [2:0] state;
- 
-  initial begin
-    done=0; sh=0; load=0; load_ac=0; r0=0; dec=0;
-    state = START;
-  end
- 
+  reg [3:0] count;
   
   always @(posedge clk or posedge rst ) begin
     if (rst) begin
         state <= START;
+        count <= 4'b0;
     end
     else begin
         case (state)
+        
 
          START: begin
                 if(start)
-                    state = SHIFT;
+                    state <= SHIFT;
               else
-                    state = START;
+                    state <= START;
             end
 
          SHIFT: begin
-                state = CHECK;
+                state <= CHECK;
             end
 
             CHECK: begin
                if(z)
-                    state = SUB;
+                    state <= SUB;
                 else
-                    state = CHK_CO;
+                    state <= CHK_CO;
             end
 
             SUB: begin
-               state = CHK_CO;
+               state <= CHK_CO;
             end
 
             CHK_CO: begin
               if(z_co)
-                    state = END_ST;
+                    state <= END_ST;
                 else
-                    state = SHIFT;
+                    state <= SHIFT;
             end
 
             END_ST: begin
               if(start)
-                    state = SHIFT;
+                    state <= START;
                 else
-                  state = END_ST;
+                  state <= END_ST;
             end
 
             default: begin
-               state = START;
+               state <= START;
             end
 
         endcase
@@ -80,9 +77,6 @@ output reg r0;
 end
   
   always @(*) begin
-    if (rst) begin
-      done=0; sh=0; load=0; load_ac=0; r0=0; dec=0;
-    end else begin
       case (state)
       
      START:   begin 
@@ -128,7 +122,7 @@ end
       END_ST:  begin 
           done=1; 
           sh=0; 
-           load=start; 
+           load=0; 
           load_ac=0; 
           r0=0; 
           dec=0; 
@@ -136,14 +130,15 @@ end
         default: begin 
           done=0; 
           sh=0; 
-          load=1; 
+          load=0; 
           load_ac=0; 
           r0=0; 
           dec=0; 
         end
       endcase
     end
-  end
+  
+
 `define BENCH
 `ifdef BENCH
   reg [8*40:1] state_name;
@@ -155,11 +150,6 @@ end
       SUB:       state_name = "SUB";
       CHK_CO:     state_name = "CHK_CO";
       END_ST:     state_name = "END";
-    endcase
-  end
-`endif
-endmodule
-
     endcase
   end
 `endif
