@@ -56,14 +56,11 @@ always @(posedge clk or posedge rst) begin
             end
 
             END: begin
-                count <= count + 1;
-                if(count > 9) begin
+                  if (init)
                     state <= START;
-                    count <= 4'b0;
-                end 
+
                 else 
                     state <= END;
-            end
 
             default: state <= START;
         endcase 
