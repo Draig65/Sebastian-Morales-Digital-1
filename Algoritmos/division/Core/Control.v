@@ -1,16 +1,16 @@
 module control (clk, rst, start, z, z_co, done, sh, load, load_ac, r0, dec);
   
   input  clk;
-  input  rst;
+   input  rst;
   input  start;
   input  z;       
   input  z_co;     
   
-  output reg done;
-  output reg sh;
+output reg done;
+output reg sh;
   output reg load;
   output reg load_ac;
-  output reg r0;
+output reg r0;
   output reg dec;
  
   parameter START   = 3'b000;
@@ -27,56 +27,58 @@ module control (clk, rst, start, z, z_co, done, sh, load, load_ac, r0, dec);
     state = START;
   end
  
-  //Transiciones de estado 
-  always @(posedge clk or posedge rst) begin
+  
+  always @(posedge clk or posedge rst ) begin
     if (rst) begin
         state <= START;
     end
     else begin
         case (state)
 
-            START: begin
+         START: begin
                 if(start)
-                    state <= SHIFT;
-                else
-                    state <= START;
+                    state = SHIFT;
+              else
+                    state = START;
             end
 
-            SHIFT: begin
-                state <= CHECK;
+         SHIFT: begin
+                state = CHECK;
             end
 
             CHECK: begin
-                if(z)
-                    state <= SUB;
+               if(z)
+                    state = SUB;
                 else
-                    state <= CHK_CO;
+                    state = CHK_CO;
             end
 
             SUB: begin
-                state <= CHK_CO;
+               state = CHK_CO;
             end
 
             CHK_CO: begin
-                if(z_co)
-                    state <= END_ST;
+              if(z_co)
+                    state = END_ST;
                 else
-                    state <= SHIFT;
+                    state = SHIFT;
             end
 
             END_ST: begin
-                state <= END_ST;
+              if(start)
+                    state = SHIFT;
+                else
+                  state = END_ST;
             end
 
             default: begin
-                state <= START;
+               state = START;
             end
 
         endcase
     end
 end
- 
-  // Salidas según estado 
+  
   always @(*) begin
     if (rst) begin
       done=0; sh=0; load=0; load_ac=0; r0=0; dec=0;
@@ -86,7 +88,7 @@ end
      START:   begin 
           done=0;
           sh=0; 
-          load=1; 
+        load=1; 
           load_ac=0; 
           r0=0; 
           dec=0; 
@@ -94,15 +96,15 @@ end
     SHIFT:   begin 
           done=0; 
           sh=1; 
-          load=0; 
+         load=0; 
           load_ac=0; 
           r0=0; 
           dec=1; 
         end
     CHECK:   begin 
-          done=0; 
+         done=0; 
           sh=0; 
-          load=0; 
+         load=0; 
           load_ac=0; 
           r0=0; 
           dec=0; 
@@ -126,7 +128,7 @@ end
       END_ST:  begin 
           done=1; 
           sh=0; 
-          load=0; 
+           load=start; 
           load_ac=0; 
           r0=0; 
           dec=0; 
@@ -153,6 +155,11 @@ end
       SUB:       state_name = "SUB";
       CHK_CO:     state_name = "CHK_CO";
       END_ST:     state_name = "END";
+    endcase
+  end
+`endif
+endmodule
+
     endcase
   end
 `endif
