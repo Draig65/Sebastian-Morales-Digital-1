@@ -63,27 +63,17 @@ end//-----------------------------------------------mux_4
 
 //# ---------------------------------------#
 //# ---------------------------------------#
-//# Instanciacion del periferico a probar--#
-//# ---------------------------------------#
-//# ---------------------------------------#
+//# Instanciacion del periferico division--#
 
-div_32 mult1 (
-  .rst(reset),
-  .clk(clk),
-  .start(init),
-  .done(done),
-  .cociente(result),
-  .A(A),
-  .B(B)
- );
- 
-//multi mult1 (
-// .rst(reset),
-// .clk(clk),
-//  .init(init),
-//  .done(done),
-//  .r(result),
-//  .a(A),
-//  .b(B)
-// );
+
+div div1 (
+ .rst(reset),
+.clk(clk),
+.start(init),
+.done(done),
+.cociente(result),
+  .B(A),
+.A(B)
+);
+
 endmodule
