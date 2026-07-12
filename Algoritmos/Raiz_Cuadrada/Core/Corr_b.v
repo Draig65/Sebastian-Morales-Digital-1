@@ -1,12 +1,12 @@
-module Corr_b (clk,rst,shift,b0,B);
+module Corr_b (clk,start,shift,b0,B);
     input            clk;
-    input            rst;
+    input            start;
     input            shift;
     input            b0;
   output reg [4:0] B;
-always @(posedge clk or posedge rst) begin
-if (rst) begin
-            B <= 5'b0;
+always @(posedge clk or posedge start) begin
+if (start) begin
+            B = 5'b0;
         end 
 else begin
     if (shift)  B <= B << 1;   
