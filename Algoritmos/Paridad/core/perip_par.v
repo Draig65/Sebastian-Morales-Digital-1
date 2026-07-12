@@ -63,7 +63,7 @@ end//-----------------------------------------------mux_4
 
 
 
- paridad mult1 (
+ paridad par1 (
 .rst(reset),
   .clk(clk),
 .start(init),
