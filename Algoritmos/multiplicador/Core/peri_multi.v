@@ -1,4 +1,4 @@
-odule peripheral_test(clk , reset , d_in , cs , addr , rd , wr, d_out );
+odule peripheral_multi(clk , reset , d_in , cs , addr , rd , wr, d_out );
   
   input clk;
   input reset;
