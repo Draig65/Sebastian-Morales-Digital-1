@@ -29,61 +29,67 @@ endif
 
 TCL_SCRIPT = auto_generated.tcl
 
-#COMM_OBJS+= cores/cpu/femtorv32_quark_V2.v
+# -----------------------------CPU--- UART------------------------------#
 
-COMM_OBJS+= cores/cpu/femtorv32_quark_V2.v
-COMM_OBJS+= cores/uart/perip_uart.v
-COMM_OBJS+= cores/uart/uart.v
+COMM_OBJS+= Algoritmos/cpu/femtorv32_quark_V2.v
+COMM_OBJS+= Algoritmos/uart/perip_uart.v
+COMM_OBJS+= Algoritmos/uart/uart.v
+# -bcd_binario-------------------------------------------------------------#
+COMM_OBJS+=Algoritmos/bcd_binario/Core/bcd_to_bin.v
+COMM_OBJS+=Algoritmos/bcd_binario/Core/comp_bin.v
+COMM_OBJS+=Algoritmos/bcd_binario/Core/control_bin.v
+COMM_OBJS+=Algoritmos/bcd_binario/Core/counter_bin.v
+COMM_OBJS+=Algoritmos/bcd_binario/Core/rsr_bin.v
+COMM_OBJS+=Algoritmos/bcd_binario/Core/perip_bin2bcd.v 
 
-COMM_OBJS+=cores/bin2bcd/add_sub_c2.v
-COMM_OBJS+=cores/bin2bcd/bin2bcd.v
-COMM_OBJS+=cores/bin2bcd/mux2.v
-COMM_OBJS+=cores/bin2bcd/count.v
-COMM_OBJS+=cores/bin2bcd/ctrl_b2b.v  
-COMM_OBJS+=cores/bin2bcd/perip_bin2bcd.v
-COMM_OBJS+=cores/bin2bcd/lsr4.v
-COMM_OBJS+=cores/bin2bcd/reg_msb.v
+# binario_bcd--------------------------------------------------#
+COMM_OBJS+=Algoritmos/binario_bcd/Core/bin_to_bcd.v
+COMM_OBJS+=Algoritmos/binario_bcd/Core/comp_bcd.v
+COMM_OBJS+=Algoritmos/binario_bcd/Core/control_bcd.v
+COMM_OBJS+=Algoritmos/binario_bcd/Core/counter_bcd.v
+COMM_OBJS+=Algoritmos/binario_bcd/Core/lsr_bcd.v
 
-COMM_OBJS+=cores/bcd2bin/bcd2bin.v
-COMM_OBJS+=cores/bcd2bin/perip_bcd2bin.v
-COMM_OBJS+=cores/bcd2bin/rsr4.v
-COMM_OBJS += cores/bram/bram.v
+# --------------------------bram------------------------------------#
+COMM_OBJS += Algoritmos/bram/bram.v
+
+
 
 # --------------------------------------------------------------#
+
+
+#Divisor--------------------------------------------------------------#
+
+#COMM_OBJS+= Algoritmos/division/Core/Comp_aca.v
+#COMM_OBJS+= Algoritmos/division/Core/cont.v
+#COMM_OBJS+= Algoritmos/division/Core/Control.v
+#COMM_OBJS+= Algoritmos/division/Core/Corr_acb.v
+#COMM_OBJS+= Algoritmos/division/Core/Corr_r.v
+#COMM_OBJS+= Algoritmos/division/Core/div.v
+#COMM_OBJS+= Algoritmos/division/Core/res.v
+#COMM_OBJS+= Algoritmos/division/Core/peri_divi.v
 # --------------------------------------------------------------#
-# Incluir los archivos que hacen parte del periférico a probar--#
+COMM_OBJS+= Algoritmos/Paridad/core/paridad.v
+COMM_OBJS+= Algoritmos/Paridad/core/cont.v
+COMM_OBJS+= Algoritmos/Paridad/core/control.v
+COMM_OBJS+= Algoritmos/Paridad/core/Corr_b.v
+COMM_OBJS+= Algoritmos/Paridad/core/sum_r.v
+COMM_OBJS+= Algoritmos/Paridad/core/perip_par.v
 # --------------------------------------------------------------#
+#COMM_OBJS+= Algoritmos/Raiz_Cuadrada/Core/raiz.v
+#COMM_OBJS+= Algoritmos/Raiz_Cuadrada/Core/Comp.v
+#COMM_OBJS+= Algoritmos/Raiz_Cuadrada/Core/Control.v
+#COMM_OBJS+= Algoritmos/Raiz_Cuadrada/Core/Corr_b.v
+#COMM_OBJS+= Algoritmos/Raiz_Cuadrada/Core/Corr_c.v
+#COMM_OBJS+= Algoritmos/Raiz_Cuadrada/Core/Corr_ra.v
+#COMM_OBJS+= Algoritmos/Raiz_Cuadrada/Core/perip_raiz.v
 # --------------------------------------------------------------#
-COMM_OBJS+= cores/test/perip_test.v
-#Divisor
-
-#COMM_OBJS+= cores/test/div/Comp_aca.v
-#COMM_OBJS+= cores/test/div/cont.v
-#COMM_OBJS+= cores/test/div/Control.v
-#COMM_OBJS+= cores/test/div/Corr_acb.v
-#COMM_OBJS+= cores/test/div/Corr_r.v
-#COMM_OBJS+= cores/test/div/div.v
-#COMM_OBJS+= cores/test/div/res.v
-
-COMM_OBJS+= cores/test/paridad/paridad.v
-COMM_OBJS+= cores/test/paridad/cont.v
-COMM_OBJS+= cores/test/paridad/control.v
-COMM_OBJS+= cores/test/paridad/Corr_b.v
-COMM_OBJS+= cores/test/paridad/sum_r.v
-
-#COMM_OBJS+= cores/test/raiz/raiz.v
-#COMM_OBJS+= cores/test/raiz/Comp.v
-#COMM_OBJS+= cores/test/raiz/Control.v
-#COMM_OBJS+= cores/test/raiz/Corr_b.v
-#COMM_OBJS+= cores/test/raiz/Corr_c.v
-#COMM_OBJS+= cores/test/raiz/Corr_ra.v
-
-#COMM_OBJS+= cores/test/multiplica/multiplicador.v
-#COMM_OBJS+= cores/test/multiplica/Acc.v
-#COMM_OBJS+= cores/test/multiplica/Comp.v
-#COMM_OBJS+= cores/test/multiplica/Corr_de.v
-#COMM_OBJS+= cores/test/multiplica/Corr_iz.v
-#COMM_OBJS+= cores/test/multiplica/Control.v
+#COMM_OBJS+= Algoritmos/multiplicador/Core/multiplicador.v
+#COMM_OBJS+= Algoritmos/multiplicador/Core/Acc.v
+#COMM_OBJS+= Algoritmos/multiplicador/Core/Comp.v
+#COMM_OBJS+= Algoritmos/multiplicador/Core/Corr_de.v
+#COMM_OBJS+= Algoritmos/multiplicador/Core/Corr_iz.v
+#COMM_OBJS+= Algoritmos/multiplicador/Core/Control.v
+#COMM_OBJS+= Algoritmos/multiplicador/Core/peri_multi.v
 
 COMM_OBJS +=  SOC.v
 
