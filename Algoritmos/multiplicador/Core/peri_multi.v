@@ -67,23 +67,13 @@ end//-----------------------------------------------mux_4
 //# ---------------------------------------#
 //# ---------------------------------------#
 
-div_32 mult1 (
-  .rst(reset),
+multi mult1 (
+.rst(reset),
   .clk(clk),
-  .start(init),
-  .done(done),
-  .cociente(result),
-  .A(A),
-  .B(B)
+ .init(init),
+.done(done),
+  .r(result),
+ .a(A),
+ .b(B)
  );
- 
-//multi mult1 (
-// .rst(reset),
-// .clk(clk),
-//  .init(init),
-//  .done(done),
-//  .r(result),
-//  .a(A),
-//  .b(B)
-// );
 endmodule
