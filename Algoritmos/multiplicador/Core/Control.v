@@ -61,7 +61,7 @@ always @(posedge clk or posedge rst) begin
 
                 else 
                     state <= END;
-
+            end
             default: state <= START;
         endcase 
     end
