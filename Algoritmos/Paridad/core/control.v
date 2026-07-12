@@ -16,7 +16,7 @@ module control (clk, rst, init, b0, z_co, done, shift, load, inc, dec);
    parameter INC = 3'b011;
    parameter DEC= 3'b100;
     parameter SHIFT  = 3'b101;
-  parameter CHECK_Z = 3'b110;
+  parameter CHECK_F = 3'b110;
    parameter END_ST = 3'b111;
 
   reg [2:0] state;
@@ -69,7 +69,7 @@ reg [3:0] count;
             end
 
             END_ST: begin
-                  if (start)
+                  if (init)
                     state <= START;
 
                 else 
@@ -136,7 +136,7 @@ always @(*) begin
             dec   = 0;
         end
 
-        CHECK_Z: begin
+        CHECK_F: begin
             done  = 0;
             shift = 0;
             load  = 0;
