@@ -54,25 +54,36 @@ COMM_OBJS += cores/bram/bram.v
 # Incluir los archivos que hacen parte del periférico a probar--#
 # --------------------------------------------------------------#
 # --------------------------------------------------------------#
-
-
-#multiplicador
-#COMM_OBJS+= cores/test/perip_test.v
-#COMM_OBJS+= cores/test/multiplicador/multiplicador.v
-#COMM_OBJS+= cores/test/multiplicador/Acc.v
-#COMM_OBJS+= cores/test/multiplicador/Comp.v
-#COMM_OBJS+= cores/test/multiplicador/Corr_iz.v
-#COMM_OBJS+= cores/test/multiplicador/Control.v
-#COMM_OBJS+= cores/test/multiplicador/Corr_de.v
-
+COMM_OBJS+= cores/test/perip_test.v
 #Divisor
-COMM_OBJS+= cores/test/div/Comp_aca.v
-COMM_OBJS+= cores/test/div/cont.v
-COMM_OBJS+= cores/test/div/Control.v
-COMM_OBJS+= cores/test/div/Corr_acb.v
-COMM_OBJS+= cores/test/div/Corr_r.v
-COMM_OBJS+= cores/test/div/div.v
-COMM_OBJS+= cores/test/div/res.v
+
+#COMM_OBJS+= cores/test/div/Comp_aca.v
+#COMM_OBJS+= cores/test/div/cont.v
+#COMM_OBJS+= cores/test/div/Control.v
+#COMM_OBJS+= cores/test/div/Corr_acb.v
+#COMM_OBJS+= cores/test/div/Corr_r.v
+#COMM_OBJS+= cores/test/div/div.v
+#COMM_OBJS+= cores/test/div/res.v
+
+COMM_OBJS+= cores/test/paridad/paridad.v
+COMM_OBJS+= cores/test/paridad/cont.v
+COMM_OBJS+= cores/test/paridad/control.v
+COMM_OBJS+= cores/test/paridad/Corr_b.v
+COMM_OBJS+= cores/test/paridad/sum_r.v
+
+#COMM_OBJS+= cores/test/raiz/raiz.v
+#COMM_OBJS+= cores/test/raiz/Comp.v
+#COMM_OBJS+= cores/test/raiz/Control.v
+#COMM_OBJS+= cores/test/raiz/Corr_b.v
+#COMM_OBJS+= cores/test/raiz/Corr_c.v
+#COMM_OBJS+= cores/test/raiz/Corr_ra.v
+
+#COMM_OBJS+= cores/test/multiplica/multiplicador.v
+#COMM_OBJS+= cores/test/multiplica/Acc.v
+#COMM_OBJS+= cores/test/multiplica/Comp.v
+#COMM_OBJS+= cores/test/multiplica/Corr_de.v
+#COMM_OBJS+= cores/test/multiplica/Corr_iz.v
+#COMM_OBJS+= cores/test/multiplica/Control.v
 
 COMM_OBJS +=  SOC.v
 
