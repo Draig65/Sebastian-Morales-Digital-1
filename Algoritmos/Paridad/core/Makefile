@@ -1,7 +1,11 @@
 TARGET=par
 TOP=par
 
+ICE40_SIM_CELLS=./lattice_sim/cells_sim_ecp5.v
+
 OBJS = paridad.v Corr_b.v cont.v control.v sum_r.v 
+SIM_OBJS =  ../../verilog_model/sky130_fd_sc_hd.v
+SIM_OBJS += ../../verilog_model/primitives.v
 PER_OBJS = perip_par.v $(OBJS)
 
 BUILD_DIR = build
@@ -10,26 +14,22 @@ all: sim
 
 sim:
 	rm -f a.out *.vcd
-	iverilog -DBENCH $(TARGET)_TB.v $(OBJS)
+	iverilog -DBENCH -DSIM -DPASSTHROUGH_PLL -DBOARD_FREQ=27 -DCPU_FREQ=27  $(TARGET)_TB.v $(OBJS)
 	vvp a.out
 	gtkwave $(TARGET)_TB.vcd
-
 sim_per:
 	rm -f a.out *.vcd
-	iverilog -DBENCH   perip_$(TARGET)_TB.v $(PER_OBJS)
+	iverilog -I ./lattice_sim  perip_$(TARGET)_TB.v $(PER_OBJS)
 	vvp a.out
 	gtkwave perip_$(TARGET)_TB.vcd &
 $(TOP).json:
-	yosys -v3  -p ' read_verilog $(OBJS);  synth_ice40  -top $(TARGET); write_verilog $(TOP)_synth.v' -l ${TARGET}.rpt
+	yosys -v3 -l synth.log -p 'synth_ecp5 -top $(TARGET) -json $(TARGET).json; write_verilog -attr2comment $(TARGET)_synth.v' $(OBJS)
 
-#	yosys -v3 -l synth.log -p 'synth_ice40 -top $(TOP) -json $(TOP).json; write_verilog -attr2comment $(TOP)_synth.v' $(OBJS)
-#	yosys -p "read_verilog $(TOP)_synth.v; read_verilog cells_sim.v; prep -top $(TOP); show -format svg -prefix yosys"  # Visualize
 ## ---------------------
 ## post-synth simulation
 ## ---------------------
-
 sim_post_syn: $(TOP).json $(OBJS)
-	iverilog -g2012 -DSYNTH -o $@_PS.vpp -s $(TOP)_TB $(TARGET)_TB.v $(TOP)_synth.v $(ICE40_SIM_CELLS) 
+	iverilog -I ./lattice_sim -o $@_PS.vpp -s $(TOP)_TB $(TARGET)_TB.v $(TOP)_synth.v $(ICE40_SIM_CELLS) 
 	vvp $@_PS.vpp
 	gtkwave $(TOP)_TB.vcd &
 sim_post_syn_sky:
@@ -46,13 +46,21 @@ sim_post_syn_sky:
 ## post-route simulation
 ## ---------------------
 $(TOP).asc: $(TOP).json
-	nextpnr-ice40 --hx8k --package ct256 --json $(TOP).json --pcf $(TOP).pcf --asc $@  --routed-svg $(TOP)_routed.svg --placed-svg $(TOP)_placed.svg #--pcf-allow-unconstrained
-sim_post_route: $(TOP).asc $(TOP).pcf
-	icebox_vlog -L -n $(TOP) -sp $(TOP).pcf $< > $(TOP)_route.v
-	iverilog -o $@.vpp -s $(TOP)_TB $(TARGET)_post_route_TB.v  $(TOP)_route.v  $(ICE40_SIM_CELLS)
-	chmod -x $@
-	vvp $@.vpp
-	gtkwave $(TOP)_TB.vcd &
+#	nextpnr-ecp5 --hx8k --package ct256 --json $(TOP).json --pcf $(TOP).pcf --asc $@  --routed-svg $(TOP)_routed.svg --placed-svg $(TOP)_placed.svg #--pcf-allow-unconstrained
+	nextpnr-ecp5 --json $< --lpf $(TOP).lpf --textcfg $@ --25k --package CABGA381 --speed 6  --timing-allow-fail --seed 1 --lpf-allow-unconstrained --routed-svg $(TOP)_routed.svg --placed-svg $(TOP)_placed.svg
+
+$(TOP).config: $(TOP).json
+	nextpnr-ecp5 --json $< --lpf $(TOP).lpf --textcfg $@ --25k --package CABGA381 --speed 6  --timing-allow-fail --seed 1 --lpf-allow-unconstrained
+
+$(TOP).bit: $(TOP).config
+	ecppack --bootaddr 0 --compress $< --svf ${TOP}.svf --bit $@
+
+sim_post_route: $(TOP).asc $(TOP).pcf $(TOP).bit
+	ecpunpack $(TOP).bit $(TOP).tcf
+#	iverilog -o $@.vpp -s $(TOP)_TB $(TARGET)_post_route_TB.v  $(TOP)_route.v  $(ICE40_SIM_CELLS)
+#	chmod -x $@
+#	vvp $@.vpp
+#	gtkwave $(TOP)_TB.vcd &
 
 svg: $(OBJS)
 	yosys -p "prep -top ${TARGET}; write_json ${TARGET}.json" ${OBJS}
@@ -61,4 +69,4 @@ svg: $(OBJS)
 	netlistsvg ${TARGET}_flat.json -o ${TARGET}_flat.svg  #--skin default.svg
 
 clean:
-	rm -rf *.out *.vcd *.svg *.json
+	rm -rf *.out *.vcd *.svg *.json $(TOP)_synth.v *.vpp *.asc $(TOP)_route.v synth.log
