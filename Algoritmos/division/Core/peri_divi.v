@@ -1,4 +1,4 @@
-odule peripheral_div(clk , reset , d_in , cs , addr , rd , wr, d_out );
+module peripheral_div(clk , reset , d_in , cs , addr , rd , wr, d_out );
   
   input clk;
   input reset;
