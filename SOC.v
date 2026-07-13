@@ -109,26 +109,36 @@ module SOC (
       .wr(wr),
       .d_out(test_dout)
    );
-	//peripheral_test multi(
-    //  .clk(clk),
-     // .reset(!resetn),
-      //.d_in(mem_wdata[15:0]),
-     // .cs(cs[3]),
-     // .addr(mem_addr[4:0]),
-      //.rd(rd),
-      //.wr(wr),
-      //.d_out(test_dout)
-   //);
-	//peripheral_test raiz (
-     // .clk(clk),
-      //.reset(!resetn),
-      //.d_in(mem_wdata[15:0]),
-      //.cs(cs[3]),
-      //.addr(mem_addr[4:0]),
-      //.rd(rd),
-      //.wr(wr),
-      //.d_out(test_dout)
-   //);
+	peripheral_multi multi(
+      .clk(clk),
+     .reset(!resetn),
+      .d_in(mem_wdata[15:0]),
+		.cs(cs[4]),
+      .addr(mem_addr[4:0]),
+      .rd(rd),
+      .wr(wr),
+      .d_out(test_dout)
+   );
+	peripheral_raiz raiz (
+      .clk(clk),
+      .reset(!resetn),
+      .d_in(mem_wdata[15:0]),
+		.cs(cs[5]),
+      .addr(mem_addr[4:0]),
+      .rd(rd),
+      .wr(wr),
+      .d_out(test_dout)
+   );
+	peripheral_par par(
+      .clk(clk),
+      .reset(!resetn),
+      .d_in(mem_wdata[15:0]),
+		.cs(cs[6),
+      .addr(mem_addr[4:0]),
+      .rd(rd),
+      .wr(wr),
+      .d_out(test_dout)
+   );
 
   always @*
   begin
