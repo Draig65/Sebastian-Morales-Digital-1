@@ -1,60 +1,89 @@
 `timescale 1ns / 1ps
 
-module corr_ra_TB;
-  reg        clk, rst, load, shift, sub_en;
+module Corr_ra_TB;
+  reg        clk;
+  reg        rst;
+  reg        load;
   reg  [7:0] radical_in;
+  reg        shift;
+  reg        sub_en;
   reg  [7:0] C;
-  wire [7:0] A, R;
+  wire [8:0] A;
+  wire [7:0] R;
 
-  reg [20:0] i;
-  parameter PERIOD = 20;
+  Corrimiento_ra uut (.clk(clk),  .rst(rst),.load(load),.radical_in(radical_in),.shift(shift), .sub_en(sub_en),.C(C),.A(A),.R(R));
 
-  corr_ra uut (
-    .clk(clk), .rst(rst), .load(load),.radical_in(radical_in), 
-    .shift(shift), .sub_en(sub_en), .C(C), .A(A), .R(R)
-  );
+  always #5 clk = ~clk;
 
-  event reset_trigger, reset_done_trigger;
-
-  initial begin 
-    forever begin 
-      @ (reset_trigger); @ (negedge clk); rst = 1;
-      @ (negedge clk); rst = 0; -> reset_done_trigger;
+  task check_result;
+    input [8:0] expected_A;
+    input [7:0] expected_R;
+    begin
+      #1;
+      if ((A !== expected_A) || (R !== expected_R)) begin
+        $display("Corr_ra_TB FAIL: A esperado=%h obtenido=%h, R esperado=%h obtenido=%h",
+                 expected_A, A, expected_R, R);
+        $fatal(1);
+      end
     end
-  end
+  endtask
 
-  initial begin  
-    clk = 0; rst = 1; load = 0; shift = 0; sub_en = 0;
-    radical_in = 8'hA5; C = 8'd10; // 8'hA5 = 10100101
-  end
+  initial begin
+    $dumpfile("TB/Corr_ra_TB.vcd");
+    $dumpvars(0, Corr_ra_TB);
 
-  initial forever begin
-    clk = 1'b0; #(PERIOD/2) clk = 1'b1; #(PERIOD/2);
-  end
+    clk        = 0;
+    rst        = 1;
+    load       = 0;
+    radical_in = 0;
+    shift      = 0;
+    sub_en     = 0;
+    C          = 0;
 
-  initial begin 
-    #10 -> reset_trigger; @ (reset_done_trigger);
-    
-    // 1. Cargar el Radical
-    @ (posedge clk); load = 1;
-    @ (posedge clk); load = 0;
-    $display("Carga inicial: R=%b, A=%b", R, A);
+    #1;
+    check_result(9'd0, 8'd0);
 
-    // 2. Probar desplazamiento {R,A} << 2
-    @ (posedge clk); shift = 1;
-    @ (posedge clk); shift = 0;
-    $display("Luego de Shift: R=%b, A=%b", R, A);
+    @(negedge clk);
+    rst        = 0;
+    load       = 1;
+    radical_in = 8'ha5;
+    @(posedge clk);
+    check_result(9'h14b, 8'h00);
 
-    // 3. Probar resta R = R - C
-    @ (posedge clk); sub_en = 1;
-    @ (posedge clk); sub_en = 0;
-    #5;
-    $display("Luego de Resta (-10): R=%d, A=%b", R, A);
-    
-    #20; $finish;
-  end     
+    @(negedge clk);
+    load  = 0;
+    shift = 1;
+    @(posedge clk);
+    check_result(9'h12c, 8'h02);
 
-  initial begin: TEST_CASE
-    $dumpfile("corr_ra_TB.vcd"); $dumpvars(-1, uut);
+    @(negedge clk);
+    shift  = 0;
+    sub_en = 1;
+    C      = 8'd1;
+    @(posedge clk);
+    check_result(9'h12c, 8'h01);
+
+    @(negedge clk);
+    shift  = 1;
+    sub_en = 0;
+    @(posedge clk);
+    check_result(9'h0b0, 8'h06);
+
+    @(negedge clk);
+    load       = 1;
+    shift      = 1;
+    sub_en     = 1;
+    radical_in = 8'hff;
+    @(posedge clk);
+    check_result(9'h1ff, 8'h00);
+
+    @(negedge clk);
+    rst  = 1;
+    load = 0;
+    #1;
+    check_result(9'd0, 8'd0);
+
+    $display("Corr_ra_TB PASS");
+    $finish;
   end
 endmodule
