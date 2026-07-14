@@ -63,7 +63,7 @@ end//-----------------------------------------------mux_4
 
 
 
-raiz_cuadrada raiz1 (
+raiz raiz1 (
 .rst(reset),
   .clk(clk),
 .start(init),
