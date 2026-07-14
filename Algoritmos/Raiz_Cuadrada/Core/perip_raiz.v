@@ -11,9 +11,9 @@ module peripheral_raiz(clk , reset , d_in , cs , addr , rd , wr, d_out );
 
 //------------------------------------ regs and wires-------------------------------
 reg [4:0] s; 	//selector mux_4  and write registers
-reg [15:0] A;//---mult_32 input registers
+reg [7:0] A;
 reg init;
-wire [15:0] result;	//mult_32 output Regs
+wire [4:0] result;
 wire done;
 //------------------------------------ regs and wires-------------------------------
 always @(*) begin//------address_decoder------------------------------
@@ -41,7 +41,7 @@ always @(negedge clk) begin//-------------------- escritura de registros
   end
   else begin
     if (cs && wr) begin
-		   A    = s[0] ? d_in    : A;	//Write Registers
+		   A    = s[0] ? d_in[7:0] : A;	//Write Registers
 		   init = s[2] ? d_in[0] : init;
     end
   end
@@ -54,7 +54,7 @@ always @(negedge clk) begin//-----------------------mux_4 :  multiplexa salidas 
     d_out = 0;
   else if (cs) begin
     case (s[4:0])
-      5'b01000: d_out    =  {16'b0,result};            
+      5'b01000: d_out    =  {27'b0, result};
       5'b10000: d_out    =  {31'b0, done};
     endcase
   end

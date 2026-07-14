@@ -17,4 +17,4 @@ reg [4:0] count;
     else if (dec)
       count <= count - 1'b1;  
   end
-endmodul
+endmodule

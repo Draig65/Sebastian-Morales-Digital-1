@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 `define SIMULATION
-module Multiplicador_TB;
+module multi_TB;
   reg         rst;
   reg         clk;
   reg         init;
@@ -58,7 +58,7 @@ always @(posedge done) begin
     $display(" Resultado : %d", r);
   end
    initial begin: TEST_CASE
-     $dumpfile("Multiplicador_TB.vcd");
+     $dumpfile("TB/multi_TB.vcd");
      $dumpvars(-1, uut);
      #((PERIOD*DUTY_CYCLE)*120) $finish;
    end

@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 `define SIMULATION
 
-module Raiz_TB;
+module raiz_TB;
   reg        rst;
   reg        clk;
   reg        init;
@@ -12,7 +12,7 @@ module Raiz_TB;
   wire [7:0] residuo;
   wire       done;
 
-  raiz_cuadrada uut ( .clk(clk), .rst(rst), .start(start), .radical(radical), .resultado(resultado), .done(done));
+  raiz uut ( .clk(clk), .rst(rst), .start(start), .radical(radical), .resultado(resultado), .done(done));
 
   parameter PERIOD         = 20;
   parameter real DUTY_CYCLE = 0.5;
@@ -77,7 +77,7 @@ module Raiz_TB;
   end
 
   initial begin: TEST_CASE
-    $dumpfile("Raiz_TB.vcd");
+    $dumpfile("TB/raiz_TB.vcd");
     $dumpvars(-1, uut);
   end
 endmodule

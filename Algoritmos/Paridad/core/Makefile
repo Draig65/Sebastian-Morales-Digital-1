@@ -1,5 +1,5 @@
-TARGET=par
-TOP=par
+TARGET=paridad
+TOP=paridad
 
 ICE40_SIM_CELLS=./lattice_sim/cells_sim_ecp5.v
 
@@ -13,15 +13,15 @@ BUILD_DIR = build
 all: sim
 
 sim:
-	rm -f a.out *.vcd
-	iverilog -DBENCH -DSIM -DPASSTHROUGH_PLL -DBOARD_FREQ=27 -DCPU_FREQ=27  $(TARGET)_TB.v $(OBJS)
+	rm -f a.out TB/$(TARGET)_TB.vcd
+	iverilog -DBENCH -DSIM -DPASSTHROUGH_PLL -DBOARD_FREQ=27 -DCPU_FREQ=27  TB/$(TARGET)_TB.v $(OBJS)
 	vvp a.out
-	gtkwave $(TARGET)_TB.vcd
+	gtkwave TB/$(TARGET)_TB.vcd
 sim_per:
-	rm -f a.out *.vcd
-	iverilog -I ./lattice_sim  perip_$(TARGET)_TB.v $(PER_OBJS)
+	rm -f a.out TB/perip_par_TB.vcd
+	iverilog -I ./lattice_sim TB/perip_par_TB.v $(PER_OBJS)
 	vvp a.out
-	gtkwave perip_$(TARGET)_TB.vcd &
+	gtkwave TB/perip_par_TB.vcd &
 $(TOP).json:
 	yosys -v3 -l synth.log -p 'synth_ecp5 -top $(TARGET) -json $(TARGET).json; write_verilog -attr2comment $(TARGET)_synth.v' $(OBJS)
 
@@ -29,16 +29,16 @@ $(TOP).json:
 ## post-synth simulation
 ## ---------------------
 sim_post_syn: $(TOP).json $(OBJS)
-	iverilog -I ./lattice_sim -o $@_PS.vpp -s $(TOP)_TB $(TARGET)_TB.v $(TOP)_synth.v $(ICE40_SIM_CELLS) 
+	iverilog -I ./lattice_sim -o $@_PS.vpp -s $(TOP)_TB TB/$(TARGET)_TB.v $(TOP)_synth.v $(ICE40_SIM_CELLS)
 	vvp $@_PS.vpp
-	gtkwave $(TOP)_TB.vcd &
+	gtkwave TB/$(TOP)_TB.vcd &
 sim_post_syn_sky:
 	yosys -l synth.log -c synth.tcl
 	cp out.v $(TOP)_synth_sky.v 
-	iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 -o $@_PS.vpp -s $(TOP)_TB $(TARGET)_TB.v $(TOP)_synth_sky.v ${SIM_OBJS}
+	iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 -o $@_PS.vpp -s $(TOP)_TB TB/$(TARGET)_TB.v $(TOP)_synth_sky.v ${SIM_OBJS}
 	vvp $@_PS.vpp
 	./$@_PS.vpp
-	gtkwave $(TOP)_TB.vcd &
+	gtkwave TB/$(TOP)_TB.vcd &
 	#netlistsvg ${TARGET}.json -o ${TARGET}.svg  #--skin default.svg
 	
 
@@ -69,4 +69,4 @@ svg: $(OBJS)
 	netlistsvg ${TARGET}_flat.json -o ${TARGET}_flat.svg  #--skin default.svg
 
 clean:
-	rm -rf *.out *.vcd *.svg *.json $(TOP)_synth.v *.vpp *.asc $(TOP)_route.v synth.log
+	rm -rf *.out *.vcd TB/*.vcd *.svg *.json $(TOP)_synth.v *.vpp *.asc $(TOP)_route.v synth.log

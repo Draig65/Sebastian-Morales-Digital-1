@@ -1,4 +1,4 @@
-module raiz_cuadrada (clk, rst, start,radical,resultado,done);
+module raiz (clk, rst, start,radical,resultado,done);
 input        clk, rst, start;
     input  [7:0] radical;
     output [4:0] resultado;
