@@ -1,0 +1,33 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Tue Jul 14 21:26:02 2026
+[*]
+[dumpfile] "/home/sebastian/Electronica-digital/Algoritmos/multiplicador/Core/TB/peri_multi_TB.vcd"
+[dumpfile_mtime] "Tue Jul 14 21:24:49 2026"
+[dumpfile_size] 11926
+[savefile] "/home/sebastian/Electronica-digital/Algoritmos/multiplicador/Core/TB/pero_multi.gtkw"
+[timestart] 0
+[size] 1366 768
+[pos] -1 -1
+*-17.252872 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] peri_multi_TB.
+[sst_width] 290
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 215
+@24
+peri_multi_TB.uut.A[15:0]
+peri_multi_TB.uut.B[15:0]
+@28
+[color] 3
+peri_multi_TB.uut.clk
+@24
+peri_multi_TB.uut.d_in[15:0]
+peri_multi_TB.uut.d_out[31:0]
+@25
+peri_multi_TB.uut.result[31:0]
+@28
+peri_multi_TB.uut.done
+peri_multi_TB.uut.init
+[pattern_trace] 1
+[pattern_trace] 0
