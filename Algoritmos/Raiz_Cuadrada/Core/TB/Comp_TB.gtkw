@@ -1,0 +1,26 @@
+[*]
+[*] GTKWave Analyzer save file
+[dumpfile] "TB/Comp_TB.vcd"
+[savefile] "TB/Comp_TB.gtkw"
+[timestart] 0
+[size] 1600 900
+[pos] -1 -1
+[treeopen] Comp_TB.
+[treeopen] Comp_TB.uut.
+[sst_width] 320
+[signals_width] 260
+[sst_expanded] 1
+[sst_vpaned_height] 600
+@22
+Comp_TB.R[7:0]
+Comp_TB.C[7:0]
+@28
+Comp_TB.z
+@22
+Comp_TB.uut.R[7:0]
+Comp_TB.uut.C[7:0]
+@28
+Comp_TB.uut.z
+Comp_TB.check_result.expected
+[pattern_trace] 1
+[pattern_trace] 0

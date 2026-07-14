@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
 
 module Corr_b_TB;
-  reg   clk, rst, shift, set_b0;
+  reg   clk, start, shift, b0;
   wire [4:0] B;
 
-  Corr_b uut (.clk(clk), .rst(rst), .shift(shift), .set_b0(set_b0), .B(B));
+  Corr_b uut (.clk(clk), .start(start), .shift(shift), .b0(b0), .B(B));
  always #5 clk = ~clk;
 
   task check_result;
