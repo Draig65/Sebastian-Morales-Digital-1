@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 `define SIMULATION
-module multi_TB;
+module mult_TB;
   reg         rst;
   reg         clk;
   reg         init;
@@ -8,7 +8,7 @@ module multi_TB;
   reg [15:0]  a;
   wire [31:0] r;
   wire        done;
-  multi uut (.clk(clk) , .rst(rst) , .init(init) , .b(b), .a(a), .r(r), .done(done));
+  mult uut (.clk(clk) , .init(init) , .rst(rst) , .A(a), .B(b), .resultado(r), .done(done));
    parameter PERIOD          = 20;
    parameter real DUTY_CYCLE = 0.5;
    parameter OFFSET          = 0;
@@ -58,7 +58,7 @@ always @(posedge done) begin
     $display(" Resultado : %d", r);
   end
    initial begin: TEST_CASE
-     $dumpfile("TB/multi_TB.vcd");
+     $dumpfile("TB/mult_TB.vcd");
      $dumpvars(-1, uut);
      #((PERIOD*DUTY_CYCLE)*120) $finish;
    end

@@ -16,7 +16,7 @@ sim:
 	rm -f a.out TB/$(TARGET)_TB.vcd
 	iverilog -DBENCH -DSIM -DPASSTHROUGH_PLL -DBOARD_FREQ=27 -DCPU_FREQ=27  TB/$(TARGET)_TB.v $(OBJS)
 	vvp a.out
-	gtkwave TB/$(TARGET)_TB.vcd
+	gtkwave TB/$(TARGET)_TB.vcd 
 sim_per:
 	rm -f a.out TB/peri_divi_TB.vcd
 	iverilog -I ./lattice_sim TB/peri_divi_TB.v $(PER_OBJS)

@@ -67,13 +67,13 @@ end//-----------------------------------------------mux_4
 //# ---------------------------------------#
 //# ---------------------------------------#
 
-multi mult1 (
-.rst(reset),
-  .clk(clk),
+mult mult1 (
+ .clk(clk),
  .init(init),
-.done(done),
-  .r(result),
- .a(A),
- .b(B)
+ .rst(reset),
+ .A(A),
+ .B(B),
+ .resultado(result),
+ .done(done)
  );
 endmodule

@@ -1,8 +1,8 @@
-TARGET=multi
-TOP=multi
+TARGET=mult
+TOP=mult
 ICE40_SIM_CELLS=./lattice_sim/cells_sim_ecp5.v
 
-OBJS = multiplicador.v Acc.v Comp.v Control.v Corr_de.v Corr_iz.v 
+OBJS = mult.v Acc.v Comp.v Control.v Corr_de.v Corr_iz.v
 SIM_OBJS =  ../../verilog_model/sky130_fd_sc_hd.v
 SIM_OBJS += ../../verilog_model/primitives.v
 PER_OBJS = peri_multi.v $(OBJS)

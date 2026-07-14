@@ -46,6 +46,7 @@ module SOC (
    wire [31:0] uart_dout;
    wire [31:0] test_dout;
    wire [31:0] div_dout;
+   wire [31:0] multi_dout;
    wire [31:0] sqrt_dout;
    wire [31:0] bin2bcd_dout;
    wire [31:0] bcd2bin_dout;
@@ -103,21 +104,21 @@ module SOC (
       .clk(clk),
       .reset(!resetn),
       .d_in(mem_wdata[15:0]),
-      .cs(cs[3]),
+      .cs(cs[2]),
       .addr(mem_addr[4:0]),
       .rd(rd),
       .wr(wr),
-      .d_out(test_dout)
+      .d_out(div_dout)
    );
 	peripheral_multi multi(
       .clk(clk),
      .reset(!resetn),
       .d_in(mem_wdata[15:0]),
-		.cs(cs[4]),
+		.cs(cs[3]),
       .addr(mem_addr[4:0]),
       .rd(rd),
       .wr(wr),
-      .d_out(test_dout)
+      .d_out(multi_dout)
    );
 	peripheral_raiz raiz (
       .clk(clk),
@@ -133,7 +134,7 @@ module SOC (
       .clk(clk),
       .reset(!resetn),
       .d_in(mem_wdata[15:0]),
-		.cs(cs[6),
+		.cs(cs[6]),
       .addr(mem_addr[4:0]),
       .rd(rd),
       .wr(wr),
@@ -162,7 +163,7 @@ module SOC (
         8'b10000000: mem_rdata = bcd2bin_dout;
         8'b00100000: mem_rdata = uart_dout;
         8'b00010000: mem_rdata = sqrt_dout;
-        8'b00001000: mem_rdata = test_dout;
+        8'b00001000: mem_rdata = multi_dout;
         8'b00000100: mem_rdata = div_dout;
         8'b00000010: mem_rdata = bin2bcd_dout;
         8'b00000001: mem_rdata = RAM_rdata;

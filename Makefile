@@ -83,13 +83,13 @@ COMM_OBJS+= Algoritmos/Paridad/core/perip_par.v
 #COMM_OBJS+= Algoritmos/Raiz_Cuadrada/Core/Corr_ra.v
 #COMM_OBJS+= Algoritmos/Raiz_Cuadrada/Core/perip_raiz.v
 # --------------------------------------------------------------#
-#COMM_OBJS+= Algoritmos/multiplicador/Core/multiplicador.v
-#COMM_OBJS+= Algoritmos/multiplicador/Core/Acc.v
-#COMM_OBJS+= Algoritmos/multiplicador/Core/Comp.v
-#COMM_OBJS+= Algoritmos/multiplicador/Core/Corr_de.v
-#COMM_OBJS+= Algoritmos/multiplicador/Core/Corr_iz.v
-#COMM_OBJS+= Algoritmos/multiplicador/Core/Control.v
-#COMM_OBJS+= Algoritmos/multiplicador/Core/peri_multi.v
+COMM_OBJS+= Algoritmos/multiplicador/Core/mult.v
+COMM_OBJS+= Algoritmos/multiplicador/Core/Acc.v
+COMM_OBJS+= Algoritmos/multiplicador/Core/Comp.v
+COMM_OBJS+= Algoritmos/multiplicador/Core/Corr_de.v
+COMM_OBJS+= Algoritmos/multiplicador/Core/Corr_iz.v
+COMM_OBJS+= Algoritmos/multiplicador/Core/Control.v
+COMM_OBJS+= Algoritmos/multiplicador/Core/peri_multi.v
 
 COMM_OBJS +=  SOC.v
 

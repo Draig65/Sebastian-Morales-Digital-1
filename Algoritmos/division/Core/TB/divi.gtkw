@@ -6,7 +6,7 @@
 [dumpfile_mtime] "Tue Jul 14 19:48:43 2026"
 [dumpfile_size] 44955
 [savefile] "/home/sebastian/Electronica-digital/Algoritmos/division/Core/TB/divi.gtkw"
-[timestart] 1517400
+[timestart] 0
 [size] 1366 768
 [pos] -27 -25
 *-15.489453 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
@@ -22,6 +22,8 @@ div_TB.uut.B[15:0]
 @28
 [color] 3
 div_TB.uut.clk
+div_TB.uut.start
+div_TB.uut.done
 @24
 div_TB.uut.cociente[15:0]
 @821
