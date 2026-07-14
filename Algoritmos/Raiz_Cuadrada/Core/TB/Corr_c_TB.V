@@ -1,42 +1,71 @@
 `timescale 1ns / 1ps
 
 module Corr_c_TB;
-  reg        clk, rst, load_b, calc_c;
+  reg clk;
+  reg        rst;
+  reg        load_b;
   reg  [4:0] B;
+  reg        calc_c;
   wire [7:0] C;
 
-  parameter PERIOD = 20;
-  reg_c uut (.clk(clk), .rst(rst), .load_b(load_b), .B(B), .calc_c(calc_c), .C(C));
+  Corrimiento_c uut (.clk(clk),.rst(rst),.load_b(load_b),.B(B),.calc_c(calc_c),.C(C));
 
-  event reset_trigger, reset_done_trigger;
-  initial begin 
-    forever begin 
-      @ (reset_trigger); @ (negedge clk); rst = 1;
-      @ (negedge clk); rst = 0; -> reset_done_trigger;
+  always #5 clk = ~clk;
+
+  task check_result;
+    input [7:0] expected;
+    begin
+      #1;
+      if (C !== expected) begin
+        $display("Corr_c_TB FAIL: esperado=%0d obtenido=%0d", expected, C);
+        $fatal(1);
+      end
     end
-  end
+  endtask
 
-  initial begin clk = 0; rst = 1; load_b = 0; calc_c = 0; B = 5'd4; end
-  initial forever begin clk = 1'b0; #(PERIOD/2) clk = 1'b1; #(PERIOD/2); end
+  initial begin
+    $dumpfile("TB/Corr_c_TB.vcd");
+    $dumpvars(0, Corr_c_TB);
 
-  initial begin 
-    #10 -> reset_trigger; @ (reset_done_trigger);
-    
-    // 1. Cargar C con el valor de B (C = B)
-    @ (posedge clk); load_b = 1;
-    @ (posedge clk); load_b = 0;
-    $display("C = B (Esperado C=4): C = %d", C);
+    clk    = 0;
+    rst    = 1;
+    load_b = 0;
+    B      = 0;
+    calc_c = 0;
 
-    // 2. Calcular C << 2 y C_0 = 1 -> (4 << 2) | 1 = 16 + 1 = 17
-    @ (posedge clk); calc_c = 1;
-    @ (posedge clk); calc_c = 0;
-    #5;
-    $display("C = (C<<2)|1 (Esperado C=17): C = %d", C);
-    
-    #20; $finish;
-  end     
+    #1;
+    check_result(8'd0);
 
-  initial begin: TEST_CASE
-    $dumpfile("Corr_c_TB.vcd"); $dumpvars(-1, uut);
+    @(negedge clk);
+    rst    = 0;
+    load_b = 1;
+    B      = 5'd4;
+    @(posedge clk);
+    check_result(8'd4);
+
+    @(negedge clk);
+    load_b = 0;
+    calc_c = 1;
+    @(posedge clk);
+    check_result(8'd17);
+
+    @(posedge clk);
+    check_result(8'd69);
+
+    @(negedge clk);
+    load_b = 1;
+    B      = 5'd31;
+    @(posedge clk);
+    check_result(8'd31);
+
+    @(negedge clk);
+    rst    = 1;
+    load_b = 0;
+    calc_c = 0;
+    #1;
+    check_result(8'd0);
+
+    $display("Corr_c_TB PASS");
+    $finish;
   end
 endmodule
