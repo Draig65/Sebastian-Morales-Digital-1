@@ -3,34 +3,47 @@
 module Comp_aca_TB;
   reg  [15:0] Ac;
   reg  [15:0] A;
-  wire       z;
+  wire z;
 
-  comparador uut (.Ac(Ac), .A(A), .z(z));
+  comparador_aca uut (.Ac(Ac),.A(A),.z(z) );
+
+  task check_result;
+    input expected;
+    begin
+      #1;
+      if (z !== expected) begin
+        $display("Comp_aca_TB FAIL: Ac=%0d A=%0d esperado=%b obtenido=%b",
+                 Ac, A, expected, z);
+        $fatal(1);
+      end
+    end
+  endtask
 
   initial begin
-    $display("\n=== TESTBENCH: COMPARADOR ===");
-    
-    // Caso 1: Ac < A
-    Ac = 8'd10; A = 8'd20;
-    #10;
-    $display("Ac=%d, A=%d -> z=%b (Esperado: 0)", Ac, A, z);
+    $dumpfile("TB/Comp_aca_TB.vcd");
+    $dumpvars(0, Comp_aca_TB);
 
-    // Caso 2: Ac > A
-    Ac = 8'd35; A = 8'd15;
-    #10;
-    $display("Ac=%d, A=%d -> z=%b (Esperado: 1)",Ac, A, z);
+    Ac = 16'd10;
+    A  = 16'd20;
+    check_result(1'b0);
 
-    // Caso 3: Ac == A
-    Ac = 8'd50; A = 8'd50;
-    #10;
-    $display("Ac=%d, A=%d -> z=%b (Esperado: 1)", Ac, A, z);
-    
-    $display("=============================\n");
+    Ac = 16'd35;
+    A  = 16'd15;
+    check_result(1'b1);
+
+    Ac = 16'd50;
+    A  = 16'd50;
+    check_result(1'b1);
+
+    Ac = 16'd0;
+    A  = 16'd0;
+    check_result(1'b1);
+
+    Ac = 16'hffff;
+    A  = 16'hfffe;
+    check_result(1'b1);
+
+    $display("Comp_aca_TB PASS");
     $finish;
-  end
-
-  initial begin: TEST_CASE
-    $dumpfile("Comp_aca_TB.vcd");
-    $dumpvars(-1, uut);
   end
 endmodule
