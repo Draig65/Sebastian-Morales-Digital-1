@@ -34,10 +34,10 @@ module control_bcd(
         end else begin
             case(state)
                 START: begin
-                    done <= 0;
-                    sh <= 0;
-                    load <= 1;
-                    ld_acc <= 0;
+                    done = 0;
+                    sh = 0;
+                    load = 1;
+                    ld_acc = 0;
                     wait_cnt <= 0;
                     if (init)
                         state <= SHIFT;
@@ -89,7 +89,7 @@ module control_bcd(
                     load <= 0;
                     ld_acc <= 0;
                     wait_cnt <= wait_cnt + 1;
-                    state <= (wait_cnt > 10) ? START : END_ST;
+                    state <= (wait_cnt > 28) ? START : END_ST;
                 end
 
                 default: state <= START;
