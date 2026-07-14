@@ -13,4 +13,4 @@ Se quieto el registro y se controla por la señal de LD_ACC para cargar los camb
 
 ## Simulación 
 
-![Simulación ](BCD-BIN_Simulacion_Teachbend)
+![Simulación ](BCD-BIN_SimulacionTeachbend.png)
