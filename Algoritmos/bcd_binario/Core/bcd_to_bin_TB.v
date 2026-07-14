@@ -64,7 +64,7 @@ module bcd_to_bin_TB;
         end
         start = 0;
         
-        for(i=0; i<25; i=i+1) begin
+        for(i=0; i<40; i=i+1) begin
             @ (posedge clk);
         end
 
@@ -75,7 +75,7 @@ module bcd_to_bin_TB;
             @ (posedge clk);
         end
         start = 0;
-        for(i=0; i<25; i=i+1) begin
+        for(i=0; i<40; i=i+1) begin
             @ (posedge clk);
         end
 
@@ -86,7 +86,7 @@ module bcd_to_bin_TB;
             @ (posedge clk);
         end
         start = 0;
-        for(i=0; i<25; i=i+1) begin
+        for(i=0; i<40; i=i+1) begin
             @ (posedge clk);
         end
     end	 
