@@ -1,0 +1,60 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Sun Jul 12 04:27:44 2026
+[*]
+[dumpfile] "/home/sebastian/Electronica-digital/Algoritmos/Raiz_Cuadrada/Core/TB/Control_TB.vcd"
+[dumpfile_mtime] "Sun Jul 12 04:24:03 2026"
+[dumpfile_size] 1579
+[savefile] "/home/sebastian/Electronica-digital/Algoritmos/Raiz_Cuadrada/Core/TB/Control_TB.gtkw"
+[timestart] 0
+[size] 1366 768
+[pos] -27 -25
+*-15.489453 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Control_TB.
+[treeopen] Control_TB.uut.
+[sst_width] 290
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 215
+@28
+Control_TB.clk
+Control_TB.rst
+Control_TB.start
+Control_TB.z
+Control_TB.z_a
+Control_TB.load_ra
+Control_TB.shift_ra
+Control_TB.sub_ra
+Control_TB.shift_b
+Control_TB.set_b0
+Control_TB.load_c
+Control_TB.calc_c
+Control_TB.done
+Control_TB.uut.clk
+Control_TB.uut.rst
+Control_TB.uut.start
+Control_TB.uut.z
+Control_TB.uut.z_a
+Control_TB.uut.load_ra
+Control_TB.uut.shift_ra
+Control_TB.uut.sub_ra
+Control_TB.uut.shift_b
+Control_TB.uut.set_b0
+Control_TB.uut.load_c
+Control_TB.uut.calc_c
+Control_TB.uut.done
+@22
+Control_TB.uut.state[2:0]
+Control_TB.uut.count[3:0]
+Control_TB.uut.state_name[320:1]
+@28
+Control_TB.check_outputs.expected_load_ra
+Control_TB.check_outputs.expected_shift_ra
+Control_TB.check_outputs.expected_sub_ra
+Control_TB.check_outputs.expected_shift_b
+Control_TB.check_outputs.expected_set_b0
+Control_TB.check_outputs.expected_load_c
+Control_TB.check_outputs.expected_calc_c
+Control_TB.check_outputs.expected_done
+[pattern_trace] 1
+[pattern_trace] 0
