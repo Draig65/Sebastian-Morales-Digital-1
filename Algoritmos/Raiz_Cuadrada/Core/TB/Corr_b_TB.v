@@ -4,42 +4,60 @@ module Corr_b_TB;
   reg   clk, rst, shift, set_b0;
   wire [4:0] B;
 
-  parameter PERIOD = 20;
   Corr_b uut (.clk(clk), .rst(rst), .shift(shift), .set_b0(set_b0), .B(B));
+ always #5 clk = ~clk;
 
-  event reset_trigger, reset_done_trigger;
-  initial begin 
-    forever begin 
-      @ (reset_trigger); @ (negedge clk); rst = 1;
-      @ (negedge clk); rst = 0; -> reset_done_trigger;
+  task check_result;
+    input [4:0] expected;
+    begin
+      #1;
+      if (B !== expected) begin
+        $display("Corr_b_TB FAIL: esperado=%0d obtenido=%0d", expected, B);
+        $fatal(1);
+      end
     end
-  end
+  endtask
 
-  initial begin clk = 0; rst = 1; shift = 0; set_b0 = 0; end
-  initial forever begin clk = 1'b0; #(PERIOD/2) clk = 1'b1; #(PERIOD/2); end
+  initial begin
+    $dumpfile("TB/Corr_b_TB.vcd");
+    $dumpvars(0, Corr_b_TB);
 
-  initial begin 
-    #10 -> reset_trigger; @ (reset_done_trigger);
-    
-    // Desplazar y activar bit 0
-    @ (posedge clk); shift = 1; set_b0 = 1;
-    @ (posedge clk); shift = 0; set_b0 = 0;
-    $display("Paso 1 (Esperado B=1): B = %d", B);
+    clk   = 0;
+    start = 0;
+    shift = 0;
+    b0    = 0;
 
-    @ (posedge clk); shift = 1; // Desplaza (B se vuelve 2)
-    @ (posedge clk); shift = 0;
-    $display("Paso 2 (Esperado B=2): B = %d", B);
+    #2 start = 1;
+    check_result(5'd0);
+    #2 start = 0;
 
-    @ (posedge clk); set_b0 = 1; // Pone B[0] en 1 (B se vuelve 3)
-    @ (posedge clk); set_b0 = 0;
-    #5;
-    $display("Paso 3 (Esperado B=3): B = %d", B);
-    
-    #20; $finish;
-  end     
+    @(negedge clk);
+    b0 = 1;
+    @(posedge clk);
+    check_result(5'd1);
 
-  initial begin: TEST_CASE
-    $dumpfile("Corr_b_TB.vcd"); $dumpvars(-1, uut);
+    @(negedge clk);
+    shift = 1;
+    b0    = 0;
+    @(posedge clk);
+    check_result(5'd2);
+
+    @(negedge clk);
+    shift = 1;
+    b0    = 1;
+    @(posedge clk);
+    check_result(5'd5);
+
+    @(negedge clk);
+    shift = 0;
+    b0    = 1;
+    @(posedge clk);
+    check_result(5'd5);
+
+    #2 start = 1;
+    check_result(5'd0);
+
+    $display("Corr_b_TB PASS");
+    $finish;
   end
 endmodule
-
