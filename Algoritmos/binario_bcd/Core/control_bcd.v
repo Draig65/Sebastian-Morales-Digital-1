@@ -89,7 +89,7 @@ module control_bcd(
                     load <= 0;
                     ld_acc <= 0;
                     wait_cnt <= wait_cnt + 1;
-                    state <= (wait_cnt > 28) ? START : END_ST;
+                    state <= (wait_cnt > 25) ? START : END_ST;
                 end
 
                 default: state <= START;
