@@ -17,7 +17,6 @@ module control_bin(
     parameter END_ST = 3'b101;
 
     reg [2:0] state;
-    reg [4:0] wait_cnt;
 
     initial begin
         done = 0;
@@ -25,71 +24,79 @@ module control_bin(
         load = 0;
         ld_acc = 0;
         state = START;
-        wait_cnt = 0;
     end
 
     always @(posedge clk) begin
         if (rst) begin
-            state <= START;
+            state = START;
+            done = 0;
+            sh = 0;
+            load = 0;
+            ld_acc = 0;
         end else begin
             case(state)
                 START: begin
-                    done <= 0;
-                    sh <= 0;
-                    load <= 1;
-                    ld_acc <= 0;
-                    wait_cnt <= 0;
-                    if (init)
-                        state <= SHIFT;
-                    else
-                        state <= START;
+                    done = 0;
+                    sh = 0;
+                    ld_acc = 0;
+                    if (init) begin
+                        load = 1;      
+                        state = SHIFT;
+                    end else begin
+                        load = 0;      
+                        state = START;
+                    end
                 end
 
                 SHIFT: begin
-                    done <= 0;
-                    sh <= 1;
-                    load <= 0;
-                    ld_acc <= 0;
+                    done = 0;
+                    sh = 1;
+                    load = 0;
+                    ld_acc = 0;
                     if (z)
-                        state <= END_ST;
+                        state = END_ST;
                     else
-                        state <= CHECK1;
+                        state = CHECK1;
                 end
 
                 CHECK1: begin
-                    done <= 0;
-                    sh <= 0;
-                    load <= 0;
-                    ld_acc <= 0;
+                    done = 0;
+                    sh = 0;
+                    load = 0;
+                    ld_acc = 0;
                     if (z)
-                        state <= END_ST;
+                        state = END_ST;
                     else
-                        state <= CHECK2;
+                        state = CHECK2;
                 end
 
                 CHECK2: begin
-                    done <= 0;
-                    sh <= 0;
-                    load <= 0;
-                    ld_acc <= 1;
-                    state <= ACC;
+                    done = 0;
+                    sh = 0;
+                    load = 0;
+                    ld_acc = 1;
+                    state = ACC;
                 end
 
                 ACC: begin
-                    done <= 0;
-                    sh <= 0;
-                    load <= 0;
-                    ld_acc <= 0;
-                    state <= SHIFT;
+                    done = 0;
+                    sh = 0;
+                    load = 0;
+                    ld_acc = 0;
+                    state = SHIFT;
                 end
 
                 END_ST: begin
-                    done <= 1;
-                    sh <= 0;
-                    load <= 0;
-                    ld_acc <= 0;
-                    wait_cnt <= wait_cnt + 1;
-                    state <= (wait_cnt > 10) ? START : END_ST;
+                    done = 1;          
+                    sh = 0;
+                    load = 0;         
+                    ld_acc = 0;
+                    
+                    if (init) begin
+                        load <= 1;      
+                        state <= SHIFT;
+                    end else begin
+                        state <= END_ST
                 end
 
                 default: state <= START;
