@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module Corr_b_TB;
+module sum_r_TB;
 reg         clk;
   reg         rst;
    reg  [15:0] in_B;
@@ -27,8 +27,8 @@ reg         clk;
   endtask
 
   initial begin
-    $dumpfile("TB/Corr_b_TB.vcd");
-    $dumpvars(0, Corr_b_TB);
+    $dumpfile("TB/sum_r_TB.vcd");
+    $dumpvars(0, sum_r_TB);
 
      clk   = 0;
      rst   = 1;
@@ -73,7 +73,7 @@ reg         clk;
     @(posedge clk);
     check_result(16'd0, 1'b0);
 
-    $display("Corr_b_TB PASS");
+    $display("sum_r_TB PASS");
      $finish;
 end
 endmodule

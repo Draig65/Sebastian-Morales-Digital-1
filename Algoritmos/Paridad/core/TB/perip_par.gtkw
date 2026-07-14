@@ -1,0 +1,33 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Tue Jul 14 21:52:21 2026
+[*]
+[dumpfile] "/home/sebastian/Electronica-digital/Algoritmos/Paridad/core/TB/perip_par_TB.vcd"
+[dumpfile_mtime] "Tue Jul 14 21:51:28 2026"
+[dumpfile_size] 22148
+[savefile] "/home/sebastian/Electronica-digital/Algoritmos/Paridad/core/TB/perip_par.gtkw"
+[timestart] 0
+[size] 1366 768
+[pos] -27 -25
+*-18.432426 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] perip_par_TB.
+[sst_width] 290
+[signals_width] 118
+[sst_expanded] 1
+[sst_vpaned_height] 215
+@24
+perip_par_TB.addr[4:0]
+@29
+[color] 3
+perip_par_TB.clk
+@28
+perip_par_TB.cs
+@24
+perip_par_TB.d_in[15:0]
+perip_par_TB.d_out[31:0]
+@28
+perip_par_TB.rd
+perip_par_TB.reset
+perip_par_TB.wr
+[pattern_trace] 1
+[pattern_trace] 0
