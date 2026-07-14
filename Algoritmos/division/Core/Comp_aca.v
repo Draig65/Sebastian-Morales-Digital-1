@@ -4,4 +4,4 @@ module comparador_aca (Ac, A, z);
   output        z;
  
   assign z = (Ac >= A) ? 1'b1 : 1'b0;
-endmodul
+endmodule
