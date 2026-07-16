@@ -1,0 +1,74 @@
+module peripheral_bin_to_bcd(clk , reset , d_in , cs , addr , rd , wr, d_out );
+  
+  input clk;
+  input reset;
+  input [15:0] d_in;
+  input cs;
+  input [4:0]  addr; // 4 LSB from j1_io_addr
+  input rd;
+  input wr;
+  output reg [31:0] d_out;
+
+//------------------------------------ regs and wires-------------------------------
+reg [4:0] s; 	//selector mux_4  and write registers
+reg [7:0] in_data;
+reg init;
+wire [7:0] result;
+wire done;
+
+always @(*) begin
+if (cs) begin
+  case (addr)
+    5'h04: s =  5'b00001; // in_data 
+    5'h0C: s =  5'b00100; // init
+    5'h10: s =  5'b01000; // result
+    5'h14: s =  5'b10000; // done
+    default: s = 5'b00000;
+  endcase
+end
+else 
+  s = 5'b00000;
+end
+
+
+
+
+always @(negedge clk) begin
+
+  if(reset) begin
+    init    = 0;
+    in_data = 0;
+  end
+  else begin
+    if (cs && wr) begin
+		   in_data = s[0] ? d_in[7:0] : in_data;	
+		   init    = s[2] ? d_in[0] : init;
+    end
+  end
+
+end
+
+
+always @(negedge clk) begin
+if (cs && rd) begin
+  case(s)
+	  5'b00001: d_out= {24'h000000, in_data};
+	  5'b00100: d_out= {31'h00000000, init};
+	  5'b01000: d_out= {24'h000000, result};
+	  5'b10000: d_out= {31'h00000000, done};
+    default:  d_out= 0;
+  endcase
+end
+else d_out= 0;
+end
+
+bin_to_bcd uut (
+  .clk(clk),
+  .rst(reset),
+  .init(init),
+  .in_data(in_data),
+  .result(result),
+  .done(done)
+);
+
+endmodule
