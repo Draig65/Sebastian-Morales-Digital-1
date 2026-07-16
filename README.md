@@ -2,9 +2,9 @@
 
 ## Integrantes del grupo
 
-Danna Ortiz Carrillo (1014658307).
+Danna Ortiz Carrillo (1014658307)
 
-Sebastian Morales (1010010155)
+Sebastian Morales Albino (1010010155)
 
 ## Contenidos
 
