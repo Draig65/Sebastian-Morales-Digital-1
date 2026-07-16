@@ -1,0 +1,39 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*]
+[dumpfile] "/home/sebastian/Electronica-digital/proyecto/Core/TB/ws2812_player_TB.vcd"
+[savefile] "/home/sebastian/Electronica-digital/proyecto/Core/TB/ws2812_player.gtkw"
+[timestart] 0
+[size] 1366 768
+[pos] -27 -25
+*-16.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] ws2812_player_TB.
+[treeopen] ws2812_player_TB.uut.
+[signals_width] 185
+[sst_width] 290
+[sst_expanded] 1
+[sst_vpaned_height] 215
+@28
+[color] 3
+ws2812_player_TB.uut.clk
+ws2812_player_TB.uut.reset_n
+ws2812_player_TB.uut.w_rst
+ws2812_player_TB.uut.ws_data
+@820
+[color] 1
+ws2812_player_TB.uut.ctrl.state_name[320:1]
+@22
+ws2812_player_TB.uut.w_rom_data[11:0]
+ws2812_player_TB.uut.w_grb[23:0]
+ws2812_player_TB.uut.w_bit_index[4:0]
+ws2812_player_TB.uut.w_bit_timer[5:0]
+ws2812_player_TB.uut.w_led_index[15:0]
+ws2812_player_TB.uut.w_frame_index[15:0]
+ws2812_player_TB.uut.w_reset_counter[15:0]
+@28
+ws2812_player_TB.uut.w_load_bit
+ws2812_player_TB.uut.w_sh
+ws2812_player_TB.uut.w_bit_fin
+ws2812_player_TB.uut.w_reset_fin
+[pattern_trace] 1
+[pattern_trace] 0

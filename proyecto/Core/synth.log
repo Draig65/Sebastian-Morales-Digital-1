@@ -1,0 +1,2033 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.66 (git sha1 86f2ddebc-dirty, g++ 16.1.1 -march=x86-64-v3 -mtune=haswell -O3 -fno-plt -fexceptions -fstack-clash-protection -fcf-protection -mpclmul -ffile-prefix-map=/startdir/src=/usr/src/debug/yosys -fPIC -O3) [startdir/yosys at makepkg]
+
+-- Parsing `ws2812_player.v' using frontend ` -vlog2k' --
+
+1. Executing Verilog-2005 frontend: ws2812_player.v
+Parsing Verilog input from `ws2812_player.v' to AST representation.
+Storing AST representation for module `$abstract\ws2812_player'.
+Successfully finished Verilog frontend.
+
+-- Parsing `Reset.v' using frontend ` -vlog2k' --
+
+2. Executing Verilog-2005 frontend: Reset.v
+Parsing Verilog input from `Reset.v' to AST representation.
+Storing AST representation for module `$abstract\reset_ws'.
+Successfully finished Verilog frontend.
+
+-- Parsing `Memoria.v' using frontend ` -vlog2k' --
+
+3. Executing Verilog-2005 frontend: Memoria.v
+Parsing Verilog input from `Memoria.v' to AST representation.
+Storing AST representation for module `$abstract\memoria_frames'.
+Successfully finished Verilog frontend.
+
+-- Parsing `Corr_grb.v' using frontend ` -vlog2k' --
+
+4. Executing Verilog-2005 frontend: Corr_grb.v
+Parsing Verilog input from `Corr_grb.v' to AST representation.
+Storing AST representation for module `$abstract\envia_led'.
+Successfully finished Verilog frontend.
+
+-- Parsing `Control.v' using frontend ` -vlog2k' --
+
+5. Executing Verilog-2005 frontend: Control.v
+Parsing Verilog input from `Control.v' to AST representation.
+Storing AST representation for module `$abstract\control_matriz'.
+Successfully finished Verilog frontend.
+
+-- Parsing `pulso_ws.v' using frontend ` -vlog2k' --
+
+6. Executing Verilog-2005 frontend: pulso_ws.v
+Parsing Verilog input from `pulso_ws.v' to AST representation.
+Storing AST representation for module `$abstract\pulso_ws'.
+Successfully finished Verilog frontend.
+
+-- Parsing `cont_bit.v' using frontend ` -vlog2k' --
+
+7. Executing Verilog-2005 frontend: cont_bit.v
+Parsing Verilog input from `cont_bit.v' to AST representation.
+Storing AST representation for module `$abstract\cuenta_tiempo'.
+Successfully finished Verilog frontend.
+
+-- Parsing `cont_led.v' using frontend ` -vlog2k' --
+
+8. Executing Verilog-2005 frontend: cont_led.v
+Parsing Verilog input from `cont_led.v' to AST representation.
+Storing AST representation for module `$abstract\contador_led'.
+Successfully finished Verilog frontend.
+
+-- Parsing `cont_frame.v' using frontend ` -vlog2k' --
+
+9. Executing Verilog-2005 frontend: cont_frame.v
+Parsing Verilog input from `cont_frame.v' to AST representation.
+Storing AST representation for module `$abstract\contador_frame'.
+Successfully finished Verilog frontend.
+
+-- Parsing `cont_reset.v' using frontend ` -vlog2k' --
+
+10. Executing Verilog-2005 frontend: cont_reset.v
+Parsing Verilog input from `cont_reset.v' to AST representation.
+Storing AST representation for module `$abstract\contador_reset'.
+Successfully finished Verilog frontend.
+
+-- Running command `synth_ecp5 -top ws2812_player -json ws2812_player.json; write_verilog -attr2comment ws2812_player_synth.v' --
+
+11. Executing SYNTH_LATTICE pass.
+
+11.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/lattice/cells_sim_ecp5.v
+Parsing Verilog input from `/usr/bin/../share/yosys/lattice/cells_sim_ecp5.v' to AST representation.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\$__ABC9_LUT5'.
+Generating RTLIL representation for module `\$__ABC9_LUT6'.
+Generating RTLIL representation for module `\$__ABC9_LUT7'.
+Generating RTLIL representation for module `\L6MUX21'.
+Generating RTLIL representation for module `\TRELLIS_RAM16X2'.
+Generating RTLIL representation for module `\PFUMX'.
+Generating RTLIL representation for module `\TRELLIS_DPR16X4'.
+Generating RTLIL representation for module `\DPR16X4C'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\TRELLIS_FF'.
+Generating RTLIL representation for module `\TRELLIS_IO'.
+Generating RTLIL representation for module `\INV'.
+Generating RTLIL representation for module `\TRELLIS_COMB'.
+Generating RTLIL representation for module `\VLO'.
+Generating RTLIL representation for module `\VHI'.
+Generating RTLIL representation for module `\FD1P3AX'.
+Generating RTLIL representation for module `\FD1P3AY'.
+Generating RTLIL representation for module `\FD1P3BX'.
+Generating RTLIL representation for module `\FD1P3DX'.
+Generating RTLIL representation for module `\FD1P3IX'.
+Generating RTLIL representation for module `\FD1P3JX'.
+Generating RTLIL representation for module `\FD1S3AX'.
+Generating RTLIL representation for module `\FD1S3AY'.
+Generating RTLIL representation for module `\FD1S3BX'.
+Generating RTLIL representation for module `\FD1S3DX'.
+Generating RTLIL representation for module `\FD1S3IX'.
+Generating RTLIL representation for module `\FD1S3JX'.
+Generating RTLIL representation for module `\IFS1P3BX'.
+Generating RTLIL representation for module `\IFS1P3DX'.
+Generating RTLIL representation for module `\IFS1P3IX'.
+Generating RTLIL representation for module `\IFS1P3JX'.
+Generating RTLIL representation for module `\OFS1P3BX'.
+Generating RTLIL representation for module `\OFS1P3DX'.
+Generating RTLIL representation for module `\OFS1P3IX'.
+Generating RTLIL representation for module `\OFS1P3JX'.
+Generating RTLIL representation for module `\IB'.
+Generating RTLIL representation for module `\IBPU'.
+Generating RTLIL representation for module `\IBPD'.
+Generating RTLIL representation for module `\OB'.
+Generating RTLIL representation for module `\OBZ'.
+Generating RTLIL representation for module `\OBZPU'.
+Generating RTLIL representation for module `\OBZPD'.
+Generating RTLIL representation for module `\OBCO'.
+Generating RTLIL representation for module `\BB'.
+Generating RTLIL representation for module `\BBPU'.
+Generating RTLIL representation for module `\BBPD'.
+Generating RTLIL representation for module `\ILVDS'.
+Generating RTLIL representation for module `\OLVDS'.
+Generating RTLIL representation for module `\CCU2C'.
+Generating RTLIL representation for module `\DP16KD'.
+Replacing existing blackbox module `\FD1P3AX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:2.1-2.261.
+Generating RTLIL representation for module `\FD1P3AX'.
+Replacing existing blackbox module `\FD1P3AY' at /usr/bin/../share/yosys/lattice/cells_ff.vh:3.1-3.261.
+Generating RTLIL representation for module `\FD1P3AY'.
+Replacing existing blackbox module `\FD1P3BX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:4.1-4.261.
+Generating RTLIL representation for module `\FD1P3BX'.
+Replacing existing blackbox module `\FD1P3DX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:5.1-5.261.
+Generating RTLIL representation for module `\FD1P3DX'.
+Replacing existing blackbox module `\FD1P3IX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:6.1-6.261.
+Generating RTLIL representation for module `\FD1P3IX'.
+Replacing existing blackbox module `\FD1P3JX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:7.1-7.261.
+Generating RTLIL representation for module `\FD1P3JX'.
+Replacing existing blackbox module `\FD1S3AX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:8.1-8.261.
+Generating RTLIL representation for module `\FD1S3AX'.
+Replacing existing blackbox module `\FD1S3AY' at /usr/bin/../share/yosys/lattice/cells_ff.vh:9.1-9.261.
+Generating RTLIL representation for module `\FD1S3AY'.
+Replacing existing blackbox module `\FD1S3BX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:10.1-10.261.
+Generating RTLIL representation for module `\FD1S3BX'.
+Replacing existing blackbox module `\FD1S3DX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:11.1-11.261.
+Generating RTLIL representation for module `\FD1S3DX'.
+Replacing existing blackbox module `\FD1S3IX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:12.1-12.261.
+Generating RTLIL representation for module `\FD1S3IX'.
+Replacing existing blackbox module `\FD1S3JX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:13.1-13.261.
+Generating RTLIL representation for module `\FD1S3JX'.
+Replacing existing blackbox module `\IFS1P3BX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:26.1-26.301.
+Generating RTLIL representation for module `\IFS1P3BX'.
+Replacing existing blackbox module `\IFS1P3DX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:27.1-27.301.
+Generating RTLIL representation for module `\IFS1P3DX'.
+Replacing existing blackbox module `\IFS1P3IX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:28.1-28.301.
+Generating RTLIL representation for module `\IFS1P3IX'.
+Replacing existing blackbox module `\IFS1P3JX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:29.1-29.301.
+Generating RTLIL representation for module `\IFS1P3JX'.
+Replacing existing blackbox module `\OFS1P3BX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:31.1-31.302.
+Generating RTLIL representation for module `\OFS1P3BX'.
+Replacing existing blackbox module `\OFS1P3DX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:32.1-32.302.
+Generating RTLIL representation for module `\OFS1P3DX'.
+Replacing existing blackbox module `\OFS1P3IX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:33.1-33.302.
+Generating RTLIL representation for module `\OFS1P3IX'.
+Replacing existing blackbox module `\OFS1P3JX' at /usr/bin/../share/yosys/lattice/cells_ff.vh:34.1-34.302.
+Generating RTLIL representation for module `\OFS1P3JX'.
+Replacing existing blackbox module `\IB' at /usr/bin/../share/yosys/lattice/cells_io.vh:2.1-2.157.
+Generating RTLIL representation for module `\IB'.
+Replacing existing blackbox module `\IBPU' at /usr/bin/../share/yosys/lattice/cells_io.vh:3.1-3.157.
+Generating RTLIL representation for module `\IBPU'.
+Replacing existing blackbox module `\IBPD' at /usr/bin/../share/yosys/lattice/cells_io.vh:4.1-4.157.
+Generating RTLIL representation for module `\IBPD'.
+Replacing existing blackbox module `\OB' at /usr/bin/../share/yosys/lattice/cells_io.vh:5.1-5.157.
+Generating RTLIL representation for module `\OB'.
+Replacing existing blackbox module `\OBZ' at /usr/bin/../share/yosys/lattice/cells_io.vh:6.1-6.164.
+Generating RTLIL representation for module `\OBZ'.
+Replacing existing blackbox module `\OBZPU' at /usr/bin/../share/yosys/lattice/cells_io.vh:7.1-7.164.
+Generating RTLIL representation for module `\OBZPU'.
+Replacing existing blackbox module `\OBZPD' at /usr/bin/../share/yosys/lattice/cells_io.vh:8.1-8.164.
+Generating RTLIL representation for module `\OBZPD'.
+Replacing existing blackbox module `\OBCO' at /usr/bin/../share/yosys/lattice/cells_io.vh:9.1-9.90.
+Generating RTLIL representation for module `\OBCO'.
+Replacing existing blackbox module `\BB' at /usr/bin/../share/yosys/lattice/cells_io.vh:10.1-10.179.
+Generating RTLIL representation for module `\BB'.
+Replacing existing blackbox module `\BBPU' at /usr/bin/../share/yosys/lattice/cells_io.vh:11.1-11.179.
+Generating RTLIL representation for module `\BBPU'.
+Replacing existing blackbox module `\BBPD' at /usr/bin/../share/yosys/lattice/cells_io.vh:12.1-12.179.
+Generating RTLIL representation for module `\BBPD'.
+Replacing existing blackbox module `\ILVDS' at /usr/bin/../share/yosys/lattice/cells_io.vh:13.1-13.139.
+Generating RTLIL representation for module `\ILVDS'.
+Replacing existing blackbox module `\OLVDS' at /usr/bin/../share/yosys/lattice/cells_io.vh:14.1-14.146.
+Generating RTLIL representation for module `\OLVDS'.
+Successfully finished Verilog frontend.
+
+11.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/lattice/cells_bb_ecp5.v
+Parsing Verilog input from `/usr/bin/../share/yosys/lattice/cells_bb_ecp5.v' to AST representation.
+Generating RTLIL representation for module `\GSR'.
+Generating RTLIL representation for module `\PUR'.
+Generating RTLIL representation for module `\SGSR'.
+Generating RTLIL representation for module `\PDPW16KD'.
+Generating RTLIL representation for module `\MULT18X18D'.
+Generating RTLIL representation for module `\ALU54B'.
+Generating RTLIL representation for module `\CLKDIVF'.
+Generating RTLIL representation for module `\PCSCLKDIV'.
+Generating RTLIL representation for module `\DCSC'.
+Generating RTLIL representation for module `\DCCA'.
+Generating RTLIL representation for module `\ECLKSYNCB'.
+Generating RTLIL representation for module `\ECLKBRIDGECS'.
+Generating RTLIL representation for module `\DELAYF'.
+Generating RTLIL representation for module `\DELAYG'.
+Generating RTLIL representation for module `\USRMCLK'.
+Generating RTLIL representation for module `\DQSBUFM'.
+Generating RTLIL representation for module `\DDRDLLA'.
+Generating RTLIL representation for module `\DLLDELD'.
+Generating RTLIL representation for module `\IDDRX1F'.
+Generating RTLIL representation for module `\IDDRX2F'.
+Generating RTLIL representation for module `\IDDR71B'.
+Generating RTLIL representation for module `\IDDRX2DQA'.
+Generating RTLIL representation for module `\ODDRX1F'.
+Generating RTLIL representation for module `\ODDRX2F'.
+Generating RTLIL representation for module `\ODDR71B'.
+Generating RTLIL representation for module `\OSHX2A'.
+Generating RTLIL representation for module `\TSHX2DQA'.
+Generating RTLIL representation for module `\TSHX2DQSA'.
+Generating RTLIL representation for module `\ODDRX2DQA'.
+Generating RTLIL representation for module `\ODDRX2DQSB'.
+Generating RTLIL representation for module `\EHXPLLL'.
+Generating RTLIL representation for module `\DTR'.
+Generating RTLIL representation for module `\OSCG'.
+Generating RTLIL representation for module `\EXTREFB'.
+Generating RTLIL representation for module `\JTAGG'.
+Generating RTLIL representation for module `\DCUA'.
+Successfully finished Verilog frontend.
+
+11.3. Executing HIERARCHY pass (managing design hierarchy).
+
+11.4. Executing AST frontend in derive mode using pre-parsed AST for module `\ws2812_player'.
+Generating RTLIL representation for module `\ws2812_player'.
+
+11.4.1. Analyzing design hierarchy..
+Top module:  \ws2812_player
+
+11.4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\contador_reset'.
+Generating RTLIL representation for module `\contador_reset'.
+
+11.4.3. Executing AST frontend in derive mode using pre-parsed AST for module `\contador_frame'.
+Generating RTLIL representation for module `\contador_frame'.
+
+11.4.4. Executing AST frontend in derive mode using pre-parsed AST for module `\contador_led'.
+Generating RTLIL representation for module `\contador_led'.
+
+11.4.5. Executing AST frontend in derive mode using pre-parsed AST for module `\envia_led'.
+Generating RTLIL representation for module `\envia_led'.
+
+11.4.6. Executing AST frontend in derive mode using pre-parsed AST for module `\memoria_frames'.
+Generating RTLIL representation for module `\memoria_frames'.
+
+11.4.7. Executing AST frontend in derive mode using pre-parsed AST for module `\control_matriz'.
+Generating RTLIL representation for module `\control_matriz'.
+
+11.4.8. Executing AST frontend in derive mode using pre-parsed AST for module `\reset_ws'.
+Generating RTLIL representation for module `\reset_ws'.
+
+11.4.9. Analyzing design hierarchy..
+Top module:  \ws2812_player
+Used module:     \contador_reset
+Used module:     \contador_frame
+Used module:     \contador_led
+Used module:     \envia_led
+Used module:     \memoria_frames
+Used module:     \control_matriz
+Used module:     \reset_ws
+
+11.4.10. Executing AST frontend in derive mode using pre-parsed AST for module `\pulso_ws'.
+Generating RTLIL representation for module `\pulso_ws'.
+
+11.4.11. Analyzing design hierarchy..
+Top module:  \ws2812_player
+Used module:     \contador_reset
+Used module:     \contador_frame
+Used module:     \contador_led
+Used module:     \envia_led
+Used module:         \pulso_ws
+Used module:     \memoria_frames
+Used module:     \control_matriz
+Used module:     \reset_ws
+
+11.4.12. Executing AST frontend in derive mode using pre-parsed AST for module `\cuenta_tiempo'.
+Generating RTLIL representation for module `\cuenta_tiempo'.
+
+11.4.13. Analyzing design hierarchy..
+Top module:  \ws2812_player
+Used module:     \contador_reset
+Used module:     \contador_frame
+Used module:     \contador_led
+Used module:     \envia_led
+Used module:         \pulso_ws
+Used module:             \cuenta_tiempo
+Used module:     \memoria_frames
+Used module:     \control_matriz
+Used module:     \reset_ws
+
+11.4.14. Analyzing design hierarchy..
+Top module:  \ws2812_player
+Used module:     \contador_reset
+Used module:     \contador_frame
+Used module:     \contador_led
+Used module:     \envia_led
+Used module:         \pulso_ws
+Used module:             \cuenta_tiempo
+Used module:     \memoria_frames
+Used module:     \control_matriz
+Used module:     \reset_ws
+Removing unused module `$abstract\contador_reset'.
+Removing unused module `$abstract\contador_frame'.
+Removing unused module `$abstract\contador_led'.
+Removing unused module `$abstract\cuenta_tiempo'.
+Removing unused module `$abstract\pulso_ws'.
+Removing unused module `$abstract\control_matriz'.
+Removing unused module `$abstract\envia_led'.
+Removing unused module `$abstract\memoria_frames'.
+Removing unused module `$abstract\reset_ws'.
+Removing unused module `$abstract\ws2812_player'.
+Removed 10 unused modules.
+
+11.5. Executing PROC pass (convert processes to netlists).
+
+11.5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `memoria_frames.$proc$Memoria.v:9$255'.
+Cleaned up 0 empty switches.
+
+11.5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$cont_bit.v:11$273 in module cuenta_tiempo.
+Marked 2 switch rules as full_case in process $proc$pulso_ws.v:22$268 in module pulso_ws.
+Marked 1 switch rules as full_case in process $proc$Reset.v:11$262 in module reset_ws.
+Marked 1 switch rules as full_case in process $proc$Control.v:63$257 in module control_matriz.
+Marked 6 switch rules as full_case in process $proc$Control.v:24$256 in module control_matriz.
+Marked 3 switch rules as full_case in process $proc$Corr_grb.v:25$248 in module envia_led.
+Marked 2 switch rules as full_case in process $proc$cont_led.v:14$236 in module contador_led.
+Marked 3 switch rules as full_case in process $proc$cont_frame.v:13$230 in module contador_frame.
+Marked 3 switch rules as full_case in process $proc$cont_reset.v:11$227 in module contador_reset.
+Removed a total of 0 dead cases.
+
+11.5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 9 redundant assignments.
+Promoted 2 assignments to connections.
+
+11.5.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\reset_ws.$proc$Reset.v:7$264'.
+  Set init value: \reset_sync = 2'00
+
+11.5.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset_n in `\reset_ws.$proc$Reset.v:11$262'.
+
+11.5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~31 debug messages>
+
+11.5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\cuenta_tiempo.$proc$cont_bit.v:11$273'.
+     1/1: $0\cuenta[5:0]
+Creating decoders for process `\pulso_ws.$proc$pulso_ws.v:22$268'.
+     1/1: $0\activo[0:0]
+Creating decoders for process `\reset_ws.$proc$Reset.v:7$264'.
+Creating decoders for process `\reset_ws.$proc$Reset.v:11$262'.
+     1/1: $0\reset_sync[1:0]
+Creating decoders for process `\control_matriz.$proc$Control.v:63$257'.
+     1/5: $0\en_reset[0:0]
+     2/5: $0\next_frame[0:0]
+     3/5: $0\next_led[0:0]
+     4/5: $0\start_led[0:0]
+     5/5: $0\start_frame[0:0]
+Creating decoders for process `\control_matriz.$proc$Control.v:24$256'.
+     1/2: $0\state[2:0]
+     2/2: $0\cambia_frame[0:0]
+Creating decoders for process `\memoria_frames.$proc$Memoria.v:15$252'.
+Creating decoders for process `\envia_led.$proc$Corr_grb.v:25$248'.
+     1/3: $0\bit_num[4:0]
+     2/3: $0\activo[0:0]
+     3/3: $0\dato[23:0]
+Creating decoders for process `\contador_led.$proc$cont_led.v:14$236'.
+     1/2: $0\rom_addr[10:0]
+     2/2: $0\led_index[15:0]
+Creating decoders for process `\contador_frame.$proc$cont_frame.v:13$230'.
+     1/2: $0\frame_timer[31:0]
+     2/2: $0\frame_index[15:0]
+Creating decoders for process `\contador_reset.$proc$cont_reset.v:11$227'.
+     1/1: $0\reset_counter[15:0]
+
+11.5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\control_matriz.\start_frame' from process `\control_matriz.$proc$Control.v:63$257'.
+No latch inferred for signal `\control_matriz.\start_led' from process `\control_matriz.$proc$Control.v:63$257'.
+No latch inferred for signal `\control_matriz.\next_led' from process `\control_matriz.$proc$Control.v:63$257'.
+No latch inferred for signal `\control_matriz.\next_frame' from process `\control_matriz.$proc$Control.v:63$257'.
+No latch inferred for signal `\control_matriz.\en_reset' from process `\control_matriz.$proc$Control.v:63$257'.
+
+11.5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\cuenta_tiempo.\cuenta' using process `\cuenta_tiempo.$proc$cont_bit.v:11$273'.
+  created $dff cell `$procdff$437' with positive edge clock.
+Creating register for signal `\pulso_ws.\activo' using process `\pulso_ws.$proc$pulso_ws.v:22$268'.
+  created $dff cell `$procdff$438' with positive edge clock.
+Creating register for signal `\reset_ws.\reset_sync' using process `\reset_ws.$proc$Reset.v:11$262'.
+  created $adff cell `$procdff$443' with positive edge clock and positive level reset.
+Creating register for signal `\control_matriz.\state' using process `\control_matriz.$proc$Control.v:24$256'.
+  created $dff cell `$procdff$444' with positive edge clock.
+Creating register for signal `\control_matriz.\cambia_frame' using process `\control_matriz.$proc$Control.v:24$256'.
+  created $dff cell `$procdff$445' with positive edge clock.
+Creating register for signal `\memoria_frames.\dato' using process `\memoria_frames.$proc$Memoria.v:15$252'.
+  created $dff cell `$procdff$446' with positive edge clock.
+Creating register for signal `\envia_led.\dato' using process `\envia_led.$proc$Corr_grb.v:25$248'.
+  created $dff cell `$procdff$447' with positive edge clock.
+Creating register for signal `\envia_led.\activo' using process `\envia_led.$proc$Corr_grb.v:25$248'.
+  created $dff cell `$procdff$448' with positive edge clock.
+Creating register for signal `\envia_led.\bit_num' using process `\envia_led.$proc$Corr_grb.v:25$248'.
+  created $dff cell `$procdff$449' with positive edge clock.
+Creating register for signal `\contador_led.\led_index' using process `\contador_led.$proc$cont_led.v:14$236'.
+  created $dff cell `$procdff$450' with positive edge clock.
+Creating register for signal `\contador_led.\rom_addr' using process `\contador_led.$proc$cont_led.v:14$236'.
+  created $dff cell `$procdff$451' with positive edge clock.
+Creating register for signal `\contador_frame.\frame_index' using process `\contador_frame.$proc$cont_frame.v:13$230'.
+  created $dff cell `$procdff$452' with positive edge clock.
+Creating register for signal `\contador_frame.\frame_timer' using process `\contador_frame.$proc$cont_frame.v:13$230'.
+  created $dff cell `$procdff$453' with positive edge clock.
+Creating register for signal `\contador_reset.\reset_counter' using process `\contador_reset.$proc$cont_reset.v:11$227'.
+  created $dff cell `$procdff$454' with positive edge clock.
+
+11.5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+11.5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 3 empty switches in `\cuenta_tiempo.$proc$cont_bit.v:11$273'.
+Removing empty process `cuenta_tiempo.$proc$cont_bit.v:11$273'.
+Found and cleaned up 5 empty switches in `\pulso_ws.$proc$pulso_ws.v:22$268'.
+Removing empty process `pulso_ws.$proc$pulso_ws.v:22$268'.
+Removing empty process `reset_ws.$proc$Reset.v:7$264'.
+Removing empty process `reset_ws.$proc$Reset.v:11$262'.
+Found and cleaned up 1 empty switch in `\control_matriz.$proc$Control.v:63$257'.
+Removing empty process `control_matriz.$proc$Control.v:63$257'.
+Found and cleaned up 6 empty switches in `\control_matriz.$proc$Control.v:24$256'.
+Removing empty process `control_matriz.$proc$Control.v:24$256'.
+Removing empty process `memoria_frames.$proc$Memoria.v:15$252'.
+Found and cleaned up 5 empty switches in `\envia_led.$proc$Corr_grb.v:25$248'.
+Removing empty process `envia_led.$proc$Corr_grb.v:25$248'.
+Found and cleaned up 3 empty switches in `\contador_led.$proc$cont_led.v:14$236'.
+Removing empty process `contador_led.$proc$cont_led.v:14$236'.
+Found and cleaned up 5 empty switches in `\contador_frame.$proc$cont_frame.v:13$230'.
+Removing empty process `contador_frame.$proc$cont_frame.v:13$230'.
+Found and cleaned up 3 empty switches in `\contador_reset.$proc$cont_reset.v:11$227'.
+Removing empty process `contador_reset.$proc$cont_reset.v:11$227'.
+Cleaned up 31 empty switches.
+
+11.5.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cuenta_tiempo.
+<suppressed ~1 debug messages>
+Optimizing module pulso_ws.
+<suppressed ~2 debug messages>
+Optimizing module reset_ws.
+<suppressed ~2 debug messages>
+Optimizing module control_matriz.
+<suppressed ~2 debug messages>
+Optimizing module memoria_frames.
+Optimizing module envia_led.
+<suppressed ~6 debug messages>
+Optimizing module contador_led.
+Optimizing module contador_frame.
+Optimizing module contador_reset.
+Optimizing module ws2812_player.
+
+11.6. Executing CHECK pass (checking for obvious problems).
+Checking module cuenta_tiempo...
+Checking module pulso_ws...
+Checking module reset_ws...
+Checking module control_matriz...
+Checking module memoria_frames...
+Checking module envia_led...
+Checking module contador_led...
+Checking module contador_frame...
+Checking module contador_reset...
+Checking module ws2812_player...
+Found and reported 0 problems.
+
+11.7. Executing FLATTEN pass (flatten design).
+Deleting now unused module cuenta_tiempo.
+Deleting now unused module pulso_ws.
+Deleting now unused module reset_ws.
+Deleting now unused module control_matriz.
+Deleting now unused module memoria_frames.
+Deleting now unused module envia_led.
+Deleting now unused module contador_led.
+Deleting now unused module contador_frame.
+Deleting now unused module contador_reset.
+<suppressed ~9 debug messages>
+
+11.8. Executing TRIBUF pass.
+
+11.9. Executing DEMINOUT pass (demote inout ports to input or output).
+
+11.10. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+<suppressed ~14 debug messages>
+
+11.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 7 unused cells and 98 unused wires.
+<suppressed ~17 debug messages>
+
+11.12. Executing CHECK pass (checking for obvious problems).
+Checking module ws2812_player...
+Found and reported 0 problems.
+
+11.13. Executing OPT pass (performing simple optimizations).
+
+11.13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 120 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Computing hashes of 111 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+<suppressed ~27 debug messages>
+Removed a total of 9 cells.
+
+11.13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812_player..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $flatten\led.$procmux$373: \led.activo -> 1'1
+      Replacing known input bits on port A of cell $flatten\led.$procmux$371: \led.activo -> 1'1
+      Replacing known input bits on port A of cell $flatten\led.$procmux$376: \led.activo -> 1'0
+      Replacing known input bits on port A of cell $flatten\led.\bit0.$procmux$287: \led.bit0.activo -> 1'1
+      Replacing known input bits on port B of cell $flatten\led.\bit0.$procmux$285: \led.bit0.activo -> 1'1
+      Replacing known input bits on port A of cell $flatten\led.\bit0.$procmux$290: \led.bit0.activo -> 1'0
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~73 debug messages>
+
+11.13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812_player.
+Performed a total of 0 changes.
+
+11.13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 111 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.13.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 0 unused cells and 9 unused wires.
+<suppressed ~1 debug messages>
+
+11.13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812_player..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~73 debug messages>
+
+11.13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812_player.
+Performed a total of 0 changes.
+
+11.13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 111 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.13.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+
+11.13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.13.16. Finished fast OPT passes. (There is nothing left to do.)
+
+11.14. Executing FSM pass (extract and optimize FSM).
+
+11.14.1. Executing FSM_DETECT pass (finding FSMs in design).
+Found FSM state register ws2812_player.ctrl.state.
+
+11.14.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\ctrl.state' from module `\ws2812_player'.
+  found $dff cell for state register: $flatten\ctrl.$procdff$444
+  root of input selection tree: $flatten\ctrl.$0\state[2:0]
+  found reset state: 3'100 (guessed from mux tree)
+  found ctrl input: \rst1.reset_sync [1]
+  found state code: 3'100
+  found ctrl input: $flatten\ctrl.$procmux$299_CMP
+  found ctrl input: $flatten\ctrl.$procmux$306_CMP
+  found ctrl input: $flatten\ctrl.$procmux$311_CMP
+  found ctrl input: $flatten\ctrl.$procmux$333_CMP
+  found ctrl input: $flatten\ctrl.$procmux$318_CMP
+  found ctrl input: \ctrl.reset_fin
+  found state code: 3'000
+  found ctrl input: \ctrl.done_led
+  found state code: 3'011
+  found ctrl input: \ctrl.ultimo_led
+  found state code: 3'001
+  found state code: 3'010
+  found ctrl input: \ctrl.frame_ready
+  found ctrl output: $flatten\ctrl.$procmux$333_CMP
+  found ctrl output: $flatten\ctrl.$procmux$318_CMP
+  found ctrl output: $flatten\ctrl.$procmux$311_CMP
+  found ctrl output: $flatten\ctrl.$procmux$306_CMP
+  found ctrl output: $flatten\ctrl.$procmux$299_CMP
+  ctrl inputs: { \ctrl.frame_ready \ctrl.done_led \ctrl.ultimo_led \ctrl.reset_fin \rst1.reset_sync [1] }
+  ctrl outputs: { $flatten\ctrl.$0\state[2:0] $flatten\ctrl.$procmux$299_CMP $flatten\ctrl.$procmux$306_CMP $flatten\ctrl.$procmux$311_CMP $flatten\ctrl.$procmux$318_CMP $flatten\ctrl.$procmux$333_CMP }
+  transition:      3'000 5'----0 ->      3'100 8'10000010
+  transition:      3'000 5'0---1 ->      3'000 8'00000010
+  transition:      3'000 5'1---1 ->      3'001 8'00100010
+  transition:      3'100 5'----0 ->      3'100 8'10010000
+  transition:      3'100 5'---01 ->      3'100 8'10010000
+  transition:      3'100 5'---11 ->      3'000 8'00010000
+  transition:      3'010 5'----0 ->      3'100 8'10000100
+  transition:      3'010 5'----1 ->      3'011 8'01100100
+  transition:      3'001 5'----0 ->      3'100 8'10000001
+  transition:      3'001 5'----1 ->      3'010 8'01000001
+  transition:      3'011 5'----0 ->      3'100 8'10001000
+  transition:      3'011 5'-0--1 ->      3'011 8'01101000
+  transition:      3'011 5'-10-1 ->      3'001 8'00101000
+  transition:      3'011 5'-11-1 ->      3'100 8'10001000
+
+11.14.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\ctrl.state$464' from module `\ws2812_player'.
+
+11.14.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 12 unused cells and 13 unused wires.
+<suppressed ~14 debug messages>
+
+11.14.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\ctrl.state$464' from module `\ws2812_player'.
+  Removing unused output signal $flatten\ctrl.$procmux$333_CMP.
+  Removing unused output signal $flatten\ctrl.$0\state[2:0] [0].
+  Removing unused output signal $flatten\ctrl.$0\state[2:0] [1].
+  Removing unused output signal $flatten\ctrl.$0\state[2:0] [2].
+
+11.14.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\ctrl.state$464' from module `\ws2812_player' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  000 -> ---1-
+  100 -> ----1
+  010 -> --1--
+  001 -> -1---
+  011 -> 1----
+
+11.14.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\ctrl.state$464' from module `ws2812_player':
+-------------------------------------
+
+  Information on FSM $fsm$\ctrl.state$464 (\ctrl.state):
+
+  Number of input signals:    5
+  Number of output signals:   4
+  Number of state bits:       5
+
+  Input signals:
+    0: \rst1.reset_sync [1]
+    1: \ctrl.reset_fin
+    2: \ctrl.ultimo_led
+    3: \ctrl.done_led
+    4: \ctrl.frame_ready
+
+  Output signals:
+    0: $flatten\ctrl.$procmux$318_CMP
+    1: $flatten\ctrl.$procmux$311_CMP
+    2: $flatten\ctrl.$procmux$306_CMP
+    3: $flatten\ctrl.$procmux$299_CMP
+
+  State encoding:
+    0:    5'---1-
+    1:    5'----1  <RESET STATE>
+    2:    5'--1--
+    3:    5'-1---
+    4:    5'1----
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 5'0---1   ->     0 4'0001
+      1:     0 5'----0   ->     1 4'0001
+      2:     0 5'1---1   ->     3 4'0001
+      3:     1 5'---11   ->     0 4'1000
+      4:     1 5'----0   ->     1 4'1000
+      5:     1 5'---01   ->     1 4'1000
+      6:     2 5'----0   ->     1 4'0010
+      7:     2 5'----1   ->     4 4'0010
+      8:     3 5'----0   ->     1 4'0000
+      9:     3 5'----1   ->     2 4'0000
+     10:     4 5'----0   ->     1 4'0100
+     11:     4 5'-11-1   ->     1 4'0100
+     12:     4 5'-10-1   ->     3 4'0100
+     13:     4 5'-0--1   ->     4 4'0100
+
+-------------------------------------
+
+11.14.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\ctrl.state$464' from module `\ws2812_player'.
+
+11.15. Executing OPT pass (performing simple optimizations).
+
+11.15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+<suppressed ~3 debug messages>
+
+11.15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 121 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812_player..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~66 debug messages>
+
+11.15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812_player.
+Performed a total of 0 changes.
+
+11.15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 121 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.15.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $flatten\ctrl.$procdff$445 ($dff) from module ws2812_player (D = $flatten\ctrl.$procmux$345_Y, Q = \ctrl.cambia_frame, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$517 ($sdff) from module ws2812_player (D = $flatten\ctrl.$procmux$345_Y, Q = \ctrl.cambia_frame).
+Adding SRST signal on $flatten\cont_frame.$procdff$452 ($dff) from module ws2812_player (D = $flatten\cont_frame.$procmux$423_Y, Q = \cont_frame.frame_index, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$529 ($sdff) from module ws2812_player (D = $flatten\cont_frame.$procmux$421_Y, Q = \cont_frame.frame_index).
+Adding SRST signal on $flatten\cont_frame.$procdff$453 ($dff) from module ws2812_player (D = { $flatten\cont_frame.$procmux$415_Y [25] $flatten\cont_frame.$procmux$415_Y [23:19] $flatten\cont_frame.$procmux$415_Y [17] $flatten\cont_frame.$procmux$415_Y [15:12] $flatten\cont_frame.$procmux$415_Y [7] }, Q = { \cont_frame.frame_timer [25] \cont_frame.frame_timer [23:19] \cont_frame.frame_timer [17] \cont_frame.frame_timer [15:12] \cont_frame.frame_timer [7] }, rval = 12'111111111111).
+Adding SRST signal on $flatten\cont_frame.$procdff$453 ($dff) from module ws2812_player (D = { $flatten\cont_frame.$procmux$412_Y [31:26] $flatten\cont_frame.$procmux$412_Y [24] $flatten\cont_frame.$procmux$412_Y [18] $flatten\cont_frame.$procmux$412_Y [16] $flatten\cont_frame.$procmux$412_Y [11:8] $flatten\cont_frame.$procmux$412_Y [6:0] }, Q = { \cont_frame.frame_timer [31:26] \cont_frame.frame_timer [24] \cont_frame.frame_timer [18] \cont_frame.frame_timer [16] \cont_frame.frame_timer [11:8] \cont_frame.frame_timer [6:0] }, rval = 20'00000000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$532 ($sdff) from module ws2812_player (D = { $flatten\cont_frame.$add$cont_frame.v:22$232_Y [31:26] $flatten\cont_frame.$add$cont_frame.v:22$232_Y [24] $flatten\cont_frame.$add$cont_frame.v:22$232_Y [18] $flatten\cont_frame.$add$cont_frame.v:22$232_Y [16] $flatten\cont_frame.$add$cont_frame.v:22$232_Y [11:8] $flatten\cont_frame.$add$cont_frame.v:22$232_Y [6:0] }, Q = { \cont_frame.frame_timer [31:26] \cont_frame.frame_timer [24] \cont_frame.frame_timer [18] \cont_frame.frame_timer [16] \cont_frame.frame_timer [11:8] \cont_frame.frame_timer [6:0] }).
+Adding EN signal on $auto$ff.cc:337:slice$531 ($sdff) from module ws2812_player (D = { $flatten\cont_frame.$procmux$415_Y [25] $flatten\cont_frame.$procmux$415_Y [23:19] $flatten\cont_frame.$procmux$415_Y [17] $flatten\cont_frame.$procmux$415_Y [15:12] $flatten\cont_frame.$procmux$415_Y [7] }, Q = { \cont_frame.frame_timer [25] \cont_frame.frame_timer [23:19] \cont_frame.frame_timer [17] \cont_frame.frame_timer [15:12] \cont_frame.frame_timer [7] }).
+Adding SRST signal on $flatten\cont_rst.$procdff$454 ($dff) from module ws2812_player (D = $flatten\cont_rst.$add$cont_reset.v:18$228_Y, Q = \cont_rst.reset_counter, rval = 16'0000000000000000).
+Adding SRST signal on $flatten\led.\bit0.$procdff$438 ($dff) from module ws2812_player (D = $flatten\led.\bit0.$procmux$292_Y, Q = \led.bit0.activo, rval = 1'0).
+Adding SRST signal on $flatten\led.\bit0.\cont.$procdff$437 ($dff) from module ws2812_player (D = $flatten\led.\bit0.\cont.$add$cont_bit.v:19$275_Y, Q = \led.bit0.cont.cuenta, rval = 6'000000).
+Adding SRST signal on $flatten\led.$procdff$449 ($dff) from module ws2812_player (D = $flatten\led.$procmux$365_Y, Q = \led.bit_num, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:337:slice$556 ($sdff) from module ws2812_player (D = $flatten\led.$procmux$365_Y, Q = \led.bit_num).
+Adding SRST signal on $flatten\led.$procdff$448 ($dff) from module ws2812_player (D = $flatten\led.$procmux$378_Y, Q = \led.activo, rval = 1'0).
+Adding SRST signal on $flatten\led.$procdff$447 ($dff) from module ws2812_player (D = $flatten\led.$procmux$391_Y, Q = \led.dato, rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$567 ($sdff) from module ws2812_player (D = $flatten\led.$procmux$391_Y, Q = \led.dato).
+Adding SRST signal on $flatten\cont_led.$procdff$451 ($dff) from module ws2812_player (D = $flatten\cont_led.$procmux$399_Y [10:8], Q = \cont_led.rom_addr [10:8], rval = 3'000).
+Adding SRST signal on $flatten\cont_led.$procdff$451 ($dff) from module ws2812_player (D = $flatten\cont_led.$procmux$396_Y [7:0], Q = \cont_led.rom_addr [7:0], rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$578 ($sdff) from module ws2812_player (D = $flatten\cont_led.$add$cont_led.v:25$239_Y [7:0], Q = \cont_led.rom_addr [7:0]).
+Adding EN signal on $auto$ff.cc:337:slice$577 ($sdff) from module ws2812_player (D = $flatten\cont_led.$procmux$399_Y [10:8], Q = \cont_led.rom_addr [10:8]).
+Adding SRST signal on $flatten\cont_led.$procdff$450 ($dff) from module ws2812_player (D = $flatten\cont_led.$procmux$404_Y, Q = \cont_led.led_index, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$587 ($sdff) from module ws2812_player (D = $flatten\cont_led.$add$cont_led.v:24$238_Y, Q = \cont_led.led_index).
+
+11.15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 18 unused cells and 28 unused wires.
+<suppressed ~19 debug messages>
+
+11.15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+<suppressed ~5 debug messages>
+
+11.15.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.15.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812_player..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+11.15.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812_player.
+Performed a total of 0 changes.
+
+11.15.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 132 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Computing hashes of 124 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Computing hashes of 121 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+<suppressed ~33 debug messages>
+Removed a total of 11 cells.
+
+11.15.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.15.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~1 debug messages>
+
+11.15.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.15.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.15.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812_player..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+11.15.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812_player.
+Performed a total of 0 changes.
+
+11.15.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 121 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.15.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.15.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+
+11.15.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.15.23. Finished fast OPT passes. (There is nothing left to do.)
+
+11.16. Executing WREDUCE pass (reducing word size of cells).
+Removed top 21 address bits (of 32) from memory init port ws2812_player.$flatten\mem.$meminit$\frame_mem$Memoria.v:11$254 (mem.frame_mem).
+Removed top 1 bits (of 2) from port B of cell ws2812_player.$auto$opt_dff.cc:235:make_patterns_logic$526 ($ne).
+Removed top 1 bits (of 2) from port B of cell ws2812_player.$auto$opt_dff.cc:235:make_patterns_logic$524 ($ne).
+Removed top 1 bits (of 2) from port B of cell ws2812_player.$auto$opt_dff.cc:235:make_patterns_logic$522 ($ne).
+Removed top 1 bits (of 2) from port B of cell ws2812_player.$auto$fsm_map.cc:77:implement_pattern_cache$509 ($eq).
+Removed top 1 bits (of 2) from port B of cell ws2812_player.$auto$fsm_map.cc:77:implement_pattern_cache$487 ($eq).
+Removed top 1 bits (of 2) from port B of cell ws2812_player.$auto$fsm_map.cc:77:implement_pattern_cache$480 ($eq).
+Removed top 1 bits (of 6) from port B of cell ws2812_player.$flatten\led.\bit0.\cont.$eq$cont_bit.v:9$271 ($eq).
+Removed top 27 bits (of 32) from mux cell ws2812_player.$flatten\led.\bit0.$ternary$pulso_ws.v:16$265 ($mux).
+Removed top 8 bits (of 16) from port B of cell ws2812_player.$flatten\cont_led.$eq$cont_led.v:12$235 ($eq).
+Removed top 6 bits (of 32) from mux cell ws2812_player.$flatten\cont_frame.$procmux$415 ($mux).
+Removed top 6 bits (of 32) from mux cell ws2812_player.$flatten\cont_frame.$procmux$412 ($mux).
+Removed top 13 bits (of 16) from port B of cell ws2812_player.$flatten\cont_frame.$eq$cont_frame.v:25$233 ($eq).
+Removed top 6 bits (of 32) from port B of cell ws2812_player.$flatten\cont_frame.$lt$cont_frame.v:21$231 ($lt).
+Removed top 6 bits (of 32) from port B of cell ws2812_player.$flatten\cont_frame.$ge$cont_frame.v:11$229 ($ge).
+Removed top 3 bits (of 16) from port B of cell ws2812_player.$flatten\cont_rst.$eq$cont_reset.v:9$226 ($eq).
+Removed top 6 bits (of 32) from wire ws2812_player.$flatten\cont_frame.$procmux$415_Y.
+Removed top 6 bits (of 32) from wire ws2812_player.$flatten\cont_frame.$procmux$412_Y.
+Removed top 27 bits (of 32) from wire ws2812_player.$flatten\led.\bit0.$ternary$pulso_ws.v:16$265_Y.
+
+11.17. Executing PEEPOPT pass (run peephole optimizers).
+
+11.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+11.19. Executing SHARE pass (SAT-based resource sharing).
+
+11.20. Executing TECHMAP pass (map to technology primitives).
+
+11.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+11.20.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~88 debug messages>
+
+11.21. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.22. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+
+11.23. Executing TECHMAP pass (map to technology primitives).
+
+11.23.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/usr/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+11.23.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+11.24. Executing TECHMAP pass (map to technology primitives).
+
+11.24.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/lattice/dsp_map_18x18.v
+Parsing Verilog input from `/usr/bin/../share/yosys/lattice/dsp_map_18x18.v' to AST representation.
+Generating RTLIL representation for module `$__MUL18X18'.
+Successfully finished Verilog frontend.
+
+11.24.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+11.25. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module ws2812_player:
+  creating $macc model for $flatten\cont_frame.$add$cont_frame.v:22$232 ($add).
+  creating $macc model for $flatten\led.$sub$Corr_grb.v:43$251 ($sub).
+  creating $macc model for $flatten\led.\bit0.\cont.$add$cont_bit.v:19$275 ($add).
+  creating $macc model for $flatten\cont_frame.$add$cont_frame.v:28$234 ($add).
+  creating $macc model for $flatten\cont_led.$add$cont_led.v:25$239 ($add).
+  creating $macc model for $flatten\cont_led.$add$cont_led.v:24$238 ($add).
+  creating $macc model for $flatten\cont_rst.$add$cont_reset.v:18$228 ($add).
+  creating $alu model for $macc $flatten\cont_rst.$add$cont_reset.v:18$228.
+  creating $alu model for $macc $flatten\cont_led.$add$cont_led.v:24$238.
+  creating $alu model for $macc $flatten\cont_led.$add$cont_led.v:25$239.
+  creating $alu model for $macc $flatten\cont_frame.$add$cont_frame.v:28$234.
+  creating $alu model for $macc $flatten\led.\bit0.\cont.$add$cont_bit.v:19$275.
+  creating $alu model for $macc $flatten\led.$sub$Corr_grb.v:43$251.
+  creating $alu model for $macc $flatten\cont_frame.$add$cont_frame.v:22$232.
+  creating $alu model for $flatten\cont_frame.$lt$cont_frame.v:21$231 ($lt): new $alu
+  creating $alu model for $flatten\led.\bit0.$lt$pulso_ws.v:17$266 ($lt): new $alu
+  creating $alu model for $flatten\cont_frame.$ge$cont_frame.v:11$229 ($ge): merged with $flatten\cont_frame.$lt$cont_frame.v:21$231.
+  creating $alu cell for $flatten\led.\bit0.$lt$pulso_ws.v:17$266: $auto$alumacc.cc:512:replace_alu$599
+  creating $alu cell for $flatten\cont_frame.$lt$cont_frame.v:21$231, $flatten\cont_frame.$ge$cont_frame.v:11$229: $auto$alumacc.cc:512:replace_alu$604
+  creating $alu cell for $flatten\cont_frame.$add$cont_frame.v:22$232: $auto$alumacc.cc:512:replace_alu$617
+  creating $alu cell for $flatten\led.$sub$Corr_grb.v:43$251: $auto$alumacc.cc:512:replace_alu$620
+  creating $alu cell for $flatten\led.\bit0.\cont.$add$cont_bit.v:19$275: $auto$alumacc.cc:512:replace_alu$623
+  creating $alu cell for $flatten\cont_frame.$add$cont_frame.v:28$234: $auto$alumacc.cc:512:replace_alu$626
+  creating $alu cell for $flatten\cont_led.$add$cont_led.v:25$239: $auto$alumacc.cc:512:replace_alu$629
+  creating $alu cell for $flatten\cont_led.$add$cont_led.v:24$238: $auto$alumacc.cc:512:replace_alu$632
+  creating $alu cell for $flatten\cont_rst.$add$cont_reset.v:18$228: $auto$alumacc.cc:512:replace_alu$635
+  created 9 $alu and 0 $macc cells.
+
+11.26. Executing OPT pass (performing simple optimizations).
+
+11.26.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+<suppressed ~2 debug messages>
+
+11.26.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 126 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.26.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812_player..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+11.26.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812_player.
+Performed a total of 0 changes.
+
+11.26.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 126 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.26.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.26.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+11.26.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.26.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.26.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812_player..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+11.26.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812_player.
+Performed a total of 0 changes.
+
+11.26.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 126 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.26.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.26.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+
+11.26.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.26.16. Finished fast OPT passes. (There is nothing left to do.)
+
+11.27. Executing MEMORY pass.
+
+11.27.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+11.27.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+11.27.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+11.27.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+11.27.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\mem.frame_mem'[0] in module `\ws2812_player': merging output FF to cell.
+
+11.27.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 1 unused cells and 13 unused wires.
+<suppressed ~2 debug messages>
+
+11.27.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+11.27.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+11.27.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+
+11.27.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+11.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+
+11.29. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+found attribute 'ram_style = block' on memory ws2812_player.mem.frame_mem, forced mapping to block RAM
+mapping memory ws2812_player.mem.frame_mem via $__PDPW16KD_
+<suppressed ~141 debug messages>
+
+11.30. Executing TECHMAP pass (map to technology primitives).
+
+11.30.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/lattice/lutrams_map_trellis.v
+Parsing Verilog input from `/usr/bin/../share/yosys/lattice/lutrams_map_trellis.v' to AST representation.
+Generating RTLIL representation for module `$__TRELLIS_DPR16X4_'.
+Successfully finished Verilog frontend.
+
+11.30.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/lattice/brams_map_16kd.v
+Parsing Verilog input from `/usr/bin/../share/yosys/lattice/brams_map_16kd.v' to AST representation.
+Generating RTLIL representation for module `$__DP16KD_'.
+Generating RTLIL representation for module `$__PDPW16KD_'.
+Successfully finished Verilog frontend.
+
+11.30.3. Continuing TECHMAP pass.
+Using template $paramod$e261af34c9b22b55e1b25a646ec07899115338df$__PDPW16KD_ for cells of type $__PDPW16KD_.
+No more expansions possible.
+<suppressed ~29 debug messages>
+
+11.31. Executing OPT pass (performing simple optimizations).
+
+11.31.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+<suppressed ~16 debug messages>
+
+11.31.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 119 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.31.3. Executing OPT_DFF pass (perform DFF optimizations).
+Removing always-active EN on $auto$memory_libmap.cc:1669:generate_mux$652 ($dffe) from module ws2812_player.
+
+11.31.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 0 unused cells and 33 unused wires.
+<suppressed ~1 debug messages>
+
+11.31.5. Rerunning OPT passes. (Removed registers in this run.)
+
+11.31.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.31.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 119 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.31.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.31.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+
+11.31.10. Finished fast OPT passes.
+
+11.32. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+11.33. Executing OPT pass (performing simple optimizations).
+
+11.33.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.33.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 119 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.33.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812_player..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~29 debug messages>
+
+11.33.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812_player.
+    Consolidated identical input bits for $mux cell $flatten\led.\bit0.$ternary$pulso_ws.v:16$265:
+      Old ports: A=5'01010, B=5'10100, Y=\led.bit0.tiempo [4:0]
+      New ports: A=2'01, B=2'10, Y=\led.bit0.tiempo [2:1]
+      New connections: { \led.bit0.tiempo [4:3] \led.bit0.tiempo [0] } = { \led.bit0.tiempo [2:1] 1'0 }
+  Optimizing cells in module \ws2812_player.
+Performed a total of 1 changes.
+
+11.33.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 119 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.33.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.33.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+
+11.33.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+<suppressed ~1 debug messages>
+
+11.33.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.33.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812_player..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~29 debug messages>
+
+11.33.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812_player.
+Performed a total of 0 changes.
+
+11.33.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 120 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.33.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.33.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+11.33.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.33.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.33.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812_player..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~29 debug messages>
+
+11.33.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812_player.
+Performed a total of 0 changes.
+
+11.33.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 119 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.33.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.33.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+
+11.33.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.33.23. Finished fast OPT passes. (There is nothing left to do.)
+
+11.34. Executing TECHMAP pass (map to technology primitives).
+
+11.34.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+11.34.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/lattice/arith_map_ccu2c.v
+Parsing Verilog input from `/usr/bin/../share/yosys/lattice/arith_map_ccu2c.v' to AST representation.
+Generating RTLIL representation for module `\_80_ccu2c_alu'.
+Successfully finished Verilog frontend.
+
+11.34.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $bmux.
+Using extmapper simplemap for cells of type $dff.
+Using template $paramod$2af30114e9bd4ccb04dad757b3f0a8f6bf0615b0\_80_ccu2c_alu for cells of type $alu.
+Using template $paramod$2f5fb04daf2da94d981bf9455fa4454c6ec8b705\_80_ccu2c_alu for cells of type $alu.
+Using template $paramod$32efbfac1c4dc57230cf86180788fdfd12e3b511\_80_ccu2c_alu for cells of type $alu.
+Using template $paramod$dc04b7d98e503a7bab16fce2df70e6e2c5ca34d6\_80_ccu2c_alu for cells of type $alu.
+Using template $paramod$6a42b6fefed750f8a1c58eab59479d960557103c\_80_ccu2c_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$275be2cc3fa96a4c6777a1ac36cc9e92d410979f\_80_ccu2c_alu for cells of type $alu.
+Using template $paramod$b18e16801adf491a64caa0542270798e5d4ac6b6\_80_ccu2c_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+<suppressed ~644 debug messages>
+
+11.35. Executing OPT pass (performing simple optimizations).
+
+11.35.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+<suppressed ~615 debug messages>
+
+11.35.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 775 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Computing hashes of 710 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Computing hashes of 709 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Computing hashes of 708 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+<suppressed ~201 debug messages>
+Removed a total of 67 cells.
+
+11.35.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.35.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 174 unused cells and 543 unused wires.
+<suppressed ~175 debug messages>
+
+11.35.5. Finished fast OPT passes.
+
+11.36. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+
+11.37. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+11.38. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 599 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Computing hashes of 535 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+<suppressed ~192 debug messages>
+Removed a total of 64 cells.
+
+11.39. Executing TECHMAP pass (map to technology primitives).
+
+11.39.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/lattice/cells_map_trellis.v
+Parsing Verilog input from `/usr/bin/../share/yosys/lattice/cells_map_trellis.v' to AST representation.
+Generating RTLIL representation for module `$_DFF_N_'.
+Generating RTLIL representation for module `$_DFF_P_'.
+Generating RTLIL representation for module `$_DFFE_NN_'.
+Generating RTLIL representation for module `$_DFFE_PN_'.
+Generating RTLIL representation for module `$_DFFE_NP_'.
+Generating RTLIL representation for module `$_DFFE_PP_'.
+Generating RTLIL representation for module `$_DFF_NP0_'.
+Generating RTLIL representation for module `$_DFF_NP1_'.
+Generating RTLIL representation for module `$_DFF_PP0_'.
+Generating RTLIL representation for module `$_DFF_PP1_'.
+Generating RTLIL representation for module `$_SDFF_NP0_'.
+Generating RTLIL representation for module `$_SDFF_NP1_'.
+Generating RTLIL representation for module `$_SDFF_PP0_'.
+Generating RTLIL representation for module `$_SDFF_PP1_'.
+Generating RTLIL representation for module `$_DFFE_NP0P_'.
+Generating RTLIL representation for module `$_DFFE_NP1P_'.
+Generating RTLIL representation for module `$_DFFE_PP0P_'.
+Generating RTLIL representation for module `$_DFFE_PP1P_'.
+Generating RTLIL representation for module `$_DFFE_NP0N_'.
+Generating RTLIL representation for module `$_DFFE_NP1N_'.
+Generating RTLIL representation for module `$_DFFE_PP0N_'.
+Generating RTLIL representation for module `$_DFFE_PP1N_'.
+Generating RTLIL representation for module `$_SDFFE_NP0P_'.
+Generating RTLIL representation for module `$_SDFFE_NP1P_'.
+Generating RTLIL representation for module `$_SDFFE_PP0P_'.
+Generating RTLIL representation for module `$_SDFFE_PP1P_'.
+Generating RTLIL representation for module `$_SDFFE_NP0N_'.
+Generating RTLIL representation for module `$_SDFFE_NP1N_'.
+Generating RTLIL representation for module `$_SDFFE_PP0N_'.
+Generating RTLIL representation for module `$_SDFFE_PP1N_'.
+Generating RTLIL representation for module `$_ALDFF_NP_'.
+Generating RTLIL representation for module `$_ALDFF_PP_'.
+Generating RTLIL representation for module `$_ALDFFE_NPN_'.
+Generating RTLIL representation for module `$_ALDFFE_NPP_'.
+Generating RTLIL representation for module `$_ALDFFE_PPN_'.
+Generating RTLIL representation for module `$_ALDFFE_PPP_'.
+Generating RTLIL representation for module `\FD1P3AX'.
+Generating RTLIL representation for module `\FD1P3AY'.
+Generating RTLIL representation for module `\FD1P3BX'.
+Generating RTLIL representation for module `\FD1P3DX'.
+Generating RTLIL representation for module `\FD1P3IX'.
+Generating RTLIL representation for module `\FD1P3JX'.
+Generating RTLIL representation for module `\FD1S3AX'.
+Generating RTLIL representation for module `\FD1S3AY'.
+Generating RTLIL representation for module `\FD1S3BX'.
+Generating RTLIL representation for module `\FD1S3DX'.
+Generating RTLIL representation for module `\FD1S3IX'.
+Generating RTLIL representation for module `\FD1S3JX'.
+Generating RTLIL representation for module `\IFS1P3BX'.
+Generating RTLIL representation for module `\IFS1P3DX'.
+Generating RTLIL representation for module `\IFS1P3IX'.
+Generating RTLIL representation for module `\IFS1P3JX'.
+Generating RTLIL representation for module `\OFS1P3BX'.
+Generating RTLIL representation for module `\OFS1P3DX'.
+Generating RTLIL representation for module `\OFS1P3IX'.
+Generating RTLIL representation for module `\OFS1P3JX'.
+Generating RTLIL representation for module `\IB'.
+Generating RTLIL representation for module `\IBPU'.
+Generating RTLIL representation for module `\IBPD'.
+Generating RTLIL representation for module `\OB'.
+Generating RTLIL representation for module `\OBZ'.
+Generating RTLIL representation for module `\OBZPU'.
+Generating RTLIL representation for module `\OBZPD'.
+Generating RTLIL representation for module `\OBCO'.
+Generating RTLIL representation for module `\BB'.
+Generating RTLIL representation for module `\BBPU'.
+Generating RTLIL representation for module `\BBPD'.
+Generating RTLIL representation for module `\ILVDS'.
+Generating RTLIL representation for module `\OLVDS'.
+Successfully finished Verilog frontend.
+
+11.39.2. Continuing TECHMAP pass.
+Using template $_DFF_PP0_ for cells of type $_DFF_PP0_.
+Using template $paramod$_DFF_P_\_TECHMAP_WIREINIT_Q_=1'x for cells of type $_DFF_P_.
+Using template $_SDFFE_PP0P_ for cells of type $_SDFFE_PP0P_.
+Using template $_SDFFE_PP0N_ for cells of type $_SDFFE_PP0N_.
+Using template $_SDFFE_PP1P_ for cells of type $_SDFFE_PP1P_.
+Using template $_SDFF_PP0_ for cells of type $_SDFF_PP0_.
+No more expansions possible.
+<suppressed ~220 debug messages>
+
+11.40. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+<suppressed ~27 debug messages>
+
+11.41. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+11.42. Executing LATTICE_GSR pass (implement FF init values).
+Handling GSR in ws2812_player.
+
+11.43. Executing ATTRMVCP pass (move or copy attributes).
+
+11.44. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 0 unused cells and 854 unused wires.
+<suppressed ~1 debug messages>
+
+11.45. Executing TECHMAP pass (map to technology primitives).
+
+11.45.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/lattice/latches_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/lattice/latches_map.v' to AST representation.
+Generating RTLIL representation for module `$_DLATCH_N_'.
+Generating RTLIL representation for module `$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+11.45.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+11.46. Executing ABC9 pass.
+
+11.46.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+11.46.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+11.46.3. Executing PROC pass (convert processes to netlists).
+
+11.46.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+11.46.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/lattice/common_sim.vh:282$3017 in module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
+Removed a total of 0 dead cases.
+
+11.46.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 1 assignment to connection.
+
+11.46.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/usr/bin/../share/yosys/lattice/common_sim.vh:278$3018'.
+  Set init value: \Q = 1'0
+
+11.46.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \muxlsr in `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/usr/bin/../share/yosys/lattice/common_sim.vh:282$3017'.
+
+11.46.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+11.46.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/usr/bin/../share/yosys/lattice/common_sim.vh:278$3018'.
+Creating decoders for process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/usr/bin/../share/yosys/lattice/common_sim.vh:282$3017'.
+     1/1: $0\Q[0:0]
+
+11.46.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+11.46.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.\Q' using process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/usr/bin/../share/yosys/lattice/common_sim.vh:282$3017'.
+  created $adff cell `$procdff$3023' with positive edge clock and positive level reset.
+
+11.46.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+11.46.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/usr/bin/../share/yosys/lattice/common_sim.vh:278$3018'.
+Found and cleaned up 1 empty switch in `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/usr/bin/../share/yosys/lattice/common_sim.vh:282$3017'.
+Removing empty process `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.$proc$/usr/bin/../share/yosys/lattice/common_sim.vh:282$3017'.
+Cleaned up 1 empty switch.
+
+11.46.4. Executing SCC pass (detecting logic loops).
+Found an SCC: $auto$opt_expr.cc:607:replace_const_cells$2559 $auto$ff.cc:337:slice$1431 $auto$simplemap.cc:157:simplemap_reduce$1185 $auto$opt_expr.cc:607:replace_const_cells$2561 $auto$ff.cc:337:slice$1430 $auto$simplemap.cc:46:simplemap_not$2394 $auto$ff.cc:337:slice$1429 $auto$simplemap.cc:157:simplemap_reduce$1194 $auto$simplemap.cc:157:simplemap_reduce$1184 $auto$opt_expr.cc:607:replace_const_cells$2565 $auto$ff.cc:337:slice$1428 $auto$opt_expr.cc:607:replace_const_cells$2567 $auto$ff.cc:337:slice$1427 $auto$simplemap.cc:157:simplemap_reduce$1183 $auto$opt_expr.cc:607:replace_const_cells$2569 $auto$ff.cc:337:slice$1426 $auto$simplemap.cc:157:simplemap_reduce$1199 $auto$simplemap.cc:157:simplemap_reduce$1193 $auto$simplemap.cc:157:simplemap_reduce$1182 $auto$opt_expr.cc:607:replace_const_cells$2571 $auto$ff.cc:337:slice$1425 $auto$simplemap.cc:157:simplemap_reduce$1179 $auto$opt_expr.cc:607:replace_const_cells$2573 $auto$ff.cc:337:slice$1424 $auto$simplemap.cc:157:simplemap_reduce$1202 $auto$simplemap.cc:157:simplemap_reduce$1198 $auto$simplemap.cc:157:simplemap_reduce$1191 $auto$simplemap.cc:157:simplemap_reduce$1178 $auto$opt_expr.cc:607:replace_const_cells$2575 $auto$ff.cc:337:slice$1423 $auto$opt_expr.cc:607:replace_const_cells$2577 $auto$ff.cc:337:slice$1422 $auto$simplemap.cc:157:simplemap_reduce$1175 $auto$opt_expr.cc:607:replace_const_cells$2579 $auto$ff.cc:337:slice$1421 $auto$opt_expr.cc:607:replace_const_cells$2581 $auto$ff.cc:337:slice$1420 $auto$simplemap.cc:157:simplemap_reduce$1197 $auto$simplemap.cc:157:simplemap_reduce$1189 $auto$simplemap.cc:157:simplemap_reduce$1174 $auto$opt_expr.cc:607:replace_const_cells$2583 $auto$simplemap.cc:46:simplemap_not$1205 $auto$simplemap.cc:256:simplemap_logbin$2397 $auto$alumacc.cc:512:replace_alu$604.slice[22].ccu2c_i $auto$alumacc.cc:512:replace_alu$604.slice[20].ccu2c_i $auto$alumacc.cc:512:replace_alu$604.slice[18].ccu2c_i $auto$alumacc.cc:512:replace_alu$604.slice[16].ccu2c_i $auto$alumacc.cc:512:replace_alu$604.slice[14].ccu2c_i $auto$alumacc.cc:512:replace_alu$604.slice[12].ccu2c_i $auto$alumacc.cc:512:replace_alu$604.slice[10].ccu2c_i $auto$alumacc.cc:512:replace_alu$604.slice[8].ccu2c_i $auto$alumacc.cc:512:replace_alu$604.slice[6].ccu2c_i $auto$alumacc.cc:512:replace_alu$604.slice[4].ccu2c_i $auto$alumacc.cc:512:replace_alu$604.slice[2].ccu2c_i $auto$alumacc.cc:512:replace_alu$604.slice[0].ccu2c_i $auto$ff.cc:337:slice$1419 $auto$simplemap.cc:157:simplemap_reduce$1173 $auto$simplemap.cc:46:simplemap_not$2371 $auto$ff.cc:337:slice$1418 $auto$simplemap.cc:46:simplemap_not$2370 $auto$ff.cc:337:slice$1417 $auto$simplemap.cc:157:simplemap_reduce$1188 $auto$simplemap.cc:157:simplemap_reduce$1172 $auto$simplemap.cc:46:simplemap_not$2369 $auto$ff.cc:337:slice$1416 $auto$simplemap.cc:46:simplemap_not$2368 $auto$ff.cc:337:slice$1415 $auto$simplemap.cc:157:simplemap_reduce$1171 $auto$simplemap.cc:46:simplemap_not$2367 $auto$ff.cc:337:slice$1414 $auto$simplemap.cc:46:simplemap_not$2366 $auto$ff.cc:337:slice$1413 $auto$simplemap.cc:157:simplemap_reduce$1204 $auto$simplemap.cc:157:simplemap_reduce$1201 $auto$simplemap.cc:157:simplemap_reduce$1196 $auto$simplemap.cc:157:simplemap_reduce$1187 $auto$simplemap.cc:157:simplemap_reduce$1170 $auto$simplemap.cc:46:simplemap_not$2365 $auto$ff.cc:337:slice$1412 $auto$simplemap.cc:157:simplemap_reduce$1313 $auto$simplemap.cc:298:simplemap_mux$1580 $auto$simplemap.cc:157:simplemap_reduce$1166 $auto$simplemap.cc:46:simplemap_not$1167 $auto$simplemap.cc:106:simplemap_bitop$1168
+Found an SCC: $auto$ff.cc:337:slice$1374 $auto$simplemap.cc:157:simplemap_reduce$1600 $auto$opt_expr.cc:607:replace_const_cells$2645 $auto$ff.cc:337:slice$1373 $auto$opt_expr.cc:607:replace_const_cells$2639 $auto$ff.cc:337:slice$1372 $auto$simplemap.cc:157:simplemap_reduce$1599 $auto$opt_expr.cc:607:replace_const_cells$2641 $auto$ff.cc:337:slice$1371 $auto$opt_expr.cc:607:replace_const_cells$2643 $auto$ff.cc:337:slice$1370 $auto$simplemap.cc:256:simplemap_logbin$1609 $auto$simplemap.cc:227:simplemap_lognot$1606 $auto$simplemap.cc:157:simplemap_reduce$1604 $auto$simplemap.cc:157:simplemap_reduce$1602 $auto$simplemap.cc:157:simplemap_reduce$1598 $auto$ff.cc:337:slice$1369 $auto$simplemap.cc:157:simplemap_reduce$1367
+Found an SCC: $auto$ff.cc:337:slice$1397 $auto$simplemap.cc:157:simplemap_reduce$1864 $auto$ff.cc:337:slice$1396 $auto$ff.cc:337:slice$1395 $auto$simplemap.cc:157:simplemap_reduce$1869 $auto$simplemap.cc:157:simplemap_reduce$1863 $auto$simplemap.cc:46:simplemap_not$1953 $auto$ff.cc:337:slice$1394 $auto$simplemap.cc:46:simplemap_not$1952 $auto$ff.cc:337:slice$1393 $auto$simplemap.cc:157:simplemap_reduce$1862 $auto$simplemap.cc:46:simplemap_not$1951 $auto$ff.cc:337:slice$1392 $auto$ff.cc:337:slice$1391 $auto$simplemap.cc:157:simplemap_reduce$1872 $auto$simplemap.cc:157:simplemap_reduce$1868 $auto$simplemap.cc:157:simplemap_reduce$1861 $auto$simplemap.cc:46:simplemap_not$1949 $auto$ff.cc:337:slice$1390 $auto$ff.cc:337:slice$1389 $auto$simplemap.cc:157:simplemap_reduce$1860 $auto$opt_expr.cc:607:replace_const_cells$2613 $auto$ff.cc:337:slice$1388 $auto$ff.cc:337:slice$1387 $auto$simplemap.cc:157:simplemap_reduce$1867 $auto$simplemap.cc:157:simplemap_reduce$1859 $auto$ff.cc:337:slice$1386 $auto$opt_expr.cc:607:replace_const_cells$2615 $auto$ff.cc:337:slice$1385 $auto$simplemap.cc:157:simplemap_reduce$1858 $auto$ff.cc:337:slice$1384 $auto$opt_expr.cc:607:replace_const_cells$2617 $auto$ff.cc:337:slice$1383 $auto$simplemap.cc:227:simplemap_lognot$1876 $auto$simplemap.cc:157:simplemap_reduce$1874 $auto$simplemap.cc:157:simplemap_reduce$1871 $auto$simplemap.cc:157:simplemap_reduce$1866 $auto$simplemap.cc:157:simplemap_reduce$1857 $auto$opt_expr.cc:607:replace_const_cells$2603 $auto$ff.cc:337:slice$1382 $auto$simplemap.cc:157:simplemap_reduce$1379
+Found 3 SCCs in module ws2812_player.
+Found 3 SCCs.
+
+11.46.5. Executing ABC9_OPS pass (helper functions for ABC9).
+
+11.46.6. Executing TECHMAP pass (map to technology primitives).
+
+11.46.6.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+11.46.6.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~168 debug messages>
+
+11.46.7. Executing OPT pass (performing simple optimizations).
+
+11.46.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
+
+11.46.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF'.
+Computing hashes of 2 cells of `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF'.
+Finding duplicate cells in `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF'.
+Removed a total of 0 cells.
+
+11.46.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+11.46.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
+Performed a total of 0 changes.
+
+11.46.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF'.
+Computing hashes of 2 cells of `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF'.
+Finding duplicate cells in `$paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF'.
+Removed a total of 0 cells.
+
+11.46.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.46.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF..
+
+11.46.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
+
+11.46.7.9. Finished fast OPT passes. (There is nothing left to do.)
+
+11.46.8. Executing TECHMAP pass (map to technology primitives).
+
+11.46.8.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/abc9_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/abc9_map.v' to AST representation.
+Successfully finished Verilog frontend.
+
+11.46.8.2. Continuing TECHMAP pass.
+Using template $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF for cells of type $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
+No more expansions possible.
+<suppressed ~5 debug messages>
+
+11.46.9. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/abc9_model.v
+Parsing Verilog input from `/usr/bin/../share/yosys/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ABC9_DELAY'.
+Generating RTLIL representation for module `$__ABC9_SCC_BREAKER'.
+Generating RTLIL representation for module `$__DFF_N__$abc9_flop'.
+Generating RTLIL representation for module `$__DFF_P__$abc9_flop'.
+Successfully finished Verilog frontend.
+
+11.46.10. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~2 debug messages>
+
+11.46.11. Executing ABC9_OPS pass (helper functions for ABC9).
+
+11.46.12. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~2 debug messages>
+
+11.46.13. Executing TECHMAP pass (map to technology primitives).
+
+11.46.13.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+11.46.13.2. Continuing TECHMAP pass.
+Using template $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C for cells of type $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\LUT2\INIT=4'1010 for cells of type LUT2.
+Using template $paramod\LUT4\INIT=16'1001011010101010 for cells of type LUT4.
+Using extmapper simplemap for cells of type $mux.
+No more expansions possible.
+<suppressed ~207 debug messages>
+
+11.46.14. Executing OPT pass (performing simple optimizations).
+
+11.46.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+<suppressed ~18 debug messages>
+
+11.46.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 59 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Computing hashes of 57 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+11.46.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812_player..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+11.46.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812_player.
+Performed a total of 0 changes.
+
+11.46.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 57 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.46.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.46.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+Removed 0 unused cells and 55 unused wires.
+<suppressed ~1 debug messages>
+
+11.46.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.46.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.46.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812_player..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+11.46.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812_player.
+Performed a total of 0 changes.
+
+11.46.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812_player'.
+Computing hashes of 57 cells of `\ws2812_player'.
+Finding duplicate cells in `\ws2812_player'.
+Removed a total of 0 cells.
+
+11.46.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.46.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812_player..
+
+11.46.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812_player.
+
+11.46.14.16. Finished fast OPT passes. (There is nothing left to do.)
+
+11.46.15. Executing AIGMAP pass (map logic to AIG).
+Module ws2812_player: replaced 18 cells with 120 new cells, skipped 39 cells.
+  replaced 3 cell types:
+      14 $_MUX_
+       2 $_OR_
+       2 $_XOR_
+  not replaced 3 cell types:
+       4 $_AND_
+       4 $_NOT_
+      31 $specify2
+
+11.46.16. Executing AIGMAP pass (map logic to AIG).
+Module ws2812_player: replaced 177 cells with 981 new cells, skipped 334 cells.
+  replaced 2 cell types:
+      91 $_MUX_
+      86 $_OR_
+  not replaced 9 cell types:
+      53 $_AND_
+      64 $_NOT_
+       1 $__ABC9_SCC_BREAKER
+       9 $scopeinfo
+     136 TRELLIS_FF
+       1 DP16KD
+      66 $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C
+       2 $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF
+       2 $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF_$abc9_byp
+
+11.46.16.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+11.46.16.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+11.46.16.3. Executing XAIGER backend.
+<suppressed ~11 debug messages>
+Extracted 412 AND gates and 1652 wires from module `ws2812_player' to a netlist network with 179 inputs and 162 outputs.
+
+11.46.16.4. Executing ABC9_EXE pass (technology mapping using ABC9).
+
+11.46.16.5. Executing ABC9.
+Running ABC command: "<yosys-exe-dir>/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_lut <abc-temp-dir>/input.lut 
+ABC: + read_box <abc-temp-dir>/input.box 
+ABC: + &read <abc-temp-dir>/input.xaig 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =    179/    162  and =     327  lev =   10 (0.65)  mem = 0.02 MB  box = 68  bb = 2
+ABC: + &scorr 
+ABC: Warning: The network is combinational.
+ABC: + &sweep 
+ABC: + &dc2 
+ABC: + &dch -f -r 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =    179/    162  and =     367  lev =    9 (0.37)  mem = 0.02 MB  ch =   34  box = 68  bb = 2
+ABC: cst =       0  cls =     34  lit =      34  unused =     678  proof =     0
+ABC: + &if -W 300 -v 
+ABC: K = 7. Memory (bytes): Truth =    0. Cut =   76. Obj =  156. Set =  780. CutMin = no
+ABC: Node =     367.  Ch =    34.  Total mem =    0.25 MB. Peak cut mem =    0.01 MB.
+ABC: P:  Del = 1897.00.  Ar =     344.0.  Edge =      438.  Cut =     2249.  T =     0.00 sec
+ABC: P:  Del = 1897.00.  Ar =     344.0.  Edge =      438.  Cut =     2242.  T =     0.00 sec
+ABC: P:  Del = 1897.00.  Ar =     162.0.  Edge =      417.  Cut =     2812.  T =     0.00 sec
+ABC: F:  Del = 1897.00.  Ar =     132.0.  Edge =      397.  Cut =     1785.  T =     0.00 sec
+ABC: A:  Del = 1897.00.  Ar =     128.0.  Edge =      353.  Cut =     1630.  T =     0.00 sec
+ABC: A:  Del = 1897.00.  Ar =     128.0.  Edge =      353.  Cut =     1689.  T =     0.00 sec
+ABC: Total time =     0.00 sec
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + &mfs 
+ABC: The network is not changed by "&mfs".
+ABC: + &ps -l 
+ABC: <abc-temp-dir>/input : i/o =    179/    162  and =     276  lev =    9 (0.37)  mem = 0.02 MB  box = 68  bb = 2
+ABC: Mapping (K=7)  :  lut =    109  edge =     353  lev =    3 (0.21)  levB =   16  mem = 0.01 MB
+ABC: LUT = 109 : 2=25 22.9 %  3=46 42.2 %  4=29 26.6 %  5=6 5.5 %  6=2 1.8 %  7=1 0.9 %  Ave = 3.24
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + &verify 
+ABC: Networks are equivalent.  Time =     0.01 sec
+ABC: + time 
+ABC: elapse: 0.03 seconds, total: 0.03 seconds
+
+11.46.16.6. Executing AIGER frontend.
+<suppressed ~692 debug messages>
+Removed 385 unused cells and 1684 unused wires.
+
+11.46.16.7. Executing ABC9_OPS pass (helper functions for ABC9).
+ABC RESULTS:              $lut cells:      119
+ABC RESULTS:   $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C cells:       66
+ABC RESULTS:   $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF_$abc9_byp cells:        2
+ABC RESULTS:           input signals:       24
+ABC RESULTS:          output signals:       33
+Removing temp directory.
+
+11.46.17. Executing TECHMAP pass (map to technology primitives).
+
+11.46.17.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/abc9_unmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/abc9_unmap.v' to AST representation.
+Generating RTLIL representation for module `$__DFF_x__$abc9_flop'.
+Generating RTLIL representation for module `$__ABC9_SCC_BREAKER'.
+Successfully finished Verilog frontend.
+
+11.46.17.2. Continuing TECHMAP pass.
+Using template $paramod$__ABC9_SCC_BREAKER\WIDTH=32'00000000000000000000000000000011 for cells of type $__ABC9_SCC_BREAKER.
+Using template $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF for cells of type $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF.
+Using template $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF_$abc9_byp for cells of type $paramod$68581f66a8fa831820fa7633bd24ba569ae9d7e3\TRELLIS_FF_$abc9_byp.
+Using template $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C for cells of type $paramod$838872d5a4bab89607f53482b205c0fd50d8b82e\CCU2C.
+No more expansions possible.
+<suppressed ~90 debug messages>
+Removed 39 unused cells and 2201 unused wires.
+
+11.47. Executing TECHMAP pass (map to technology primitives).
+
+11.47.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/lattice/cells_map_trellis.v
+Parsing Verilog input from `/usr/bin/../share/yosys/lattice/cells_map_trellis.v' to AST representation.
+Generating RTLIL representation for module `$_DFF_N_'.
+Generating RTLIL representation for module `$_DFF_P_'.
+Generating RTLIL representation for module `$_DFFE_NN_'.
+Generating RTLIL representation for module `$_DFFE_PN_'.
+Generating RTLIL representation for module `$_DFFE_NP_'.
+Generating RTLIL representation for module `$_DFFE_PP_'.
+Generating RTLIL representation for module `$_DFF_NP0_'.
+Generating RTLIL representation for module `$_DFF_NP1_'.
+Generating RTLIL representation for module `$_DFF_PP0_'.
+Generating RTLIL representation for module `$_DFF_PP1_'.
+Generating RTLIL representation for module `$_SDFF_NP0_'.
+Generating RTLIL representation for module `$_SDFF_NP1_'.
+Generating RTLIL representation for module `$_SDFF_PP0_'.
+Generating RTLIL representation for module `$_SDFF_PP1_'.
+Generating RTLIL representation for module `$_DFFE_NP0P_'.
+Generating RTLIL representation for module `$_DFFE_NP1P_'.
+Generating RTLIL representation for module `$_DFFE_PP0P_'.
+Generating RTLIL representation for module `$_DFFE_PP1P_'.
+Generating RTLIL representation for module `$_DFFE_NP0N_'.
+Generating RTLIL representation for module `$_DFFE_NP1N_'.
+Generating RTLIL representation for module `$_DFFE_PP0N_'.
+Generating RTLIL representation for module `$_DFFE_PP1N_'.
+Generating RTLIL representation for module `$_SDFFE_NP0P_'.
+Generating RTLIL representation for module `$_SDFFE_NP1P_'.
+Generating RTLIL representation for module `$_SDFFE_PP0P_'.
+Generating RTLIL representation for module `$_SDFFE_PP1P_'.
+Generating RTLIL representation for module `$_SDFFE_NP0N_'.
+Generating RTLIL representation for module `$_SDFFE_NP1N_'.
+Generating RTLIL representation for module `$_SDFFE_PP0N_'.
+Generating RTLIL representation for module `$_SDFFE_PP1N_'.
+Generating RTLIL representation for module `$_ALDFF_NP_'.
+Generating RTLIL representation for module `$_ALDFF_PP_'.
+Generating RTLIL representation for module `$_ALDFFE_NPN_'.
+Generating RTLIL representation for module `$_ALDFFE_NPP_'.
+Generating RTLIL representation for module `$_ALDFFE_PPN_'.
+Generating RTLIL representation for module `$_ALDFFE_PPP_'.
+Generating RTLIL representation for module `\FD1P3AX'.
+Generating RTLIL representation for module `\FD1P3AY'.
+Generating RTLIL representation for module `\FD1P3BX'.
+Generating RTLIL representation for module `\FD1P3DX'.
+Generating RTLIL representation for module `\FD1P3IX'.
+Generating RTLIL representation for module `\FD1P3JX'.
+Generating RTLIL representation for module `\FD1S3AX'.
+Generating RTLIL representation for module `\FD1S3AY'.
+Generating RTLIL representation for module `\FD1S3BX'.
+Generating RTLIL representation for module `\FD1S3DX'.
+Generating RTLIL representation for module `\FD1S3IX'.
+Generating RTLIL representation for module `\FD1S3JX'.
+Generating RTLIL representation for module `\IFS1P3BX'.
+Generating RTLIL representation for module `\IFS1P3DX'.
+Generating RTLIL representation for module `\IFS1P3IX'.
+Generating RTLIL representation for module `\IFS1P3JX'.
+Generating RTLIL representation for module `\OFS1P3BX'.
+Generating RTLIL representation for module `\OFS1P3DX'.
+Generating RTLIL representation for module `\OFS1P3IX'.
+Generating RTLIL representation for module `\OFS1P3JX'.
+Generating RTLIL representation for module `\IB'.
+Generating RTLIL representation for module `\IBPU'.
+Generating RTLIL representation for module `\IBPD'.
+Generating RTLIL representation for module `\OB'.
+Generating RTLIL representation for module `\OBZ'.
+Generating RTLIL representation for module `\OBZPU'.
+Generating RTLIL representation for module `\OBZPD'.
+Generating RTLIL representation for module `\OBCO'.
+Generating RTLIL representation for module `\BB'.
+Generating RTLIL representation for module `\BBPU'.
+Generating RTLIL representation for module `\BBPD'.
+Generating RTLIL representation for module `\ILVDS'.
+Generating RTLIL representation for module `\OLVDS'.
+Generating RTLIL representation for module `$lut'.
+Successfully finished Verilog frontend.
+
+11.47.2. Continuing TECHMAP pass.
+Using template $paramod$30305e55a780880b9c824fe3509a4d981acb0f2b$lut for cells of type $lut.
+Using template $paramod$6e238df02989b317f10820a22773676e71120644$lut for cells of type $lut.
+Using template $paramod$364c9ffbffac467d60dfec81bba4e18476c15602$lut for cells of type $lut.
+Using template $paramod$5e9374f44a27c3f8a1c38af244ec43ceb4fb8d4f$lut for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110111 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10100010 for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8$lut for cells of type $lut.
+Using template $paramod$eba7de026ff587370e320127e266317dae097a89$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod$7bb6a37e65823eeb4b38c370fec30ab082759a14$lut for cells of type $lut.
+Using template $paramod$d6ca727e39f31d51d29072e0f33aa09c65e37336$lut for cells of type $lut.
+Using template $paramod$8adf7fbd410d2cc654c288d5be5f7508ee8809b0$lut for cells of type $lut.
+Using template $paramod$b67cf2a054757d0359b8f4dd63f7f1a1a2cac73f$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001000 for cells of type $lut.
+Using template $paramod$2191f2302f27a9ddbd4b0af0d771a8f761f7991f$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1101 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0111 for cells of type $lut.
+Using template $paramod$3f1902fc3f0b2933ccafdaca77cf77fabde31645$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001010 for cells of type $lut.
+Using template $paramod$ce57c8604805f80ab07a0434d106bb987e82ae6c$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11111000 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101100 for cells of type $lut.
+Using template $paramod$5502a85110dbca29ac631107f0b0635e7fade476$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0010 for cells of type $lut.
+Using template $paramod$bea08a495d16293f8cc454a45845d26cde0762b6$lut for cells of type $lut.
+Using template $paramod$3e16029a70fce39a7928de8462baf6960337df0a$lut for cells of type $lut.
+Using template $paramod$7c5f64b6cf68ca4389c34dfdee0b7ef33fda6b46$lut for cells of type $lut.
+Using template $paramod$66cfa457f3bf0a90e11a4f3cf9336b993db8c18a$lut for cells of type $lut.
+Using template $paramod$6391e4dfd73bc2edd94abd59ba97709204cc18d4$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001110 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000100 for cells of type $lut.
+Using template $paramod$65cdee0d08505129baabb50b16fdb8a653d7a4dc$lut for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+No more expansions possible.
+<suppressed ~697 debug messages>
+
+11.48. Executing OPT_LUT_INS pass (discard unused LUT inputs).
+Optimizing LUTs in ws2812_player.
+  Optimizing lut $abc$5436$lut$auto$opt_dff.cc:251:make_patterns_logic$527.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $abc$5436$lut$auto$fsm_map.cc:170:map_fsm$471[3].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 2)
+  Optimizing lut $abc$5436$lut$auto$fsm_map.cc:170:map_fsm$471[3].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 1)
+  Optimizing lut $abc$5436$lut$auto$fsm_map.cc:170:map_fsm$471[3].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 1)
+  Optimizing lut $abc$5436$lut$auto$fsm_map.cc:170:map_fsm$471[3].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 1)
+  Optimizing lut $abc$5436$lut$auto$fsm_map.cc:170:map_fsm$471[3].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut7 (4 -> 1)
+  Optimizing lut $auto$abc9_ops.cc:1612:reintegrate$5471.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1612:reintegrate$5471.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$5436$lut$aiger5435$426.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$5436$lut$auto$opt_dff.cc:251:make_patterns_logic$527.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
+  Optimizing lut $abc$5436$lut$aiger5435$440.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$5436$lut$auto$opt_dff.cc:251:make_patterns_logic$527.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
+  Optimizing lut $abc$5436$lut$auto$fsm_map.cc:170:map_fsm$471[1].genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
+  Optimizing lut $abc$5436$lut$auto$fsm_map.cc:170:map_fsm$471[3].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1612:reintegrate$5471.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $auto$abc9_ops.cc:1612:reintegrate$5472.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$5436$lut$aiger5435$405.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$5436$lut$flatten\led.\bit0.$procmux$292_Y.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
+  Optimizing lut $abc$5436$lut$auto$fsm_map.cc:170:map_fsm$471[3].genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$5436$lut$flatten\led.\bit0.$procmux$292_Y.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
+Removed 0 unused cells and 240 unused wires.
+
+11.49. Executing AUTONAME pass.
+Renamed 592 objects in module ws2812_player (149 iterations).
+<suppressed ~592 debug messages>
+
+11.50. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `ws2812_player'. Setting top module to ws2812_player.
+
+11.50.1. Analyzing design hierarchy..
+Top module:  \ws2812_player
+
+11.50.2. Analyzing design hierarchy..
+Top module:  \ws2812_player
+Removed 0 unused modules.
+
+11.51. Printing statistics.
+
+=== ws2812_player ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      286 wires
+      816 wire bits
+      286 public wires
+      816 public wire bits
+        3 ports
+        3 port bits
+       10 cells
+        9   $scopeinfo
+        1   DP16KD
+      360 submodules
+       66   CCU2C
+        5   L6MUX21
+      137   LUT4
+       14   PFUMX
+      138   TRELLIS_FF
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+       10 ws2812_player
+
+        +----------Count including submodules.
+        | 
+      286 wires
+      816 wire bits
+      286 public wires
+      816 public wire bits
+        3 ports
+        3 port bits
+        - memories
+        - memory bits
+        - processes
+       10 cells
+        9   $scopeinfo
+        1   DP16KD
+      360 submodules
+       66   CCU2C
+        5   L6MUX21
+      137   LUT4
+       14   PFUMX
+      138   TRELLIS_FF
+
+11.52. Executing CHECK pass (checking for obvious problems).
+Checking module ws2812_player...
+Found and reported 0 problems.
+
+11.53. Executing JSON backend.
+
+12. Executing Verilog backend.
+
+12.1. Executing BMUXMAP pass.
+
+12.2. Executing DEMUXMAP pass.
+Dumping module `\ws2812_player'.
+
+End of script. Logfile hash: b3086fa6fc, time: 0.65s, user: 0.54s, system: 0.05s, MEM: 53.04 MB peak
+Yosys 0.66 (git sha1 86f2ddebc-dirty, g++ 16.1.1 -march=x86-64-v3 -mtune=haswell -O3 -fno-plt -fexceptions -fstack-clash-protection -fcf-protection -mpclmul -ffile-prefix-map=/startdir/src=/usr/src/debug/yosys -fPIC -O3) [startdir/yosys at makepkg]
+Time spent: 32% 39x read_verilog (0 sec), 19% 12x techmap (0 sec), ...
