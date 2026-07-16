@@ -1,0 +1,92 @@
+$date
+	Thu Jul 16 05:28:42 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module lsr_bcd_TB $end
+$var wire 8 ! result [7:0] $end
+$var wire 16 " r0 [15:0] $end
+$var reg 4 # add_high [3:0] $end
+$var reg 4 $ add_low [3:0] $end
+$var reg 1 % clk $end
+$var reg 8 & in_data [7:0] $end
+$var reg 1 ' ld_acc $end
+$var reg 1 ( load $end
+$var reg 1 ) rst $end
+$var reg 1 * shift $end
+$scope module uut $end
+$var wire 4 + add_high [3:0] $end
+$var wire 4 , add_low [3:0] $end
+$var wire 1 % clk $end
+$var wire 8 - in_data [7:0] $end
+$var wire 1 ' ld_acc $end
+$var wire 1 ( load $end
+$var wire 1 ) rst $end
+$var wire 1 * shift $end
+$var wire 8 . result [7:0] $end
+$var reg 16 / r0 [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 /
+b0 .
+b10100101 -
+b0 ,
+b0 +
+0*
+1)
+0(
+0'
+b10100101 &
+0%
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10000
+1%
+#20000
+b10100101 "
+b10100101 /
+0%
+1(
+0)
+#30000
+1%
+#40000
+b1 !
+b1 .
+b101001010 "
+b101001010 /
+0%
+1*
+0(
+#50000
+1%
+#60000
+b10000011 !
+b10000011 .
+b1000001101001010 "
+b1000001101001010 /
+0%
+1'
+b11 $
+b11 ,
+b1000 #
+b1000 +
+0*
+#70000
+1%
+#80000
+0%
+0'
