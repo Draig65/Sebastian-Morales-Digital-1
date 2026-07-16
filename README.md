@@ -1,4 +1,4 @@
-# Electronica-digital
+# Electronica_digital_1
 
 ## Integrantes del grupo
 
@@ -13,4 +13,4 @@ Este es el repositorio de calculadora y proyecto final de Electronica Digital Un
 * Algoritmos: donde esta todo lo relacionado a la calculadora.
 * Proyecto: donde esta todo relacionado al proyecto de la pantalla.
 
-Para la calculadora, se encontraran primero todos los diagramas y la logica, dentro de esta estaran los core donde se encontrará los codigos.
+Para la calculadora, se encontraran primero todos los diagramas y la logica, dentro de esta estaran los core donde se encontrará los codigos que viene con los Testbench y archivos de simulacion gtkwave e modoulos correspondientes a cada Algoritmo.
