@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Tue Jul 14 21:18:24 2026
+[*]
+[dumpfile] "/home/sebastian/Electronica-digital/Algoritmos/multiplicador/Core/TB/Corr_iz_TB.vcd"
+[dumpfile_mtime] "Tue Jul 14 21:17:32 2026"
+[dumpfile_size] 1209
+[savefile] "/home/sebastian/Electronica-digital/Algoritmos/multiplicador/Core/TB/Corr_iz.gtkw"
+[timestart] 0
+[size] 1366 768
+[pos] -27 -25
+*-13.792970 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Corr_iz_TB.
+[sst_width] 290
+[signals_width] 118
+[sst_expanded] 1
+[sst_vpaned_height] 215
+@24
+Corr_iz_TB.uut.b[15:0]
+@28
+[color] 3
+Corr_iz_TB.uut.clk
+Corr_iz_TB.uut.load
+@25
+Corr_iz_TB.uut.out_b[31:0]
+@28
+Corr_iz_TB.uut.rst
+Corr_iz_TB.uut.shift
+[pattern_trace] 1
+[pattern_trace] 0

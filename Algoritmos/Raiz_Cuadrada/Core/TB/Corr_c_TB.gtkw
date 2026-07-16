@@ -1,0 +1,37 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Sun Jul 12 04:47:04 2026
+[*]
+[dumpfile] "/home/sebastian/Electronica-digital/Algoritmos/Raiz_Cuadrada/Core/TB/Corr_c_TB.vcd"
+[dumpfile_mtime] "Sun Jul 12 04:43:23 2026"
+[dumpfile_size] 1579
+[savefile] "/home/sebastian/Electronica-digital/Algoritmos/Raiz_Cuadrada/Core/TB/Corr_c_TB.gtkw"
+[timestart] 0
+[size] 1366 768
+[pos] -27 -25
+*-15.489453 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Corr_c_TB.
+[treeopen] Corr_c_TB.uut.
+[sst_width] 290
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 215
+@28
+Corr_c_TB.clk
+Corr_c_TB.rst
+Corr_c_TB.load_b
+Corr_c_TB.calc_c
+@22
+Corr_c_TB.B[4:0]
+Corr_c_TB.C[7:0]
+@28
+Corr_c_TB.uut.clk
+Corr_c_TB.uut.rst
+Corr_c_TB.uut.load_b
+Corr_c_TB.uut.calc_c
+@22
+Corr_c_TB.uut.B[4:0]
+Corr_c_TB.uut.C[7:0]
+Corr_c_TB.check_result.expected[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

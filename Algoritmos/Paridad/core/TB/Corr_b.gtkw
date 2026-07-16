@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Tue Jul 14 21:58:26 2026
+[*]
+[dumpfile] "/home/sebastian/Electronica-digital/Algoritmos/Paridad/core/TB/Corr_b_TB.vcd"
+[dumpfile_mtime] "Tue Jul 14 21:56:57 2026"
+[dumpfile_size] 1235
+[savefile] "/home/sebastian/Electronica-digital/Algoritmos/Paridad/core/TB/Corr_b.gtkw"
+[timestart] 0
+[size] 1366 768
+[pos] -1 -1
+*-13.792970 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Corr_b_TB.
+[sst_width] 290
+[signals_width] 118
+[sst_expanded] 1
+[sst_vpaned_height] 215
+@25
+Corr_b_TB.in_B[15:0]
+@24
+Corr_b_TB.out_B[15:0]
+@28
+Corr_b_TB.b0
+[color] 3
+Corr_b_TB.clk
+Corr_b_TB.load
+Corr_b_TB.rst
+Corr_b_TB.shift
+[pattern_trace] 1
+[pattern_trace] 0

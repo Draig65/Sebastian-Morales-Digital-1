@@ -1,0 +1,95 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Sun Jul 12 05:06:24 2026
+[*]
+[dumpfile] "/home/sebastian/Electronica-digital/Algoritmos/Raiz_Cuadrada/Core/TB/raiz_TB.vcd"
+[dumpfile_mtime] "Sun Jul 12 05:02:43 2026"
+[dumpfile_size] 1579
+[savefile] "/home/sebastian/Electronica-digital/Algoritmos/Raiz_Cuadrada/Core/TB/raiz_TB.gtkw"
+[timestart] 0
+[size] 1366 768
+[pos] -27 -25
+*-15.489453 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] raiz_TB.
+[treeopen] raiz_TB.uut.
+[treeopen] raiz_TB.uut.comp.
+[treeopen] raiz_TB.uut.corr_b.
+[treeopen] raiz_TB.uut.corr_c.
+[treeopen] raiz_TB.uut.corr_ra.
+[treeopen] raiz_TB.uut.ctrl.
+[sst_width] 290
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 215
+@28
+raiz_TB.uut.clk
+raiz_TB.uut.rst
+raiz_TB.uut.start
+@22
+raiz_TB.uut.radical[7:0]
+raiz_TB.uut.resultado[4:0]
+@28
+raiz_TB.uut.done
+raiz_TB.uut.w_z
+raiz_TB.uut.w_z_a
+raiz_TB.uut.w_load_ra
+raiz_TB.uut.w_shift_ra
+raiz_TB.uut.w_sub_ra
+raiz_TB.uut.w_shift_b
+raiz_TB.uut.w_set_b0
+raiz_TB.uut.w_load_c
+raiz_TB.uut.w_calc_c
+@22
+raiz_TB.uut.w_A[8:0]
+raiz_TB.uut.w_R[7:0]
+raiz_TB.uut.w_C[7:0]
+raiz_TB.uut.w_B[4:0]
+raiz_TB.uut.comp.R[7:0]
+raiz_TB.uut.comp.C[7:0]
+@28
+raiz_TB.uut.comp.z
+raiz_TB.uut.corr_b.clk
+raiz_TB.uut.corr_b.start
+raiz_TB.uut.corr_b.shift
+raiz_TB.uut.corr_b.b0
+@22
+raiz_TB.uut.corr_b.B[4:0]
+@28
+raiz_TB.uut.corr_c.clk
+raiz_TB.uut.corr_c.rst
+raiz_TB.uut.corr_c.load_b
+raiz_TB.uut.corr_c.calc_c
+@22
+raiz_TB.uut.corr_c.B[4:0]
+raiz_TB.uut.corr_c.C[7:0]
+@28
+raiz_TB.uut.corr_ra.clk
+raiz_TB.uut.corr_ra.rst
+raiz_TB.uut.corr_ra.load
+raiz_TB.uut.corr_ra.shift
+raiz_TB.uut.corr_ra.sub_en
+@22
+raiz_TB.uut.corr_ra.radical_in[7:0]
+raiz_TB.uut.corr_ra.C[7:0]
+raiz_TB.uut.corr_ra.A[8:0]
+raiz_TB.uut.corr_ra.R[7:0]
+@28
+raiz_TB.uut.ctrl.clk
+raiz_TB.uut.ctrl.rst
+raiz_TB.uut.ctrl.start
+raiz_TB.uut.ctrl.z
+raiz_TB.uut.ctrl.z_a
+raiz_TB.uut.ctrl.load_ra
+raiz_TB.uut.ctrl.shift_ra
+raiz_TB.uut.ctrl.sub_ra
+raiz_TB.uut.ctrl.shift_b
+raiz_TB.uut.ctrl.set_b0
+raiz_TB.uut.ctrl.load_c
+raiz_TB.uut.ctrl.calc_c
+raiz_TB.uut.ctrl.done
+@22
+raiz_TB.uut.ctrl.state[2:0]
+raiz_TB.uut.ctrl.count[3:0]
+raiz_TB.uut.ctrl.state_name[320:1]
+[pattern_trace] 1
+[pattern_trace] 0

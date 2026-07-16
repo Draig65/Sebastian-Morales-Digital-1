@@ -1,0 +1,35 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Thu Jul 16 11:13:22 2026
+[*]
+[dumpfile] "/home/ddraig/digital_UN/basic_circuits/test_peripherals/rtl/cores/test/bcd_binario/Core/TB/rsr_bin_TB.vcd"
+[dumpfile_mtime] "Thu Jul 16 11:11:01 2026"
+[dumpfile_size] 1160
+[savefile] "/home/ddraig/digital_UN/basic_circuits/test_peripherals/rtl/cores/test/bcd_binario/Core/TB/rsr_bin_TB.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-14.707585 26200 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] rsr_bin_TB.
+[sst_width] 216
+[signals_width] 134
+[sst_expanded] 1
+[sst_vpaned_height] 151
+@28
+rsr_bin_TB.uut.clk
+@29
+rsr_bin_TB.uut.in_data[7:0]
+@28
+rsr_bin_TB.uut.ld_acc
+rsr_bin_TB.uut.load
+@22
+rsr_bin_TB.uut.r0[15:0]
+rsr_bin_TB.uut.result[7:0]
+@28
+rsr_bin_TB.uut.rst
+rsr_bin_TB.uut.shift
+@22
+rsr_bin_TB.uut.sub_high[3:0]
+rsr_bin_TB.uut.sub_low[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
