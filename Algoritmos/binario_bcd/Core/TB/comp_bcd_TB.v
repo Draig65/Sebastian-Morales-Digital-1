@@ -4,7 +4,7 @@ module comp_bcd_TB;
   reg  [3:0] nibble_in;
   wire [3:0] nibble_out;
 
-  // Instancia del comparador para Bin-to-BCD
+
   comp_bcd uut (
     .nibble_in(nibble_in),
     .nibble_out(nibble_out)
@@ -25,12 +25,12 @@ module comp_bcd_TB;
     $dumpfile("TB/comp_bcd_TB.vcd");
     $dumpvars(0, comp_bcd_TB);
 
-    // Casos menores a 5 (no deben cambiar)
+  
     nibble_in = 4'd0; check_result(4'd0);
     nibble_in = 4'd3; check_result(4'd3);
     nibble_in = 4'd4; check_result(4'd4);
 
-    // Casos mayores o iguales a 5 (deben sumar 3)
+   
     nibble_in = 4'd5; check_result(4'd8);
     nibble_in = 4'd7; check_result(4'd10);
     nibble_in = 4'd9; check_result(4'd12);

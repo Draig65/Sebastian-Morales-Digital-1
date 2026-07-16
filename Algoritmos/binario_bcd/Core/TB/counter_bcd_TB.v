@@ -17,7 +17,7 @@ module counter_bcd_TB;
     .z(z)
   );
 
-  always #10 clk = ~clk; // Periodo de 20ns
+  always #10 clk = ~clk; 
 
   initial begin
     $dumpfile("TB/counter_bcd_TB.vcd");
@@ -26,13 +26,12 @@ module counter_bcd_TB;
     clk = 0; rst = 1; load = 0; dec = 0;
     #20 rst = 0;
 
-    // 1. Probar carga inicial (debe ir a 8)
     load = 1; #20 load = 0;
     if (count !== 4'd8 || z !== 1'b0) begin
       $display("counter_bcd_TB FAIL en carga inicial"); $fatal(1);
     end
 
-    // 2. Probar decremento hasta cero
+  
     dec = 1;
     repeat(8) @(negedge clk);
     dec = 0;

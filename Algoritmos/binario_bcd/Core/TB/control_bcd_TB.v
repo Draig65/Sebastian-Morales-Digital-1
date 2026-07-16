@@ -30,20 +30,19 @@ module control_bcd_TB;
     clk = 0; rst = 1; init = 0; z = 0;
     #20 rst = 0;
 
-    // En estado START, load debe estar activo cuando inicia
+   
     init = 1; #20 init = 0;
 
-    // Simular 8 ciclos alternando estados
     repeat(7) begin
-      @(posedge clk); // SHIFT
-      @(posedge clk); // CHECK
-      @(posedge clk); // ACC
+      @(posedge clk); 
+      @(posedge clk); 
+      @(posedge clk); 
     end
 
-    // Último ciclo activando la bandera z
+
     z = 1;
-    @(posedge clk); // Entra a SHIFT/CHECK final
-    @(posedge clk); // Debe pasar a END_ST
+    @(posedge clk); 
+    @(posedge clk); 
 
     #1;
     if (done !== 1'b1) begin
